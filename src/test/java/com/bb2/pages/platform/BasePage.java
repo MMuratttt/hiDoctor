@@ -15,6 +15,12 @@ public class BasePage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/div[2]/div/nav/ul/div[1]/p")
     public WebElement DASHBOARD;
 
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div/div[2]/div/nav/ul/div[1]")
+    public WebElement MISSIONS;
+
+    @FindBy(xpath = "//div[@class='MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-4aidhw']")
+    public WebElement OVERVIEW;
+
     @FindBy(id = "extra-button")
     public WebElement THREE_DOTS;
 
