@@ -11,10 +11,9 @@ import org.junit.runner.RunWith;
                 "pretty",
                 "html:target/cucumber-report.html",
                 "rerun:target//rerun.txt",
-                "me.jvt.cucumber.report.PrettyReports:target/cucumber"
         },
         features = "src/test/resources/features",
-        glue = "com/cydeo/step_definitions",
+        glue = "com/bb2/step_definitions",
         dryRun = false,
         //       tags = "@wip or @regression or @smoke",
         publish = true
