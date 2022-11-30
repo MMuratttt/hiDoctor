@@ -1,4 +1,4 @@
-package com.bb2.utilities;
+package com.hiDoctor.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -90,6 +90,13 @@ public class Driver {
 
         return driverPool.get();
 
+    }
+
+    public static void closeDriver() {
+        if (driverPool.get() != null) {
+            driverPool.get().quit(); // this line will terminate the existing session. value will not even be null
+            driverPool.remove();
+        }
     }
 
 }

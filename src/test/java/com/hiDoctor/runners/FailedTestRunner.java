@@ -1,4 +1,4 @@
-package com.bb2.runners;
+package com.hiDoctor.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        glue = "com/cydeo/step_definitions",
+        glue = "com/hiDoctor/step_definitions",
         features = "@target/rerun.txt"
 )
 

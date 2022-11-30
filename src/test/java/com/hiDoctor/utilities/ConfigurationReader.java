@@ -1,4 +1,4 @@
-package com.bb2.utilities;
+package com.hiDoctor.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;

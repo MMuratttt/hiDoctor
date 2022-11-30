@@ -1,4 +1,4 @@
-package com.bb2.utilities;
+package com.hiDoctor.utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;

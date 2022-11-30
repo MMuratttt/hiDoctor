@@ -1,4 +1,4 @@
-package com.bb2.runners;
+package com.hiDoctor.runners;
 
 
 import io.cucumber.junit.Cucumber;
@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
                 "rerun:target//rerun.txt",
         },
         features = "src/test/resources/features",
-        glue = "com/bb2/step_definitions",
-        dryRun = false,
+        glue = "com/hiDoctor/step_definitions",
+        dryRun = true,
         //       tags = "@wip or @regression or @smoke",
         publish = true
 )
