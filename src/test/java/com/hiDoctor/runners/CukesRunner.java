@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/hiDoctor/step_definitions",
-        dryRun = true,
+        dryRun = false,
         //       tags = "@wip or @regression or @smoke",
         publish = true
 )
