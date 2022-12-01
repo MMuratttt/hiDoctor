@@ -11,9 +11,6 @@ public class MainPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(className = "flex -space-x-2")
-    public WebElement PROFILE;
-
     @FindBy(className = "btn btn-primary text-xs")
     public WebElement LOGIN_REGISTER;
 
@@ -84,11 +81,32 @@ public class MainPage {
     @FindBy(xpath = "//*[@id=\"2\"]/div[1]/div[2]")
     public String OTP_SENT_POPUP_TEXT;
 
-
+    @FindBy(className = "font-bold text-xl")
+    public String OTP_COUNTER;
 
     @FindBy(className = "text-2xl font-bold mt-2")
     public String USER_PHONE_NUMBER;
 
+    @FindBy(xpath = "//input[@aria-label='Please enter verification code. Digit 1']")
+    public String OTP_DIGIT_1;
+
+    @FindBy(xpath = "//input[@aria-label='Digit 2']")
+    public String OTP_DIGIT_2;
+
+    @FindBy(xpath = "//input[@aria-label='Digit 3']")
+    public String OTP_DIGIT_3;
+
+    @FindBy(xpath = "//input[@aria-label='Digit 4']")
+    public String OTP_DIGIT_4;
+
+    @FindBy(xpath = "//input[@aria-label='Digit 5']")
+    public String OTP_DIGIT_5;
+
+    @FindBy(xpath = "//input[@aria-label='Digit 6']")
+    public String OTP_DIGIT_6;
+
+    @FindBy(className = "flex -space-x-2")
+    public WebElement PROFILE;
 
 
 

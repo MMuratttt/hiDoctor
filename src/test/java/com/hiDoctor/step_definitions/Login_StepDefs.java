@@ -19,12 +19,13 @@ public class Login_StepDefs {
 
     @When("User clicks on Login Register")
     public void user_clicks_on_login_register() {
-
+    mainPage.LOGIN_REGISTER.click();
     }
 
     @Then("Login iFrame is displayed")
     public void login_i_frame_is_displayed() {
-        Driver.getDriver().switchTo().frame(mainPage.SIGN_IN_IFRAME);
+    Driver.getDriver().switchTo().frame(mainPage.SIGN_IN_IFRAME);
+
     }
 
     @Then("User clicks on Sign Up")
@@ -94,7 +95,7 @@ public class Login_StepDefs {
     String actualResult = mainPage.OTP_SENT_POPUP_TEXT;  // we need text
     }
 
-    @Then("User should see the exact number which already entered")
+    @Then("User should see the exact phone number which already entered")
     public void user_should_see_the_exact_number_which_already_entered() {
 
     }

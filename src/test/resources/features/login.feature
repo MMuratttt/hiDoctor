@@ -4,6 +4,7 @@ Feature: Login feature
   Background: For the scenarios in the feature file, user is expected to be on main page
     Given User is on the main page
 
+  @wip
   Scenario: Sign Up Happy Path
     When User clicks on Login Register
     Then Login iFrame is displayed
@@ -21,7 +22,7 @@ Feature: Login feature
     When User clicks on mandatory checkboxes
     And User clicks on Sign Up inside
     Then User should see the counter and popup message OTP code sent successfully
-    Then User should see the exact number which already entered
+    Then User should see the exact phone number which already entered
     When User enters the OTP code
     Then User should land on main page as signed in
 
