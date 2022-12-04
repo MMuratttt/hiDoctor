@@ -18,9 +18,8 @@ public class Hooks {
 
         }
 
-    //    Driver.closeDriver();
+        Driver.closeDriver();
 
     }
-
 
 }
