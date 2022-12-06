@@ -1,12 +1,14 @@
 package com.hiDoctor.step_definitions;
 
 import com.hiDoctor.pages.MainPage;
+import com.hiDoctor.utilities.BrowserUtils;
 import com.hiDoctor.utilities.ConfigurationReader;
 import com.hiDoctor.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class Login_StepDefs {
 
@@ -20,22 +22,30 @@ public class Login_StepDefs {
     @When("User clicks on Login Register")
     public void user_clicks_on_login_register() {
     mainPage.LOGIN_REGISTER.click();
+    BrowserUtils.waitForVisibility(mainPage.LOGIN,10);
     }
 
     @Then("Login iFrame is displayed")
     public void login_i_frame_is_displayed() {
-    Driver.getDriver().switchTo().frame(mainPage.SIGN_IN_IFRAME);
-
+    Assert.assertTrue(mainPage.LOGIN.isDisplayed());
     }
 
     @Then("User clicks on Sign Up")
     public void user_clicks_on_sign_up() {
-
+    mainPage.SIGN_UP.click();
     }
 
     @Then("User can open, read and accept all acknowledge texts")
     public void user_can_open_read_and_accept_all_acknowledge_texts() {
+    mainPage.CLARIFICATION_TEXT.click();
+    Driver.getDriver().switchTo().frame(mainPage.TEXT_IFRAME);
+    Assert.assertEquals(mainPage.clarificationTextHeader,"Aydınlatma Metni");
+    mainPage.TEXT_CLOSE.click();
 
+    mainPage.CLARIFICATION_TEXT.click();
+    Driver.getDriver().switchTo().frame(mainPage.TEXT_IFRAME);
+    Assert.assertEquals(mainPage.clarificationTextHeader,"Aydınlatma Metni");
+    mainPage.TEXT_CLOSE.click();
     }
 
     @Then("Checkboxes should be clickable and user unclick every checboxes")

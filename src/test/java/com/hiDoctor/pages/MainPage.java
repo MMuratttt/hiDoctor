@@ -11,10 +11,10 @@ public class MainPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(className = "btn btn-primary text-xs")
+    @FindBy(xpath = "//*[@id=\"__next\"]/div[2]/div[2]/div/div[2]/div/button[2]")
     public WebElement LOGIN_REGISTER;
 
-    @FindBy(className = "pt-6 hidden-scrollbar max-h-screen bg-white rounded-xl rounded-b-none md:rounded-b-xl relative")
+    @FindBy(xpath = "//*[@id=\"headlessui-dialog-panel-:r3:\"]/div[1]")
     public WebElement SIGN_IN_IFRAME;
 
     @FindBy(className = "flex justify-center items-center cursor-pointer")
@@ -23,10 +23,10 @@ public class MainPage {
     @FindBy(name = "mobile.phoneNumber")
     public WebElement PHONE_NUMBER;
 
-    @FindBy(className = "btn btn-primary btn-lg w-full h-14 text-base font-semibold")
+    @FindBy(xpath = "//*[@id=\"login\"]/div[2]/button")
     public WebElement LOGIN;
 
-    @FindBy(className = "px-1 text-base text-primary-500 underline cursor-pointer font-semibold")
+    @FindBy(xpath = "//*[@id=\"login\"]/div[3]/a")
     public WebElement SIGN_UP;
 
     @FindBy(partialLinkText = "Clarification Text")
@@ -35,7 +35,12 @@ public class MainPage {
     @FindBy(id = "headlessui-dialog-panel-:rl:")
     public WebElement TEXT_IFRAME;
 
-    @FindBy(className = "absolute top-1 right-4 md:right-0 inline-block p-1 border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-500 rounded-full cursor-pointer transition-all ease-out")
+    @FindBy(xpath = "//*[@id=\"headlessui-dialog-panel-:r9:\"]/div/div[1]/div/span")
+    public WebElement TEXT_TITLE;
+
+    public String clarificationTextHeader= "Aydınlatma Metni";
+
+    @FindBy(xpath = "//*[@id=\"headlessui-dialog-panel-:r5:\"]/div/div[1]/span/svgt")
     public WebElement TEXT_CLOSE;
 
     @FindBy(partialLinkText = "Application Terms of Use")
