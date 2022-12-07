@@ -4,6 +4,7 @@ Feature: Login feature
   Background: For the scenarios in the feature file, user is expected to be on main page
     Given User is on the main page
 
+    @wip
   Scenario: Sign Up Happy Path
     When User clicks on Login Register
     Then Login iFrame is displayed
