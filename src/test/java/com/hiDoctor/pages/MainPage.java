@@ -82,10 +82,7 @@ public class MainPage {
     @FindBy(xpath = "//*[@id=\"register\"]/div[1]/div/div")
     public WebElement RED_FRAME_PHONE;
 
-    @FindBy(xpath = "//*[@id=\"2\"]/div[1]")
-    public WebElement OTP_SENT_POPUP;
-
-    @FindBy(xpath = "//*[@id=\"1\"]/div[1]/div[2]")
+    @FindBy(xpath = "//*[@id=\"1\"]/div[1]") //    //*[@id="1"]/div[1]    //*[@id="1"]/div[1]/div[1]    //*[@id="1"]/div[1]/div[2]
     public WebElement OTP_SENT_POPUP_TEXT;
 
     @FindBy(xpath = "//*[@id=\"register\"]/div/div[1]/div[3]/div[2]")
@@ -121,8 +118,14 @@ public class MainPage {
     @FindBy(xpath = "//input[@aria-label='Digit 6']")
     public WebElement OTP_DIGIT_6;
 
-    @FindBy(className = "flex -space-x-2")
+    @FindBy(xpath = "//*[@id=\"__next\"]/div[2]/div[2]/div/div[2]/div/div[2]/div[1]")
     public WebElement PROFILE;
+
+    @FindBy(xpath = "//*[@id=\"register\"]/div/div[3]/button[1]")
+    public WebElement RESEND_CODE_BUTTON;
+
+    @FindBy(xpath = "//*[@id=\"register\"]/div/div[3]/button[2]")
+    public WebElement EDIT_PHONE_NUMBER;
 
 
 }

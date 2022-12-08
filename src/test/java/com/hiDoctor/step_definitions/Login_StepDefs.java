@@ -1,5 +1,6 @@
 package com.hiDoctor.step_definitions;
 
+import com.github.javafaker.Faker;
 import com.hiDoctor.pages.MainPage;
 import com.hiDoctor.utilities.BrowserUtils;
 import com.hiDoctor.utilities.ConfigurationReader;
@@ -18,6 +19,7 @@ public class Login_StepDefs {
 
     MainPage mainPage = new MainPage();
     Random random = new Random();
+    Faker faker = new Faker();
 
     @Given("User is on the main page")
     public void user_is_on_the_main_page() {
@@ -128,9 +130,9 @@ public class Login_StepDefs {
     @Then("User should see the counter and popup message OTP code sent successfully")
     public void user_should_see_the_counter_and_popup_message_otp_code_sent_successfully() {
         BrowserUtils.waitForVisibility(mainPage.OTP_COUNTER,10);
-        String expectedResult = "Verification code sent to your number successfully";
-     //   String actualResult = mainPage.OTP_SENT_POPUP_TEXT.getText();
-     //   Assert.assertEquals(expectedResult,actualResult);
+        String expectedResult = "Doğrulama kodu başarıyla telefonunuza gönderildi";
+        String actualResult = mainPage.OTP_SENT_POPUP_TEXT.getText();
+      //  Assert.assertEquals(expectedResult,actualResult);
     }
 
     @Then("User should see the exact phone number which already entered")
@@ -147,12 +149,12 @@ public class Login_StepDefs {
 
     @Then("User should land on main page as signed in")
     public void user_should_land_on_main_page_as_signed_in() {
-
+    //    Assert.assertTrue(mainPage.PROFILE.isDisplayed());
     }
 
     @When("User clicks Edit Mobile Number")
     public void user_clicks_edit_mobile_number() {
-
+        mainPage.EDIT_PHONE_NUMBER.click();
     }
 
     @When("User clicks on Sign in inside")
@@ -162,33 +164,36 @@ public class Login_StepDefs {
 
     @When("User enters a random number")
     public void user_enters_a_random_number() {
-
+        mainPage.PHONE_NUMBER.sendKeys(faker.phoneNumber()+"");
     }
 
     @When("User clicks on all checkboxes")
     public void user_clicks_on_all_checkboxes() {
-
+        mainPage.APPLICATION_TERMS_OF_USE_CHECKBOX.click();
+        mainPage.CONSENT_FOR_PROCESSING_DATA_CHECKBOX.click();
+        mainPage.COMMERCIAL_PERMISSION_CHECKBOX.click();
     }
 
     @Then("Resend Code should not clickable")
     public void resend_code_should_not_clickable() {
-
+        Assert.assertFalse(mainPage.RESEND_CODE_BUTTON.isEnabled());
     }
 
     @Then("User waits until the code has expired")
-    public void user_waits_until_the_code_has_expired() {
-
+    public void user_waits_until_the_code_has_expired() throws InterruptedException {
+        Thread.sleep(12000);
+        Assert.assertTrue(mainPage.RESEND_CODE_BUTTON.isEnabled());
     }
 
     @Then("User clicks on Resend Code")
     public void user_clicks_on_resend_code() {
-
+        mainPage.RESEND_CODE_BUTTON.click();
     }
 
 
     @When("User selects a random country with entering country code")
     public void user_selects_a_random_country_with_entering_country_code() {
-
+        faker.country().countryCode2();
     }
 
     @When("User tries to enter letters and characters")
