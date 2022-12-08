@@ -60,7 +60,7 @@ public class MainPage {
     @FindBy(className = "font-semibold text-primary-500 text-lg")
     public WebElement CLARIFICATION_TEXT_TITLE;
 
-    @FindBy(xpath = "//*[@id=\"headlessui-dialog-panel-:rf:\"]/div/div[1]/div/span")
+    @FindBy(xpath = "//*[@id=\"headlessui-dialog-panel-:rj:\"]/div/div[1]/div/span")
     public WebElement APPLICATION_TERMS_OF_USE_TEXT_TITLE;
 
     @FindBy(xpath = "//*[@id=\"headlessui-dialog-panel-:rj:\"]/div/div[1]/div/span")
