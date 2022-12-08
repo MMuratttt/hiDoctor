@@ -4,6 +4,7 @@ Feature: Login feature
   Background: For the scenarios in the feature file, user is expected to be on main page
     Given User is on the main page
 
+  @wip
   Scenario: Sign Up Happy Path
     When User clicks on Login Register
     Then Login iFrame is displayed
@@ -25,7 +26,6 @@ Feature: Login feature
     When User enters the OTP code
     Then User should land on main page as signed in
 
-  @wip
   Scenario: Sign Up Negative Scenario
     When User clicks on Login Register
     And User clicks on Sign Up
@@ -64,7 +64,7 @@ Feature: Login feature
     When User enters a number with more or less than required phone characters
     And User clicks on Login
     Then Please enter a valid mobile number error is displayed
-    When User enters his number <phoneNumber>
+    When User enters his number "<phoneNumber>"
     And User clicks on Login
     And User enters an invalid OTP code
     Then The verification code is invalid error message should be displayed

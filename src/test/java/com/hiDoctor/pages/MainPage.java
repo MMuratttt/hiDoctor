@@ -17,6 +17,13 @@ public class MainPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    public String clarificationTextHeader = "Aydınlatma Metni";
+    public String applicationTermOfUseTextHeader = "Uygulama Kullanım Koşulları";
+    public String consentForProcessingDataTextHeader = "Sağlık Verilerinin İşlenmesi İzni";
+    public String commercialPermissionTextHeader = "Ticari İleti ve Kişiye Özel Pazarlama İzni";
+
+    public String OTPCodeSentSuccessfullyText = "Doğrulama kodu başarıyla telefonunuza gönderildi";
+
     @FindBy(xpath = "//*[@id=\"__next\"]/div[2]/div[2]/div/div[2]/div/button[2]")
     public WebElement LOGIN_REGISTER;
 
@@ -35,11 +42,6 @@ public class MainPage {
     @FindBy(xpath = "//*[@id=\"login\"]/div[3]/a")
     public WebElement SIGN_UP;
 
-    public String clarificationTextHeader = "Aydınlatma Metni";
-    public String applicationTermOfUseTextHeader = "Uygulama Kullanım Koşulları";
-    public String consentForProcessingDataTextHeader = "Sağlık Verilerinin İşlenmesi İzni";
-    public String commercialPermissionTextHeader = "Ticari İleti ve Kişiye Özel Pazarlama İzni";
-
     @FindBy(xpath = "//*[@id=\"headlessui-dialog-panel-:r3:\"]/div/div[1]/span")
     public WebElement TEXT_CLOSE;
 
@@ -54,6 +56,18 @@ public class MainPage {
 
     @FindBy(xpath = "//*[@id=\"register\"]/div[2]/div[1]/div/div[3]/label/a")
     public WebElement COMMERCIAL_PERMISSION_TEXT;
+
+    @FindBy(className = "font-semibold text-primary-500 text-lg")
+    public WebElement CLARIFICATION_TEXT_TITLE;
+
+    @FindBy(xpath = "//*[@id=\"headlessui-dialog-panel-:rf:\"]/div/div[1]/div/span")
+    public WebElement APPLICATION_TERMS_OF_USE_TEXT_TITLE;
+
+    @FindBy(xpath = "//*[@id=\"headlessui-dialog-panel-:rj:\"]/div/div[1]/div/span")
+    public WebElement CONSENT_FOR_PROCESSING_DATA_TEXT_TITLE;
+
+    @FindBy(xpath = "//*[@id=\"headlessui-dialog-panel-:rl:\"]/div/div[1]/div/span")
+    public WebElement COMMERCIAL_PERMISSION_TEXT_TITLE;
 
     @FindBy(xpath = "//button[@class='btn btn-secondary h-14 text-base font-semibold absolute left-4 right-4 bottom-4 ']")
     public WebElement ACCEPT_TEXT;
@@ -126,6 +140,9 @@ public class MainPage {
 
     @FindBy(xpath = "//*[@id=\"register\"]/div/div[3]/button[2]")
     public WebElement EDIT_PHONE_NUMBER;
+
+    @FindBy(xpath = "//*[@id=\"register\"]/div[2]/div[3]/a")
+    public WebElement SIGN_IN_INSIDE;
 
 
 }

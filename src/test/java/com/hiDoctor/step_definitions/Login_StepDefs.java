@@ -46,22 +46,22 @@ public class Login_StepDefs {
     public void user_can_open_read_and_accept_all_acknowledge_texts() throws InterruptedException {
         mainPage.CLARIFICATION_TEXT.click();
         BrowserUtils.waitForVisibility(mainPage.TEXT_CLOSE, 10);
-        Assert.assertEquals(mainPage.clarificationTextHeader, "Aydınlatma Metni");
+        Assert.assertEquals(mainPage.clarificationTextHeader, mainPage.CLARIFICATION_TEXT_TITLE.getText());
         mainPage.TEXT_CLOSE.click();
 
         mainPage.APPLICATION_TERMS_OF_USE_TEXT.click();
         BrowserUtils.waitForVisibility(mainPage.ACCEPT_TEXT, 10);
-        Assert.assertEquals(mainPage.applicationTermOfUseTextHeader, "Uygulama Kullanım Koşulları");
+        Assert.assertEquals(mainPage.applicationTermOfUseTextHeader, mainPage.CLARIFICATION_TEXT_TITLE.getText());
         mainPage.ACCEPT_TEXT.click();
 
         mainPage.CONSENT_FOR_PROCESSING_DATA_TEXT.click();
         BrowserUtils.waitForVisibility(mainPage.ACCEPT_TEXT, 10);
-        Assert.assertEquals(mainPage.consentForProcessingDataTextHeader, "Sağlık Verilerinin İşlenmesi İzni");
+        Assert.assertEquals(mainPage.consentForProcessingDataTextHeader, mainPage.CLARIFICATION_TEXT_TITLE.getText());
         mainPage.ACCEPT_TEXT.click();
 
         mainPage.COMMERCIAL_PERMISSION_TEXT.click();
         BrowserUtils.waitForVisibility(mainPage.ACCEPT_TEXT, 10);
-        Assert.assertEquals(mainPage.commercialPermissionTextHeader, "Ticari İleti ve Kişiye Özel Pazarlama İzni");
+        Assert.assertEquals(mainPage.commercialPermissionTextHeader, mainPage.CLARIFICATION_TEXT_TITLE.getText());
         mainPage.ACCEPT_TEXT.click();
     }
 
@@ -130,7 +130,7 @@ public class Login_StepDefs {
     @Then("User should see the counter and popup message OTP code sent successfully")
     public void user_should_see_the_counter_and_popup_message_otp_code_sent_successfully() {
         BrowserUtils.waitForVisibility(mainPage.OTP_COUNTER,10);
-        String expectedResult = "Doğrulama kodu başarıyla telefonunuza gönderildi";
+        String expectedResult = mainPage.OTPCodeSentSuccessfullyText;
         String actualResult = mainPage.OTP_SENT_POPUP_TEXT.getText();
       //  Assert.assertEquals(expectedResult,actualResult);
     }
@@ -159,7 +159,7 @@ public class Login_StepDefs {
 
     @When("User clicks on Sign in inside")
     public void user_clicks_on_sign_in_inside() {
-
+        mainPage.SIGN_IN_INSIDE.click();
     }
 
     @When("User enters a random number")
@@ -208,26 +208,28 @@ public class Login_StepDefs {
 
     @When("User clicks on Login")
     public void user_clicks_on_login() {
-
+        mainPage.LOGIN.click();
     }
 
     @Then("Please enter a valid mobile number error is displayed")
     public void please_enter_a_valid_mobile_number_error_is_displayed() {
-
-    }
-
-    @When("User enters his number <phoneNumber>")
-    public void user_enters_his_number_phone_number() {
-
+        String expectedResult = "Lütfen geçerli bir telefon numarası giriniz.";
     }
 
     @When("User enters an invalid OTP code")
     public void user_enters_an_invalid_otp_code() {
+        mainPage.OTP_DIGIT_1.sendKeys(random.nextInt(9)+"");
+        mainPage.OTP_DIGIT_2.sendKeys(random.nextInt(9)+"");
+        mainPage.OTP_DIGIT_3.sendKeys(random.nextInt(9)+"");
+        mainPage.OTP_DIGIT_4.sendKeys(random.nextInt(9)+"");
+        mainPage.OTP_DIGIT_5.sendKeys(random.nextInt(9)+"");
+        mainPage.OTP_DIGIT_6.sendKeys(random.nextInt(9)+"");
 
     }
 
     @Then("The verification code is invalid error message should be displayed")
     public void the_verification_code_is_invalid_error_message_should_be_displayed() {
+        String expectedResult = "Lütfen geçerli bir telefon numarası giriniz.";
 
     }
 
