@@ -46,22 +46,22 @@ public class Login_StepDefs {
     public void user_can_open_read_and_accept_all_acknowledge_texts() throws InterruptedException {
         mainPage.CLARIFICATION_TEXT.click();
         BrowserUtils.waitForVisibility(mainPage.TEXT_CLOSE, 10);
-        Assert.assertEquals(mainPage.clarificationTextHeader, mainPage.CLARIFICATION_TEXT_TITLE.getText());
+        Assert.assertEquals(mainPage.clarificationTextHeader, mainPage.TEXT_TITLE_FOR_ALL.getAttribute("textContent"));  //getAttribute("textContent") //getText()
         mainPage.TEXT_CLOSE.click();
 
         mainPage.APPLICATION_TERMS_OF_USE_TEXT.click();
         BrowserUtils.waitForVisibility(mainPage.ACCEPT_TEXT, 10);
-        Assert.assertEquals(mainPage.applicationTermOfUseTextHeader, mainPage.CLARIFICATION_TEXT_TITLE.getText());
+        Assert.assertEquals(mainPage.applicationTermOfUseTextHeader, mainPage.TEXT_TITLE_FOR_ALL.getAttribute("textContent"));
         mainPage.ACCEPT_TEXT.click();
 
         mainPage.CONSENT_FOR_PROCESSING_DATA_TEXT.click();
         BrowserUtils.waitForVisibility(mainPage.ACCEPT_TEXT, 10);
-        Assert.assertEquals(mainPage.consentForProcessingDataTextHeader, mainPage.CLARIFICATION_TEXT_TITLE.getText());
+        Assert.assertEquals(mainPage.consentForProcessingDataTextHeader, mainPage.TEXT_TITLE_FOR_ALL.getAttribute("textContent"));
         mainPage.ACCEPT_TEXT.click();
 
         mainPage.COMMERCIAL_PERMISSION_TEXT.click();
         BrowserUtils.waitForVisibility(mainPage.ACCEPT_TEXT, 10);
-        Assert.assertEquals(mainPage.commercialPermissionTextHeader, mainPage.CLARIFICATION_TEXT_TITLE.getText());
+        Assert.assertEquals(mainPage.commercialPermissionTextHeader, mainPage.TEXT_TITLE_FOR_ALL.getAttribute("textContent"));
         mainPage.ACCEPT_TEXT.click();
     }
 

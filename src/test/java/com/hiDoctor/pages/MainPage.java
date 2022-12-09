@@ -57,17 +57,8 @@ public class MainPage {
     @FindBy(xpath = "//*[@id=\"register\"]/div[2]/div[1]/div/div[3]/label/a")
     public WebElement COMMERCIAL_PERMISSION_TEXT;
 
-    @FindBy(className = "font-semibold text-primary-500 text-lg")
-    public WebElement CLARIFICATION_TEXT_TITLE;
-
-    @FindBy(xpath = "//*[@id=\"headlessui-dialog-panel-:rj:\"]/div/div[1]/div/span")
-    public WebElement APPLICATION_TERMS_OF_USE_TEXT_TITLE;
-
-    @FindBy(xpath = "//*[@id=\"headlessui-dialog-panel-:rj:\"]/div/div[1]/div/span")
-    public WebElement CONSENT_FOR_PROCESSING_DATA_TEXT_TITLE;
-
-    @FindBy(xpath = "//*[@id=\"headlessui-dialog-panel-:rl:\"]/div/div[1]/div/span")
-    public WebElement COMMERCIAL_PERMISSION_TEXT_TITLE;
+    @FindBy(xpath = "//div[@class='space-y-2 my-2']/div/span")
+    public WebElement TEXT_TITLE_FOR_ALL;
 
     @FindBy(xpath = "//button[@class='btn btn-secondary h-14 text-base font-semibold absolute left-4 right-4 bottom-4 ']")
     public WebElement ACCEPT_TEXT;
