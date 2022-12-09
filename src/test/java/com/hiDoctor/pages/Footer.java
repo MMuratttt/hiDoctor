@@ -1,11 +1,11 @@
-package com.hiDoctor.pages.services;
+package com.hiDoctor.pages;
 
 import com.hiDoctor.utilities.Driver;
 import org.openqa.selenium.support.PageFactory;
 
-public class OnlineDietitian {
+public class Footer {
 
-    public OnlineDietitian() {
+    public Footer() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

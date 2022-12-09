@@ -1,11 +1,11 @@
-package com.hiDoctor.pages;
+package com.hiDoctor.pages.headers;
 
 import com.hiDoctor.utilities.Driver;
 import org.openqa.selenium.support.PageFactory;
 
-public class BecomeAConsultant {
+public class ContactUs {
 
-    public BecomeAConsultant() {
+    public ContactUs() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
