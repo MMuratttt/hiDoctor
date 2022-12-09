@@ -1,11 +1,11 @@
-package com.hiDoctor.pages;
+package com.hiDoctor.pages.headers;
 
 import com.hiDoctor.utilities.Driver;
 import org.openqa.selenium.support.PageFactory;
 
-public class B2bApplication {
+public class Blog {
 
-    public B2bApplication() {
+    public Blog() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

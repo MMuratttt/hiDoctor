@@ -1,4 +1,4 @@
-package com.hiDoctor.pages.services;
+package com.hiDoctor.pages.headers.services;
 
 import com.hiDoctor.utilities.Driver;
 import org.openqa.selenium.support.PageFactory;
