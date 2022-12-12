@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                 "html:target/cucumber-report.html",
                 "json:target/cucumber.json",
         },
-        glue = "com/hiDoctor/step_definitions",
+        glue = "health/hiDoctor/step_definitions",
         features = "@target/rerun.txt"
 )
 
