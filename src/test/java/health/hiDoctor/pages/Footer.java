@@ -1,9 +1,9 @@
-package com.hiDoctor.pages;
+package health.hiDoctor.pages;
 
-import com.hiDoctor.utilities.Driver;
+import health.hiDoctor.utilities.Driver;
 import org.openqa.selenium.support.PageFactory;
 
-public class Footer {
+public class Footer extends BasePage {
 
     public Footer() {
         PageFactory.initElements(Driver.getDriver(), this);

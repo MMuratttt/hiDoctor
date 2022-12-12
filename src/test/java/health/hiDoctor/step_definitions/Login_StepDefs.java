@@ -1,13 +1,13 @@
-package com.hiDoctor.step_definitions;
+package health.hiDoctor.step_definitions;
 
 import com.github.javafaker.Faker;
-import com.hiDoctor.pages.BasePage;
-import com.hiDoctor.pages.MainPage;
-import com.hiDoctor.pages.SignIn_PopUp;
-import com.hiDoctor.pages.SignUp_PopUp;
-import com.hiDoctor.utilities.BrowserUtils;
-import com.hiDoctor.utilities.ConfigurationReader;
-import com.hiDoctor.utilities.Driver;
+import health.hiDoctor.pages.BasePage;
+import health.hiDoctor.pages.MainPage;
+import health.hiDoctor.pages.SignIn_PopUp;
+import health.hiDoctor.pages.SignUp_PopUp;
+import health.hiDoctor.utilities.BrowserUtils;
+import health.hiDoctor.utilities.ConfigurationReader;
+import health.hiDoctor.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -20,7 +20,6 @@ import java.util.Random;
 
 public class Login_StepDefs {
 
-    BasePage basePage = new BasePage();
     MainPage mainPage = new MainPage();
     SignIn_PopUp signIn_popUp = new SignIn_PopUp();
     SignUp_PopUp signUp_popUp = new SignUp_PopUp();
@@ -51,22 +50,22 @@ public class Login_StepDefs {
     @Then("User can open, read and accept all acknowledge texts")
     public void user_can_open_read_and_accept_all_acknowledge_texts() throws InterruptedException {
         signUp_popUp.CLARIFICATION_TEXT.click();
-        BrowserUtils.waitForVisibility(signUp_popUp.TEXT_CLOSE, 10);
+        BrowserUtils.waitForVisibility(signUp_popUp.TEXT_TITLE_FOR_ALL, 10);
         Assert.assertEquals(signUp_popUp.clarificationTextHeader, signUp_popUp.TEXT_TITLE_FOR_ALL.getAttribute("textContent"));  //getAttribute("textContent") //getText()
         signUp_popUp.TEXT_CLOSE.click();
 
         signUp_popUp.APPLICATION_TERMS_OF_USE_TEXT.click();
-        BrowserUtils.waitForVisibility(signUp_popUp.ACCEPT_TEXT, 10);
+        BrowserUtils.waitForVisibility(signUp_popUp.TEXT_TITLE_FOR_ALL, 10);
         Assert.assertEquals(signUp_popUp.applicationTermOfUseTextHeader, signUp_popUp.TEXT_TITLE_FOR_ALL.getAttribute("textContent"));
         signUp_popUp.ACCEPT_TEXT.click();
 
         signUp_popUp.CONSENT_FOR_PROCESSING_DATA_TEXT.click();
-        BrowserUtils.waitForVisibility(signUp_popUp.ACCEPT_TEXT, 10);
+        BrowserUtils.waitForVisibility(signUp_popUp.TEXT_TITLE_FOR_ALL, 10);
         Assert.assertEquals(signUp_popUp.consentForProcessingDataTextHeader, signUp_popUp.TEXT_TITLE_FOR_ALL.getAttribute("textContent"));
         signUp_popUp.ACCEPT_TEXT.click();
 
         signUp_popUp.COMMERCIAL_PERMISSION_TEXT.click();
-        BrowserUtils.waitForVisibility(signUp_popUp.ACCEPT_TEXT, 10);
+        BrowserUtils.waitForVisibility(signUp_popUp.TEXT_TITLE_FOR_ALL, 10);
         Assert.assertEquals(signUp_popUp.commercialPermissionTextHeader, signUp_popUp.TEXT_TITLE_FOR_ALL.getAttribute("textContent"));
         signUp_popUp.ACCEPT_TEXT.click();
     }

@@ -1,6 +1,6 @@
-package com.hiDoctor.pages;
+package health.hiDoctor.pages;
 
-import com.hiDoctor.utilities.Driver;
+import health.hiDoctor.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;

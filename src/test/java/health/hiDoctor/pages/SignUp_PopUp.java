@@ -1,6 +1,6 @@
-package com.hiDoctor.pages;
+package health.hiDoctor.pages;
 
-import com.hiDoctor.utilities.Driver;
+import health.hiDoctor.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -40,7 +40,7 @@ public class SignUp_PopUp extends MainPage{
     @FindBy(xpath = "//*[@id=\"register\"]/div[2]/div[1]/div/div[3]/label/a")
     public WebElement COMMERCIAL_PERMISSION_TEXT;
 
-    @FindBy(xpath = "//div[@class='space-y-2 my-2']/div/span")
+    @FindBy(xpath = "//div[@class='space-y-2 my-2']/div/div/span")
     public WebElement TEXT_TITLE_FOR_ALL;
 
     @FindBy(className = "flex justify-center items-center cursor-pointer")

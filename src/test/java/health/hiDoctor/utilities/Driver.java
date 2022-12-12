@@ -1,4 +1,4 @@
-package com.hiDoctor.utilities;
+package health.hiDoctor.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -11,8 +11,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Duration;
-import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
