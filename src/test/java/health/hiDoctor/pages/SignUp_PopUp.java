@@ -7,9 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SignUp_PopUp extends MainPage{
 
-    public SignUp_PopUp() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
 
     public String clarificationTextHeader = "Aydınlatma Metni";
     public String applicationTermOfUseTextHeader = "Uygulama Kullanım Koşulları";
@@ -104,7 +101,7 @@ public class SignUp_PopUp extends MainPage{
 
     public String OTPCodeSentSuccessfullyText = "Doğrulama kodu başarıyla telefonunuza gönderildi";
 
-    @FindBy(xpath = "//*[@id=\"1\"]/div[1]") //    //*[@id="1"]/div[1]    //*[@id="1"]/div[1]/div[1]    //*[@id="1"]/div[1]/div[2]
+    @FindBy(xpath = "//*[@id='1']/div/div[2]") //    //*[@id="1"]/div[1]    //*[@id="1"]/div[1]/div[1]    //*[@id="1"]/div[1]/div[2]
     public WebElement OTP_SENT_POPUP_TEXT;
 
     @FindBy(xpath = "//*[@id=\"register\"]/div/div[1]/div[3]/div[2]")

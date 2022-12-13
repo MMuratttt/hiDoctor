@@ -7,9 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SignIn_PopUp extends MainPage{
 
-    public SignIn_PopUp() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
 
     @FindBy(xpath = "//*[@id=\"login\"]/div[2]/button")
     public WebElement LOGIN;

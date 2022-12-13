@@ -59,10 +59,14 @@ public class Login_StepDefs {
         Assert.assertEquals(signUp_popUp.applicationTermOfUseTextHeader, signUp_popUp.TEXT_TITLE_FOR_ALL.getAttribute("textContent"));
         signUp_popUp.ACCEPT_TEXT.click();
 
+        Thread.sleep(1000);
+
         signUp_popUp.CONSENT_FOR_PROCESSING_DATA_TEXT.click();
         BrowserUtils.waitForVisibility(signUp_popUp.TEXT_TITLE_FOR_ALL, 10);
         Assert.assertEquals(signUp_popUp.consentForProcessingDataTextHeader, signUp_popUp.TEXT_TITLE_FOR_ALL.getAttribute("textContent"));
         signUp_popUp.ACCEPT_TEXT.click();
+
+        Thread.sleep(1000);
 
         signUp_popUp.COMMERCIAL_PERMISSION_TEXT.click();
         BrowserUtils.waitForVisibility(signUp_popUp.TEXT_TITLE_FOR_ALL, 10);
@@ -130,14 +134,15 @@ public class Login_StepDefs {
     public void user_clicks_on_mandatory_checkboxes() {
         signUp_popUp.APPLICATION_TERMS_OF_USE_CHECKBOX.click();
         signUp_popUp.CONSENT_FOR_PROCESSING_DATA_CHECKBOX.click();
+        signUp_popUp.COMMERCIAL_PERMISSION_CHECKBOX.click();
     }
 
     @Then("User should see the counter and popup message OTP code sent successfully")
     public void user_should_see_the_counter_and_popup_message_otp_code_sent_successfully() {
         BrowserUtils.waitForVisibility(signUp_popUp.OTP_COUNTER,10);
         String expectedResult = signUp_popUp.OTPCodeSentSuccessfullyText;
-        String actualResult = signUp_popUp.OTP_SENT_POPUP_TEXT.getText();
-      //  Assert.assertEquals(expectedResult,actualResult);
+        String actualResult = signUp_popUp.OTP_SENT_POPUP_TEXT.getAttribute("textContent");
+        Assert.assertEquals(expectedResult,actualResult);
     }
 
     @Then("User should see the exact phone number which already entered")
@@ -149,11 +154,17 @@ public class Login_StepDefs {
 
     @When("User enters the OTP code")
     public void user_enters_the_otp_code() {
-
+    signUp_popUp.OTP_DIGIT_1.sendKeys(ConfigurationReader.getProperty("OTPDigit1"));
+    signUp_popUp.OTP_DIGIT_2.sendKeys(ConfigurationReader.getProperty("OTPDigit2"));
+    signUp_popUp.OTP_DIGIT_3.sendKeys(ConfigurationReader.getProperty("OTPDigit3"));
+    signUp_popUp.OTP_DIGIT_4.sendKeys(ConfigurationReader.getProperty("OTPDigit4"));
+    signUp_popUp.OTP_DIGIT_5.sendKeys(ConfigurationReader.getProperty("OTPDigit5"));
+    signUp_popUp.OTP_DIGIT_6.sendKeys(ConfigurationReader.getProperty("OTPDigit6"));
     }
 
     @Then("User should land on main page as signed in")
     public void user_should_land_on_main_page_as_signed_in() {
+        BrowserUtils.waitForVisibility(mainPage.PROFILE,10);
     //    Assert.assertTrue(mainPage.PROFILE.isDisplayed());
     }
 
