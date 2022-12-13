@@ -1,15 +1,15 @@
-package com.hiDoctor.pages;
+package health.hiDoctor.pages;
 
-import com.hiDoctor.utilities.Driver;
+import health.hiDoctor.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SignUp_PopUp extends MainPage{
+import java.util.List;
+import java.util.Random;
 
-    public SignUp_PopUp() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+public class SignUp_PopUp extends MainPage{
 
     public String clarificationTextHeader = "Aydınlatma Metni";
     public String applicationTermOfUseTextHeader = "Uygulama Kullanım Koşulları";
@@ -40,7 +40,7 @@ public class SignUp_PopUp extends MainPage{
     @FindBy(xpath = "//*[@id=\"register\"]/div[2]/div[1]/div/div[3]/label/a")
     public WebElement COMMERCIAL_PERMISSION_TEXT;
 
-    @FindBy(xpath = "//div[@class='space-y-2 my-2']/div/span")
+    @FindBy(xpath = "//div[@class='space-y-2 my-2']/div/div/span")
     public WebElement TEXT_TITLE_FOR_ALL;
 
     @FindBy(className = "flex justify-center items-center cursor-pointer")
@@ -73,7 +73,6 @@ public class SignUp_PopUp extends MainPage{
     @FindBy(xpath = "//*[@id=\"register\"]/div[2]/div[1]/div/div[2]/label")
     public WebElement RED_TEXT_ERROR_2;
 
-
     @FindBy(xpath = "//*[@id=\"register\"]/div/div[3]/button[1]")
     public WebElement RESEND_CODE_BUTTON;
 
@@ -81,8 +80,7 @@ public class SignUp_PopUp extends MainPage{
     public WebElement EDIT_PHONE_NUMBER;
 
     @FindBy(xpath = "//*[@id=\"register\"]/div[2]/div[3]/a")
-    public WebElement SIGN_IN_INSIDE;
-
+    public WebElement SIGN_IN;
 
     @FindBy(xpath = "//input[@aria-label='Please enter verification code. Digit 1']")
     public WebElement OTP_DIGIT_1;
@@ -104,7 +102,7 @@ public class SignUp_PopUp extends MainPage{
 
     public String OTPCodeSentSuccessfullyText = "Doğrulama kodu başarıyla telefonunuza gönderildi";
 
-    @FindBy(xpath = "//*[@id=\"1\"]/div[1]") //    //*[@id="1"]/div[1]    //*[@id="1"]/div[1]/div[1]    //*[@id="1"]/div[1]/div[2]
+    @FindBy(xpath = "//*[@id='1']/div/div[2]") //    //*[@id="1"]/div[1]    //*[@id="1"]/div[1]/div[1]    //*[@id="1"]/div[1]/div[2]
     public WebElement OTP_SENT_POPUP_TEXT;
 
     @FindBy(xpath = "//*[@id=\"register\"]/div/div[1]/div[3]/div[2]")
@@ -115,6 +113,12 @@ public class SignUp_PopUp extends MainPage{
 
     @FindBy(xpath = "//*[@id=\"register\"]/div/div[1]/div[2]")
     public WebElement FULL_PHONE;
+
+    public WebElement RANDOM_COUNTRY(){
+        List<WebElement> countryList = Driver.getDriver().findElements(By.xpath("//*[@id=\"register\"]/div[1]/div/div[2]/ul/li"));
+        int randomCountryCode = new Random().nextInt(countryList.size());
+        return countryList.get(randomCountryCode);
+    }
 
 
 

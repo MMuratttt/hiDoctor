@@ -1,4 +1,4 @@
-package com.hiDoctor.utilities;
+package health.hiDoctor.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;

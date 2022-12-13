@@ -1,10 +1,4 @@
-package com.hiDoctor.step_definitions;
-
-import com.hiDoctor.utilities.Driver;
-import io.cucumber.java.After;
-import io.cucumber.java.Scenario;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+package health.hiDoctor.step_definitions;
 
 public class Hooks {
 /*
