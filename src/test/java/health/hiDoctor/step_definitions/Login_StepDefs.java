@@ -48,7 +48,7 @@ public class Login_StepDefs {
     }
 
     @Then("User can open, read and accept all acknowledge texts")
-    public void user_can_open_read_and_accept_all_acknowledge_texts() throws InterruptedException {
+    public void user_can_open_read_and_accept_all_acknowledge_texts() {
         signUp_popUp.CLARIFICATION_TEXT.click();
         BrowserUtils.waitForVisibility(signUp_popUp.TEXT_TITLE_FOR_ALL, 10);
         Assert.assertEquals(signUp_popUp.clarificationTextHeader, signUp_popUp.TEXT_TITLE_FOR_ALL.getAttribute("textContent"));  //getAttribute("textContent") //getText()
@@ -59,14 +59,14 @@ public class Login_StepDefs {
         Assert.assertEquals(signUp_popUp.applicationTermOfUseTextHeader, signUp_popUp.TEXT_TITLE_FOR_ALL.getAttribute("textContent"));
         signUp_popUp.ACCEPT_TEXT.click();
 
-        Thread.sleep(1000);
+        BrowserUtils.waitFor(1);
 
         signUp_popUp.CONSENT_FOR_PROCESSING_DATA_TEXT.click();
         BrowserUtils.waitForVisibility(signUp_popUp.TEXT_TITLE_FOR_ALL, 10);
         Assert.assertEquals(signUp_popUp.consentForProcessingDataTextHeader, signUp_popUp.TEXT_TITLE_FOR_ALL.getAttribute("textContent"));
         signUp_popUp.ACCEPT_TEXT.click();
 
-        Thread.sleep(1000);
+        BrowserUtils.waitFor(1);
 
         signUp_popUp.COMMERCIAL_PERMISSION_TEXT.click();
         BrowserUtils.waitForVisibility(signUp_popUp.TEXT_TITLE_FOR_ALL, 10);
@@ -93,11 +93,10 @@ public class Login_StepDefs {
 
     @When("User selects a random country")
     public void user_selects_a_random_country() {
-        List<WebElement> countryList = Driver.getDriver().findElements(By.xpath("//*[@id=\"register\"]/div[1]/div/div[2]/ul/li"));
-        int randomCountryCode = random.nextInt(countryList.size());
-        WebElement RANDOM_COUNTRY = countryList.get(randomCountryCode);
-        BrowserUtils.scrollToElement(RANDOM_COUNTRY);
-        RANDOM_COUNTRY.click();
+        WebElement randomCountry = signUp_popUp.RANDOM_COUNTRY();
+        BrowserUtils.waitForVisibility(randomCountry,10);
+        BrowserUtils.scrollToElement(randomCountry);
+        randomCountry.click();
     }
 
     @When("User selects country {string} that his phone registered")
@@ -134,7 +133,6 @@ public class Login_StepDefs {
     public void user_clicks_on_mandatory_checkboxes() {
         signUp_popUp.APPLICATION_TERMS_OF_USE_CHECKBOX.click();
         signUp_popUp.CONSENT_FOR_PROCESSING_DATA_CHECKBOX.click();
-        signUp_popUp.COMMERCIAL_PERMISSION_CHECKBOX.click();
     }
 
     @Then("User should see the counter and popup message OTP code sent successfully")
@@ -164,23 +162,24 @@ public class Login_StepDefs {
 
     @Then("User should land on main page as signed in")
     public void user_should_land_on_main_page_as_signed_in() {
-        BrowserUtils.waitForVisibility(mainPage.PROFILE,10);
+    //    BrowserUtils.waitForVisibility(mainPage.PROFILE,10);
     //    Assert.assertTrue(mainPage.PROFILE.isDisplayed());
     }
 
     @When("User clicks Edit Mobile Number")
     public void user_clicks_edit_mobile_number() {
+        BrowserUtils.waitForVisibility(signUp_popUp.EDIT_PHONE_NUMBER,10);
         signUp_popUp.EDIT_PHONE_NUMBER.click();
     }
 
     @When("User clicks on Sign in inside")
     public void user_clicks_on_sign_in_inside() {
-        signUp_popUp.SIGN_IN_INSIDE.click();
+        signUp_popUp.SIGN_IN.click();
     }
 
     @When("User enters a random number")
     public void user_enters_a_random_number() {
-        signUp_popUp.PHONE_NUMBER.sendKeys(faker.phoneNumber()+"");
+        signUp_popUp.PHONE_NUMBER.sendKeys(faker.numerify("#######")+"");
     }
 
     @When("User clicks on all checkboxes")
@@ -192,12 +191,13 @@ public class Login_StepDefs {
 
     @Then("Resend Code should not clickable")
     public void resend_code_should_not_clickable() {
+        BrowserUtils.waitForVisibility(signUp_popUp.RESEND_CODE_BUTTON,10);
         Assert.assertFalse(signUp_popUp.RESEND_CODE_BUTTON.isEnabled());
     }
 
     @Then("User waits until the code has expired")
-    public void user_waits_until_the_code_has_expired() throws InterruptedException {
-        Thread.sleep(12000);
+    public void user_waits_until_the_code_has_expired() {
+        BrowserUtils.waitFor(120);
         Assert.assertTrue(signUp_popUp.RESEND_CODE_BUTTON.isEnabled());
     }
 

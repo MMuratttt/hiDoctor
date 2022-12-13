@@ -1,12 +1,15 @@
 package health.hiDoctor.pages;
 
 import health.hiDoctor.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SignUp_PopUp extends MainPage{
+import java.util.List;
+import java.util.Random;
 
+public class SignUp_PopUp extends MainPage{
 
     public String clarificationTextHeader = "Aydınlatma Metni";
     public String applicationTermOfUseTextHeader = "Uygulama Kullanım Koşulları";
@@ -70,7 +73,6 @@ public class SignUp_PopUp extends MainPage{
     @FindBy(xpath = "//*[@id=\"register\"]/div[2]/div[1]/div/div[2]/label")
     public WebElement RED_TEXT_ERROR_2;
 
-
     @FindBy(xpath = "//*[@id=\"register\"]/div/div[3]/button[1]")
     public WebElement RESEND_CODE_BUTTON;
 
@@ -78,8 +80,7 @@ public class SignUp_PopUp extends MainPage{
     public WebElement EDIT_PHONE_NUMBER;
 
     @FindBy(xpath = "//*[@id=\"register\"]/div[2]/div[3]/a")
-    public WebElement SIGN_IN_INSIDE;
-
+    public WebElement SIGN_IN;
 
     @FindBy(xpath = "//input[@aria-label='Please enter verification code. Digit 1']")
     public WebElement OTP_DIGIT_1;
@@ -112,6 +113,12 @@ public class SignUp_PopUp extends MainPage{
 
     @FindBy(xpath = "//*[@id=\"register\"]/div/div[1]/div[2]")
     public WebElement FULL_PHONE;
+
+    public WebElement RANDOM_COUNTRY(){
+        List<WebElement> countryList = Driver.getDriver().findElements(By.xpath("//*[@id=\"register\"]/div[1]/div/div[2]/ul/li"));
+        int randomCountryCode = new Random().nextInt(countryList.size());
+        return countryList.get(randomCountryCode);
+    }
 
 
 
