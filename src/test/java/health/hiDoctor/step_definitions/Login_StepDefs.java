@@ -164,8 +164,8 @@ public class Login_StepDefs {
 
     @Then("User should land on main page as signed in")
     public void user_should_land_on_main_page_as_signed_in() {
-        //    BrowserUtils.waitForVisibility(mainPage.PROFILE,10);
-        //    Assert.assertTrue(mainPage.PROFILE.isDisplayed());
+        BrowserUtils.waitForVisibility(mainPage.PROFILE, 10);
+        Assert.assertTrue(mainPage.PROFILE.isDisplayed());
     }
 
     @When("User clicks Edit Mobile Number")
@@ -246,7 +246,6 @@ public class Login_StepDefs {
         signUp_popUp.OTP_DIGIT_4.sendKeys(random.nextInt(9) + "");
         signUp_popUp.OTP_DIGIT_5.sendKeys(random.nextInt(9) + "");
         signUp_popUp.OTP_DIGIT_6.sendKeys(random.nextInt(9) + "");
-
     }
 
     @Then("The verification code is invalid error message should be displayed")
