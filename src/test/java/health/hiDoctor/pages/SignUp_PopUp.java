@@ -102,7 +102,7 @@ public class SignUp_PopUp extends MainPage{
 
     public String OTPCodeSentSuccessfullyText = "Doğrulama kodu başarıyla telefonunuza gönderildi";
 
-    @FindBy(xpath = "//*[@id='1']/div/div[2]") //    //*[@id="1"]/div[1]    //*[@id="1"]/div[1]/div[1]    //*[@id="1"]/div[1]/div[2]
+    @FindBy(xpath = "//*[@id='1']/div/div[2]")
     public WebElement OTP_SENT_POPUP_TEXT;
 
     @FindBy(xpath = "//*[@id=\"register\"]/div/div[1]/div[3]/div[2]")
@@ -113,6 +113,11 @@ public class SignUp_PopUp extends MainPage{
 
     @FindBy(xpath = "//*[@id=\"register\"]/div/div[1]/div[2]")
     public WebElement FULL_PHONE;
+
+    @FindBy(xpath = "//div[@id='2']/div/div[2]")
+    public WebElement INVALID_PHONE_TEXT;
+
+    public String pleaseEnterValidPhoneText = "Lütfen geçerli bir telefon numarası giriniz.";
 
     public WebElement RANDOM_COUNTRY(){
         List<WebElement> countryList = Driver.getDriver().findElements(By.xpath("//*[@id=\"register\"]/div[1]/div/div[2]/ul/li"));

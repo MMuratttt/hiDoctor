@@ -94,7 +94,7 @@ public class Login_StepDefs {
     @When("User selects a random country")
     public void user_selects_a_random_country() {
         WebElement randomCountry = signUp_popUp.RANDOM_COUNTRY();
-        BrowserUtils.waitForVisibility(randomCountry,10);
+        BrowserUtils.waitForVisibility(randomCountry, 10);
         BrowserUtils.scrollToElement(randomCountry);
         randomCountry.click();
     }
@@ -120,6 +120,7 @@ public class Login_StepDefs {
     @When("User enters his number {string}")
     public void user_enters_his_number(String userPhone) {
         userPhone = ConfigurationReader.getProperty("userPhoneNumber");
+        signUp_popUp.USER_PHONE_NUMBER.clear();
         signUp_popUp.USER_PHONE_NUMBER.sendKeys(userPhone);
     }
 
@@ -137,38 +138,39 @@ public class Login_StepDefs {
 
     @Then("User should see the counter and popup message OTP code sent successfully")
     public void user_should_see_the_counter_and_popup_message_otp_code_sent_successfully() {
-        BrowserUtils.waitForVisibility(signUp_popUp.OTP_COUNTER,10);
+        BrowserUtils.waitForVisibility(signUp_popUp.OTP_COUNTER, 10);
         String expectedResult = signUp_popUp.OTPCodeSentSuccessfullyText;
         String actualResult = signUp_popUp.OTP_SENT_POPUP_TEXT.getAttribute("textContent");
-        Assert.assertEquals(expectedResult,actualResult);
+        Assert.assertEquals(expectedResult, actualResult);
     }
 
     @Then("User should see the exact phone number which already entered")
     public void user_should_see_the_exact_number_which_already_entered() {
         String expectedResult = ConfigurationReader.getProperty("userCountryCode") + ConfigurationReader.getProperty("userPhoneNumber");
         String actualResult = signUp_popUp.FULL_PHONE.getText();
-        Assert.assertEquals(expectedResult,actualResult);
+        Assert.assertEquals(expectedResult, actualResult);
     }
 
     @When("User enters the OTP code")
     public void user_enters_the_otp_code() {
-    signUp_popUp.OTP_DIGIT_1.sendKeys(ConfigurationReader.getProperty("OTPDigit1"));
-    signUp_popUp.OTP_DIGIT_2.sendKeys(ConfigurationReader.getProperty("OTPDigit2"));
-    signUp_popUp.OTP_DIGIT_3.sendKeys(ConfigurationReader.getProperty("OTPDigit3"));
-    signUp_popUp.OTP_DIGIT_4.sendKeys(ConfigurationReader.getProperty("OTPDigit4"));
-    signUp_popUp.OTP_DIGIT_5.sendKeys(ConfigurationReader.getProperty("OTPDigit5"));
-    signUp_popUp.OTP_DIGIT_6.sendKeys(ConfigurationReader.getProperty("OTPDigit6"));
+        BrowserUtils.waitForVisibility(signUp_popUp.OTP_COUNTER, 10);
+        signUp_popUp.OTP_DIGIT_1.sendKeys(ConfigurationReader.getProperty("OTPDigit1"));
+        signUp_popUp.OTP_DIGIT_2.sendKeys(ConfigurationReader.getProperty("OTPDigit2"));
+        signUp_popUp.OTP_DIGIT_3.sendKeys(ConfigurationReader.getProperty("OTPDigit3"));
+        signUp_popUp.OTP_DIGIT_4.sendKeys(ConfigurationReader.getProperty("OTPDigit4"));
+        signUp_popUp.OTP_DIGIT_5.sendKeys(ConfigurationReader.getProperty("OTPDigit5"));
+        signUp_popUp.OTP_DIGIT_6.sendKeys(ConfigurationReader.getProperty("OTPDigit6"));
     }
 
     @Then("User should land on main page as signed in")
     public void user_should_land_on_main_page_as_signed_in() {
-    //    BrowserUtils.waitForVisibility(mainPage.PROFILE,10);
-    //    Assert.assertTrue(mainPage.PROFILE.isDisplayed());
+        //    BrowserUtils.waitForVisibility(mainPage.PROFILE,10);
+        //    Assert.assertTrue(mainPage.PROFILE.isDisplayed());
     }
 
     @When("User clicks Edit Mobile Number")
     public void user_clicks_edit_mobile_number() {
-        BrowserUtils.waitForVisibility(signUp_popUp.EDIT_PHONE_NUMBER,10);
+        BrowserUtils.waitForVisibility(signUp_popUp.EDIT_PHONE_NUMBER, 10);
         signUp_popUp.EDIT_PHONE_NUMBER.click();
     }
 
@@ -179,7 +181,8 @@ public class Login_StepDefs {
 
     @When("User enters a random number")
     public void user_enters_a_random_number() {
-        signUp_popUp.PHONE_NUMBER.sendKeys(faker.numerify("#######")+"");
+        signUp_popUp.PHONE_NUMBER.clear();
+        signUp_popUp.PHONE_NUMBER.sendKeys(faker.numerify("#######") + "");
     }
 
     @When("User clicks on all checkboxes")
@@ -189,9 +192,9 @@ public class Login_StepDefs {
         signUp_popUp.COMMERCIAL_PERMISSION_CHECKBOX.click();
     }
 
-    @Then("Resend Code should not clickable")
+    @Then("Resend Code should not be clickable")
     public void resend_code_should_not_clickable() {
-        BrowserUtils.waitForVisibility(signUp_popUp.RESEND_CODE_BUTTON,10);
+        BrowserUtils.waitForVisibility(signUp_popUp.RESEND_CODE_BUTTON, 10);
         Assert.assertFalse(signUp_popUp.RESEND_CODE_BUTTON.isEnabled());
     }
 
@@ -229,25 +232,33 @@ public class Login_StepDefs {
 
     @Then("Please enter a valid mobile number error is displayed")
     public void please_enter_a_valid_mobile_number_error_is_displayed() {
-        String expectedResult = "Lütfen geçerli bir telefon numarası giriniz.";
+        BrowserUtils.waitForVisibility(signUp_popUp.INVALID_PHONE_TEXT, 10);
+        String expectedResult = signUp_popUp.pleaseEnterValidPhoneText;
+        String actualResult = signUp_popUp.INVALID_PHONE_TEXT.getAttribute("textContent");
+        Assert.assertEquals(expectedResult, actualResult);
     }
 
     @When("User enters an invalid OTP code")
     public void user_enters_an_invalid_otp_code() {
-        signUp_popUp.OTP_DIGIT_1.sendKeys(random.nextInt(9)+"");
-        signUp_popUp.OTP_DIGIT_2.sendKeys(random.nextInt(9)+"");
-        signUp_popUp.OTP_DIGIT_3.sendKeys(random.nextInt(9)+"");
-        signUp_popUp.OTP_DIGIT_4.sendKeys(random.nextInt(9)+"");
-        signUp_popUp.OTP_DIGIT_5.sendKeys(random.nextInt(9)+"");
-        signUp_popUp.OTP_DIGIT_6.sendKeys(random.nextInt(9)+"");
+        signUp_popUp.OTP_DIGIT_1.sendKeys(random.nextInt(9) + "");
+        signUp_popUp.OTP_DIGIT_2.sendKeys(random.nextInt(9) + "");
+        signUp_popUp.OTP_DIGIT_3.sendKeys(random.nextInt(9) + "");
+        signUp_popUp.OTP_DIGIT_4.sendKeys(random.nextInt(9) + "");
+        signUp_popUp.OTP_DIGIT_5.sendKeys(random.nextInt(9) + "");
+        signUp_popUp.OTP_DIGIT_6.sendKeys(random.nextInt(9) + "");
 
     }
 
     @Then("The verification code is invalid error message should be displayed")
     public void the_verification_code_is_invalid_error_message_should_be_displayed() {
-        String expectedResult = "Lütfen geçerli bir telefon numarası giriniz.";
+
 
     }
 
 
+    @Then("User shouldn't be logged in")
+    public void user_shouldnt_be_LoggedIn() {
+        BrowserUtils.waitFor(2);
+        Assert.assertFalse(mainPage.PROFILE.isDisplayed());
+    }
 }

@@ -43,16 +43,15 @@ Feature: Login feature
     And User enters a random number
     And User clicks on all checkboxes
     And User clicks on Sign Up inside
-    And User clicks Edit Mobile Number
+    Then Please enter a valid mobile number error is displayed
     When User selects country "<country>" that his phone registered
     And User enters his number "<phoneNumber>"
-    And User clicks on mandatory checkboxes
     And User clicks on Sign Up inside
-    Then Resend Code should not clickable
+    Then Resend Code should not be clickable
     And User waits until the code has expired
-    And User clicks on Resend Code
-    When User enters the OTP code
-    Then User should land on main page as signed in
+    When User clicks on Resend Code
+    And User enters an invalid OTP code
+    Then User shouldn't be logged in
 
 
   Scenario: Sign In
