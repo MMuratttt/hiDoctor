@@ -117,8 +117,10 @@ public class SignUp_PopUp extends MainPage{
     @FindBy(xpath = "//div[@id='2']/div/div[2]")
     public WebElement INVALID_PHONE_TEXT;
 
-    public String pleaseEnterValidPhoneText = "Lütfen geçerli bir telefon numarası giriniz.";
+    @FindBy(xpath = "//div[@class='w-full space-y-3']/p[1]")
+    public WebElement LOG_IN_TITLE;
 
+    public String pleaseEnterValidPhoneText = "Lütfen geçerli bir telefon numarası giriniz.";
     public WebElement RANDOM_COUNTRY(){
         List<WebElement> countryList = Driver.getDriver().findElements(By.xpath("//*[@id=\"register\"]/div[1]/div/div[2]/ul/li"));
         int randomCountryCode = new Random().nextInt(countryList.size());

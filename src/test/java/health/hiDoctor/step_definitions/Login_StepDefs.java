@@ -240,6 +240,9 @@ public class Login_StepDefs {
 
     @When("User enters an invalid OTP code")
     public void user_enters_an_invalid_otp_code() {
+
+        BrowserUtils.waitForElementIsEnable(signUp_popUp.OTP_DIGIT_1,1,10);
+
         signUp_popUp.OTP_DIGIT_1.sendKeys(random.nextInt(9) + "");
         signUp_popUp.OTP_DIGIT_2.sendKeys(random.nextInt(9) + "");
         signUp_popUp.OTP_DIGIT_3.sendKeys(random.nextInt(9) + "");
@@ -258,6 +261,6 @@ public class Login_StepDefs {
     @Then("User shouldn't be logged in")
     public void user_shouldnt_be_LoggedIn() {
         BrowserUtils.waitFor(2);
-        Assert.assertFalse(mainPage.PROFILE.isDisplayed());
+        Assert.assertTrue(signUp_popUp.LOG_IN_TITLE.isDisplayed());
     }
 }

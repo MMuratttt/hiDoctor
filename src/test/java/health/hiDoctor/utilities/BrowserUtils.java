@@ -14,7 +14,7 @@ import java.util.Set;
 
 public class BrowserUtils {
 
-    /*
+    /**
    This method accepts 3 arguments.
    Arg1: webdriver
    Arg2: expectedInUrl : for verify if the url contains given String.
@@ -41,7 +41,7 @@ public class BrowserUtils {
         Assert.assertTrue(actualTitle.contains(expectedInTitle));
     }
 
-    /*
+    /**
     This method accepts a String "expectedTitle" and Asserts if it is true
      */
     public static void verifyTitle(String expectedTitle){
@@ -460,6 +460,25 @@ public class BrowserUtils {
      */
     public static void waitForPresenceOfElement(By by, long time) {
         new WebDriverWait(Driver.getDriver(), time).until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+
+    /**
+     *  checks that an element is enabled or not. on the DOM of a page.
+     *    * time = waiting for each time (in seconds)
+     *    * count = system check an element is enabled or not ... times
+     * @param element
+     * @param time
+     * @param count
+     */
+    public static void waitForElementIsEnable(WebElement element, int time, int count){
+
+        int num = 1;
+        while ( !(element.isEnabled()) ){
+            waitFor(time);
+            num++;
+            if(num==count) {break;}
+        }
+
     }
 
 
