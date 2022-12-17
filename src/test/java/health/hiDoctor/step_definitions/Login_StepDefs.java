@@ -61,13 +61,6 @@ public class Login_StepDefs {
 
         BrowserUtils.waitFor(1);
 
-        signUp_popUp.CONSENT_FOR_PROCESSING_DATA_TEXT.click();
-        BrowserUtils.waitForVisibility(signUp_popUp.TEXT_TITLE_FOR_ALL, 10);
-        Assert.assertEquals(signUp_popUp.consentForProcessingDataTextHeader, signUp_popUp.TEXT_TITLE_FOR_ALL.getAttribute("textContent"));
-        signUp_popUp.ACCEPT_TEXT.click();
-
-        BrowserUtils.waitFor(1);
-
         signUp_popUp.COMMERCIAL_PERMISSION_TEXT.click();
         BrowserUtils.waitForVisibility(signUp_popUp.TEXT_TITLE_FOR_ALL, 10);
         Assert.assertEquals(signUp_popUp.commercialPermissionTextHeader, signUp_popUp.TEXT_TITLE_FOR_ALL.getAttribute("textContent"));
@@ -78,9 +71,6 @@ public class Login_StepDefs {
     public void checkboxes_should_be_clickable_and_user_unclick_every_checboxes() {
         BrowserUtils.waitForClickablility(signUp_popUp.APPLICATION_TERMS_OF_USE_CHECKBOX, 10);
         signUp_popUp.APPLICATION_TERMS_OF_USE_CHECKBOX.click();
-
-        BrowserUtils.waitForClickablility(signUp_popUp.CONSENT_FOR_PROCESSING_DATA_CHECKBOX, 10);
-        signUp_popUp.CONSENT_FOR_PROCESSING_DATA_CHECKBOX.click();
 
         BrowserUtils.waitForClickablility(signUp_popUp.COMMERCIAL_PERMISSION_CHECKBOX, 10);
         signUp_popUp.COMMERCIAL_PERMISSION_CHECKBOX.click();
@@ -133,7 +123,6 @@ public class Login_StepDefs {
     @When("User clicks on mandatory checkboxes")
     public void user_clicks_on_mandatory_checkboxes() {
         signUp_popUp.APPLICATION_TERMS_OF_USE_CHECKBOX.click();
-        signUp_popUp.CONSENT_FOR_PROCESSING_DATA_CHECKBOX.click();
     }
 
     @Then("User should see the counter and popup message OTP code sent successfully")
@@ -188,7 +177,6 @@ public class Login_StepDefs {
     @When("User clicks on all checkboxes")
     public void user_clicks_on_all_checkboxes() {
         signUp_popUp.APPLICATION_TERMS_OF_USE_CHECKBOX.click();
-        signUp_popUp.CONSENT_FOR_PROCESSING_DATA_CHECKBOX.click();
         signUp_popUp.COMMERCIAL_PERMISSION_CHECKBOX.click();
     }
 
@@ -212,17 +200,20 @@ public class Login_StepDefs {
 
     @When("User selects a random country with entering country code")
     public void user_selects_a_random_country_with_entering_country_code() {
-        faker.country().countryCode2();
+        signIn_popUp.ENTER_COUNTRY_CODE_BOX.click();
+        signIn_popUp.ENTER_COUNTRY.sendKeys(random.nextInt(1,8)+"");
+        signIn_popUp.TOP_OF_COUNTRY_LIST.click();
     }
 
-    @When("User tries to enter letters and characters")
-    public void user_tries_to_enter_letters_and_characters() {
-
+    @When("User tries to enter letters and characters but can't")
+    public void user_tries_to_enter_letters_and_characters_but_cant() {
+        signUp_popUp.USER_PHONE_NUMBER.clear();
+        signUp_popUp.USER_PHONE_NUMBER.sendKeys(faker.letterify("???????"));
     }
 
     @When("User enters a number with more or less than required phone characters")
     public void user_enters_a_number_with_more_or_less_than_required_phone_characters() {
-
+        
     }
 
     @When("User clicks on Login")
@@ -263,4 +254,14 @@ public class Login_StepDefs {
         BrowserUtils.waitFor(2);
         Assert.assertTrue(signUp_popUp.LOG_IN_TITLE.isDisplayed());
     }
+
+    @When("User selects country {string} that his phone registered in login page")
+    public void user_selects_country_that_his_phone_registered_in_login_page(String userCountry) {
+        userCountry = ConfigurationReader.getProperty("userCountry");
+        signIn_popUp.ENTER_COUNTRY_CODE_BOX.click();
+        signIn_popUp.ENTER_COUNTRY.sendKeys(userCountry);
+        signIn_popUp.TOP_OF_COUNTRY_LIST.click();
+    }
+
+
 }

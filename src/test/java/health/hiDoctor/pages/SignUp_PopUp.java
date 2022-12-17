@@ -11,16 +11,12 @@ import java.util.Random;
 
 public class SignUp_PopUp extends MainPage{
 
-    public String clarificationTextHeader = "Aydınlatma Metni";
-    public String applicationTermOfUseTextHeader = "Uygulama Kullanım Koşulları";
-    public String consentForProcessingDataTextHeader = "Sağlık Verilerinin İşlenmesi İzni";
+    public String clarificationTextHeader = "Aydınlatma Metni'ni";
+    public String applicationTermOfUseTextHeader = " Uygulama Kullanım Koşulları";
     public String commercialPermissionTextHeader = "Ticari İleti ve Kişiye Özel Pazarlama İzni";
 
-    @FindBy(id = "agreement-2")
+    @FindBy(id = "agreement-1")
     public WebElement APPLICATION_TERMS_OF_USE_CHECKBOX;
-
-    @FindBy(id = "agreement-3")
-    public WebElement CONSENT_FOR_PROCESSING_DATA_CHECKBOX;
 
     @FindBy(id = "agreement-4")
     public WebElement COMMERCIAL_PERMISSION_CHECKBOX;
@@ -35,9 +31,6 @@ public class SignUp_PopUp extends MainPage{
     public WebElement APPLICATION_TERMS_OF_USE_TEXT;
 
     @FindBy(xpath = "//*[@id=\"register\"]/div[2]/div[1]/div/div[2]/label/a")
-    public WebElement CONSENT_FOR_PROCESSING_DATA_TEXT;
-
-    @FindBy(xpath = "//*[@id=\"register\"]/div[2]/div[1]/div/div[3]/label/a")
     public WebElement COMMERCIAL_PERMISSION_TEXT;
 
     @FindBy(xpath = "//div[@class='space-y-2 my-2']/div/div/span")
@@ -48,7 +41,7 @@ public class SignUp_PopUp extends MainPage{
 
     @FindBy(name = "mobile.phoneNumber")
     public WebElement PHONE_NUMBER;
-
+    //*[@id="login"]/div[1]/div/div/div/div[1]
     @FindBy(xpath = "//*[@id=\"register\"]/div[1]/div/div/div/div[1]")
     public WebElement ENTER_COUNTRY_CODE_BOX;
 
