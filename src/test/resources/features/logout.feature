@@ -18,6 +18,7 @@ Feature: Logout feature
 
 
   Scenario: Logging out with closing the tab
+    When User open another tab
     When User closes the tab
     And User is on the main page
     Then User should land on main page as signed in

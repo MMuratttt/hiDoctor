@@ -26,7 +26,7 @@ public class Logout_StepDefs {
 
     @Given("User is on the main page as logged in")
     public void user_is_on_the_main_page_as_logged_in() {
-        signIn_popUp.login();
+        mainPage.login();
     }
 
     @When("User clicks on Profile Menu")
@@ -54,12 +54,13 @@ public class Logout_StepDefs {
 
     @When("User closes the tab")
     public void user_closes_the_tab() {
-
+        BrowserUtils.switchToWindow("HiDoctor: Online Psikolog | Diyetisyen!");
+        Driver.getDriver().close();
     }
 
     @When("User closes the window")
     public void user_closes_the_window() {
-
+        Driver.getDriver().quit();
     }
 
     @Then("User see the are you sure pop up")
@@ -84,6 +85,14 @@ public class Logout_StepDefs {
 
     @And("Logout")
     public void logout() {
-
+        mainPage.logout();
     }
+
+    @When("User open another tab")
+    public void user_Open_Another_Tab() {
+        Driver.getDriver().get("https://www.google.com/");
+    }
+
+
+
 }
