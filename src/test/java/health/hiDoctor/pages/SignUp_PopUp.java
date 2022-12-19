@@ -11,16 +11,12 @@ import java.util.Random;
 
 public class SignUp_PopUp extends MainPage{
 
-    public String clarificationTextHeader = "Aydınlatma Metni";
-    public String applicationTermOfUseTextHeader = "Uygulama Kullanım Koşulları";
-    public String consentForProcessingDataTextHeader = "Sağlık Verilerinin İşlenmesi İzni";
+    public String clarificationTextHeader = "Aydınlatma Metni'ni";
+    public String applicationTermOfUseTextHeader = " Uygulama Kullanım Koşulları";
     public String commercialPermissionTextHeader = "Ticari İleti ve Kişiye Özel Pazarlama İzni";
 
-    @FindBy(id = "agreement-2")
+    @FindBy(id = "agreement-1")
     public WebElement APPLICATION_TERMS_OF_USE_CHECKBOX;
-
-    @FindBy(id = "agreement-3")
-    public WebElement CONSENT_FOR_PROCESSING_DATA_CHECKBOX;
 
     @FindBy(id = "agreement-4")
     public WebElement COMMERCIAL_PERMISSION_CHECKBOX;
@@ -35,9 +31,6 @@ public class SignUp_PopUp extends MainPage{
     public WebElement APPLICATION_TERMS_OF_USE_TEXT;
 
     @FindBy(xpath = "//*[@id=\"register\"]/div[2]/div[1]/div/div[2]/label/a")
-    public WebElement CONSENT_FOR_PROCESSING_DATA_TEXT;
-
-    @FindBy(xpath = "//*[@id=\"register\"]/div[2]/div[1]/div/div[3]/label/a")
     public WebElement COMMERCIAL_PERMISSION_TEXT;
 
     @FindBy(xpath = "//div[@class='space-y-2 my-2']/div/div/span")
@@ -48,7 +41,7 @@ public class SignUp_PopUp extends MainPage{
 
     @FindBy(name = "mobile.phoneNumber")
     public WebElement PHONE_NUMBER;
-
+    //*[@id="login"]/div[1]/div/div/div/div[1]
     @FindBy(xpath = "//*[@id=\"register\"]/div[1]/div/div/div/div[1]")
     public WebElement ENTER_COUNTRY_CODE_BOX;
 
@@ -102,7 +95,7 @@ public class SignUp_PopUp extends MainPage{
 
     public String OTPCodeSentSuccessfullyText = "Doğrulama kodu başarıyla telefonunuza gönderildi";
 
-    @FindBy(xpath = "//*[@id='1']/div/div[2]") //    //*[@id="1"]/div[1]    //*[@id="1"]/div[1]/div[1]    //*[@id="1"]/div[1]/div[2]
+    @FindBy(xpath = "//*[@id='1']/div/div[2]")
     public WebElement OTP_SENT_POPUP_TEXT;
 
     @FindBy(xpath = "//*[@id=\"register\"]/div/div[1]/div[3]/div[2]")
@@ -114,11 +107,20 @@ public class SignUp_PopUp extends MainPage{
     @FindBy(xpath = "//*[@id=\"register\"]/div/div[1]/div[2]")
     public WebElement FULL_PHONE;
 
+    @FindBy(xpath = "//div[@id='2']/div/div[2]")
+    public WebElement INVALID_PHONE_TEXT;
+
+    @FindBy(xpath = "//div[@class='w-full space-y-3']/p[1]")
+    public WebElement LOG_IN_TITLE;
+
+    public String pleaseEnterValidPhoneText = "Lütfen geçerli bir telefon numarası giriniz.";
     public WebElement RANDOM_COUNTRY(){
         List<WebElement> countryList = Driver.getDriver().findElements(By.xpath("//*[@id=\"register\"]/div[1]/div/div[2]/ul/li"));
         int randomCountryCode = new Random().nextInt(countryList.size());
         return countryList.get(randomCountryCode);
     }
+
+
 
 
 

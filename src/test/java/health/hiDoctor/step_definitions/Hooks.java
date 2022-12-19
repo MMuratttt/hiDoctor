@@ -1,7 +1,13 @@
 package health.hiDoctor.step_definitions;
 
+import health.hiDoctor.utilities.Driver;
+import io.cucumber.java.Scenario;
+import org.junit.After;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
 public class Hooks {
-/*
+
     @After
     public void teardownScenario(Scenario scenario){
 
@@ -15,5 +21,5 @@ public class Hooks {
         Driver.closeDriver();
 
     }
-*/
+
 }
