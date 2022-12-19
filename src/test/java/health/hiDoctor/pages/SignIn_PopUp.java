@@ -1,6 +1,8 @@
 package health.hiDoctor.pages;
 
 import com.github.javafaker.Faker;
+import health.hiDoctor.utilities.BrowserUtils;
+import health.hiDoctor.utilities.ConfigurationReader;
 import health.hiDoctor.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -45,6 +47,8 @@ public class SignIn_PopUp extends MainPage {
         int n = random.nextInt(0, 1);
         return phoneNumberMoreLess.get(n);
     }
+
+
 
 
 }

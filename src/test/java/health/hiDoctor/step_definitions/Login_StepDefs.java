@@ -198,7 +198,6 @@ public class Login_StepDefs {
         signUp_popUp.RESEND_CODE_BUTTON.click();
     }
 
-
     @When("User selects a random country with entering country code")
     public void user_selects_a_random_country_with_entering_country_code() {
         signIn_popUp.ENTER_COUNTRY_CODE_BOX.click();
