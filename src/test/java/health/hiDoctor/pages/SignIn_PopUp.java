@@ -1,12 +1,19 @@
 package health.hiDoctor.pages;
 
+import com.github.javafaker.Faker;
 import health.hiDoctor.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SignIn_PopUp extends MainPage{
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
+public class SignIn_PopUp extends MainPage {
+
+    Random random = new Random();
+    Faker faker = new Faker();
 
     @FindBy(xpath = "//*[@id=\"login\"]/div[2]/button")
     public WebElement LOGIN;
@@ -22,5 +29,22 @@ public class SignIn_PopUp extends MainPage{
 
     @FindBy(xpath = "//*[@id=\"login\"]/div[1]/div/div[2]/ul/li[1]")
     public WebElement TOP_OF_COUNTRY_LIST;
+
+    @FindBy(xpath = "//div[@id='1']/div/div[2]")
+    public WebElement INVALID_PHONE_TEXT;
+
+    @FindBy(xpath = "//div[@id='3']/div/div[2]")
+    public WebElement INVALID_OTP_TEXT;
+
+    public String invalidOTPText = "Doğrulama kodu geçersiz";
+
+    public String PHONE_NUMBER_MORE_LESS() {
+        List<String> phoneNumberMoreLess = new ArrayList<>();
+        phoneNumberMoreLess.add(faker.numerify("######"));
+        phoneNumberMoreLess.add(faker.numerify("########"));
+        int n = random.nextInt(0, 1);
+        return phoneNumberMoreLess.get(n);
+    }
+
 
 }

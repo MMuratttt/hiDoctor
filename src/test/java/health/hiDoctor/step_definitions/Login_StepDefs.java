@@ -15,6 +15,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -201,7 +202,7 @@ public class Login_StepDefs {
     @When("User selects a random country with entering country code")
     public void user_selects_a_random_country_with_entering_country_code() {
         signIn_popUp.ENTER_COUNTRY_CODE_BOX.click();
-        signIn_popUp.ENTER_COUNTRY.sendKeys(random.nextInt(1,8)+"");
+        signIn_popUp.ENTER_COUNTRY.sendKeys(random.nextInt(1, 8) + "");
         signIn_popUp.TOP_OF_COUNTRY_LIST.click();
     }
 
@@ -213,7 +214,8 @@ public class Login_StepDefs {
 
     @When("User enters a number with more or less than required phone characters")
     public void user_enters_a_number_with_more_or_less_than_required_phone_characters() {
-        
+        String sixOrEightNumber = signIn_popUp.PHONE_NUMBER_MORE_LESS();
+        signUp_popUp.USER_PHONE_NUMBER.sendKeys(sixOrEightNumber);
     }
 
     @When("User clicks on Login")
@@ -232,7 +234,7 @@ public class Login_StepDefs {
     @When("User enters an invalid OTP code")
     public void user_enters_an_invalid_otp_code() {
 
-        BrowserUtils.waitForElementIsEnable(signUp_popUp.OTP_DIGIT_1,1,10);
+        BrowserUtils.waitForElementIsEnable(signUp_popUp.OTP_DIGIT_1, 1, 10);
 
         signUp_popUp.OTP_DIGIT_1.sendKeys(random.nextInt(9) + "");
         signUp_popUp.OTP_DIGIT_2.sendKeys(random.nextInt(9) + "");
@@ -244,8 +246,11 @@ public class Login_StepDefs {
 
     @Then("The verification code is invalid error message should be displayed")
     public void the_verification_code_is_invalid_error_message_should_be_displayed() {
-
-
+        BrowserUtils.waitForVisibility(signIn_popUp.INVALID_OTP_TEXT, 10);
+        String expectedResult = signIn_popUp.invalidOTPText;
+        String actualResult = signIn_popUp.INVALID_OTP_TEXT.getAttribute("textContent");
+        Assert.assertEquals(expectedResult, actualResult);
+        BrowserUtils.waitForClickablility(signUp_popUp.RESEND_CODE_BUTTON,125);
     }
 
 
@@ -263,5 +268,31 @@ public class Login_StepDefs {
         signIn_popUp.TOP_OF_COUNTRY_LIST.click();
     }
 
+    @Then("Please enter a valid mobile number error is displayed in login page")
+    public void please_enter_a_valid_mobile_number_error_is_displayed_in_login_page() {
+        BrowserUtils.waitForVisibility(signIn_popUp.INVALID_PHONE_TEXT, 10);
+        String expectedResult = signUp_popUp.pleaseEnterValidPhoneText;
+        String actualResult = signIn_popUp.INVALID_PHONE_TEXT.getAttribute("textContent");
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+
+    @When("User enters the OTP code after clearing the fields")
+    public void user_enters_the_otp_code_after_clearing_the_fields() {
+        BrowserUtils.waitForVisibility(signUp_popUp.OTP_COUNTER, 10);
+
+        signUp_popUp.OTP_DIGIT_1.clear();
+        signUp_popUp.OTP_DIGIT_2.clear();
+        signUp_popUp.OTP_DIGIT_3.clear();
+        signUp_popUp.OTP_DIGIT_4.clear();
+        signUp_popUp.OTP_DIGIT_5.clear();
+        signUp_popUp.OTP_DIGIT_6.clear();
+
+        signUp_popUp.OTP_DIGIT_1.sendKeys(ConfigurationReader.getProperty("OTPDigit1"));
+        signUp_popUp.OTP_DIGIT_2.sendKeys(ConfigurationReader.getProperty("OTPDigit2"));
+        signUp_popUp.OTP_DIGIT_3.sendKeys(ConfigurationReader.getProperty("OTPDigit3"));
+        signUp_popUp.OTP_DIGIT_4.sendKeys(ConfigurationReader.getProperty("OTPDigit4"));
+        signUp_popUp.OTP_DIGIT_5.sendKeys(ConfigurationReader.getProperty("OTPDigit5"));
+        signUp_popUp.OTP_DIGIT_6.sendKeys(ConfigurationReader.getProperty("OTPDigit6"));
+    }
 
 }

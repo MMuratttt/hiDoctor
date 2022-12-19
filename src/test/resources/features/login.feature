@@ -53,6 +53,8 @@ Feature: Login feature
     Then User should see the exact phone number which already entered
     When User enters the OTP code
     Then User should land on main page as signed in
+    And User clicks on Profile Menu
+    And User clicks on Log out
 
   @wip
   Scenario: Sign In
@@ -63,12 +65,14 @@ Feature: Login feature
     Then User tries to enter letters and characters but can't
     When User enters a number with more or less than required phone characters
     And User clicks on Login
-    Then Please enter a valid mobile number error is displayed
+    Then Please enter a valid mobile number error is displayed in login page
     When User enters his number "<phoneNumber>"
     And User clicks on Login
     And User enters an invalid OTP code
     Then The verification code is invalid error message should be displayed
     When User clicks on Resend Code
-    And User enters the OTP code
+    And User enters the OTP code after clearing the fields
     Then User should land on main page as signed in
+    And User clicks on Profile Menu
+    And User clicks on Log out
 
