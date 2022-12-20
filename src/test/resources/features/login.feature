@@ -32,7 +32,7 @@ Feature: Login feature
     And User enters an invalid OTP code
     Then User shouldn't be logged in
 
-  @wip
+
   Scenario: Sign Up Happy Path
     When User clicks on Login Register
     Then Login iFrame is displayed
@@ -55,7 +55,7 @@ Feature: Login feature
     Then User should land on main page as signed in
     And Logout
 
-  @wip
+
   Scenario: Sign In
     When User clicks on Login Register
     Then Login iFrame is displayed

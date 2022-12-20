@@ -8,6 +8,9 @@ import org.openqa.selenium.support.FindBy;
 
 public class MainPage extends BasePage{
 
+    public String title = "HiDoctor: Online Psikolog | Diyetisyen!";
+    public String bannerTextAtTheTop = "Sen De Modunu Yakala Diye İlk Psikolog Seansının %25'i Bizden Hediye!";
+
     @FindBy(xpath="//img[@alt='Online Psikolog']")
     public WebElement ONLINE_PSYCHOLOGIST;
 
