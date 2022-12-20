@@ -4,7 +4,7 @@ Feature: Login feature
   Background: For the scenarios in the feature file, user is expected to be on main page
     Given User is on the main page
 
-  @wip
+
   Scenario: Sign Up Negative Scenario
     When User clicks on Login Register
     And User clicks on Sign Up

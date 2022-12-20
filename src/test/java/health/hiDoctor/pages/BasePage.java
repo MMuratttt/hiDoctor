@@ -14,10 +14,6 @@ public abstract class BasePage {
     }
 
 
-    MainPage mainPage = new MainPage();
-    SignIn_PopUp signIn_popUp = new SignIn_PopUp();
-    SignUp_PopUp signUp_popUp = new SignUp_PopUp();
-
     @FindBy(xpath = "//*[@id=\"__next\"]/div[2]/div[2]/div/div[2]/div/button")
     public WebElement LOGIN_REGISTER;
 
@@ -40,23 +36,5 @@ public abstract class BasePage {
     public WebElement ARE_YOU_SURE_LOGOUT_TEXT;
 
     public String areYouSureLogout = "Çıkış yapmak istediğinizden emin misiniz?";
-
-    public void login(){
-        Driver.getDriver().get(ConfigurationReader.getProperty("platformURL"));
-        LOGIN_REGISTER.click();
-        BrowserUtils.waitForVisibility(signIn_popUp.LOGIN, 10);
-        signUp_popUp.ENTER_COUNTRY_CODE_BOX.click();
-        signUp_popUp.ENTER_COUNTRY.sendKeys(ConfigurationReader.getProperty("userCountry"));
-        signUp_popUp.TOP_OF_COUNTRY_LIST.click();
-        signUp_popUp.USER_PHONE_NUMBER.clear();
-        signUp_popUp.USER_PHONE_NUMBER.sendKeys(ConfigurationReader.getProperty("userPhoneNumber"));
-        signIn_popUp.LOGIN.click();
-    }
-
-    public void logout(){
-        PROFILE.click();
-        LOGOUT.click();
-        YES.click();
-    }
 
 }
