@@ -4,7 +4,7 @@ Feature: Main page functionalities are working fine
   Background: For the scenarios in the feature file, user is expected to be on main page as logged in
     Given User is on the main page as logged in
 
-  @wip
+
   Scenario: All buttons are working fine and functional
     Then The title should be displayed correctly
     Then The banner at the top of the page should display correct text

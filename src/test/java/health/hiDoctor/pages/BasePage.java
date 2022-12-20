@@ -35,6 +35,9 @@ public abstract class BasePage {
     @FindBy(xpath = "//div[@class='flex justify-center']/p")
     public WebElement ARE_YOU_SURE_LOGOUT_TEXT;
 
+    @FindBy(xpath = "//button[@class='Toastify__close-button Toastify__close-button--colored']")
+    public WebElement X_BUTTON_IN_POPUP;
+
     public String areYouSureLogout = "Çıkış yapmak istediğinizden emin misiniz?";
 
 }

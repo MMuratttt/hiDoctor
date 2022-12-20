@@ -1,21 +1,31 @@
 package health.hiDoctor.step_definitions;
 
+import health.hiDoctor.pages.MainPage;
+import health.hiDoctor.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class MainPage_StepDefs {
 
+    MainPage mainPage = new MainPage();
     @Then("The title should be displayed correctly")
     public void the_title_should_be_displayed_correctly() {
-
+        String actualResult = Driver.getDriver().getTitle();
+        String expectedResult = mainPage.title;
+        Assert.assertEquals(expectedResult,actualResult);
     }
     @Then("The banner at the top of the page should display correct text")
     public void the_banner_at_the_top_of_the_page_should_display_correct_text() {
-
+        String actualResult = mainPage.BANNER_TEXT_PART_1.getText() +
+                    mainPage.BANNER_TEXT_PART_2.getText() +
+                    mainPage.BANNER_TEXT_PART_3.getText();
+        String expectedResult = mainPage.bannerTextAtTheTop;
+        Assert.assertEquals(expectedResult,actualResult);
     }
     @When("User clicks on the banner at the top of the page")
     public void user_clicks_on_the_banner_at_the_top_of_the_page() {
-
+        mainPage.BANNER_TEXT_ON_THE_TOP.click();
     }
     @Then("User should land All Psychologist page")
     public void user_should_land_all_psychologist_page() {

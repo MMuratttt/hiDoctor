@@ -4,7 +4,7 @@ Feature: Logout feature
   Background: For the scenarios in the feature file, user is expected to be on main page as logged in
     Given User is on the main page as logged in
 
-
+  @wip
   Scenario: Logging out with Logout button
     When User clicks on Profile Menu
     Then User should see the exact number which already entered
