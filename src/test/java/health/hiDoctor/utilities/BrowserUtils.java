@@ -1,5 +1,9 @@
 package health.hiDoctor.utilities;
 
+import health.hiDoctor.pages.MainPage;
+import health.hiDoctor.pages.SignIn_PopUp;
+import health.hiDoctor.pages.SignUp_PopUp;
+import io.cucumber.java.it.Ma;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -15,13 +19,13 @@ import java.util.Set;
 public class BrowserUtils {
 
     /**
-   This method accepts 3 arguments.
-   Arg1: webdriver
-   Arg2: expectedInUrl : for verify if the url contains given String.
-       - If condition matches, will break loop.
-   Arg3: expectedInTitle to be compared against actualTitle
-    */
-    public static void switchWindowAndVerify(String expectedInUrl, String expectedInTitle){
+     * This method accepts 3 arguments.
+     * Arg1: webdriver
+     * Arg2: expectedInUrl : for verify if the url contains given String.
+     * - If condition matches, will break loop.
+     * Arg3: expectedInTitle to be compared against actualTitle
+     */
+    public static void switchWindowAndVerify(String expectedInUrl, String expectedInTitle) {
 
         Set<String> allWindowsHandles = Driver.getDriver().getWindowHandles();
 
@@ -31,7 +35,7 @@ public class BrowserUtils {
 
             System.out.println("Current URL: " + Driver.getDriver().getCurrentUrl());
 
-            if (Driver.getDriver().getCurrentUrl().contains(expectedInUrl)){
+            if (Driver.getDriver().getCurrentUrl().contains(expectedInUrl)) {
                 break;
             }
         }
@@ -42,9 +46,9 @@ public class BrowserUtils {
     }
 
     /**
-    This method accepts a String "expectedTitle" and Asserts if it is true
+     * This method accepts a String "expectedTitle" and Asserts if it is true
      */
-    public static void verifyTitle(String expectedTitle){
+    public static void verifyTitle(String expectedTitle) {
 
         Assert.assertEquals(Driver.getDriver().getTitle(), expectedTitle);
 
@@ -52,9 +56,10 @@ public class BrowserUtils {
 
     /**
      * This method will accept a String as expected value and verify actual URL CONTAINS the value.
+     *
      * @param expectedInURL
      */
-    public static void verifyURLContains(String expectedInURL){
+    public static void verifyURLContains(String expectedInURL) {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInURL));
     }
 
@@ -62,23 +67,24 @@ public class BrowserUtils {
     /**
      * This method will accept a dropdown as a WebElement
      * and return all the options' text in a List of String.
+     *
      * @param dropdownElement
      * @return List<String> actualOptionsAsString
      */
-    public static List<String> dropdownOptionsAsString(WebElement dropdownElement){
+    public static List<String> dropdownOptionsAsString(WebElement dropdownElement) {
         Select select = new Select(dropdownElement);
 
         //List of all ACTUAL month <options> as a web element
         List<WebElement> actualOptionsAsWebElement = select.getOptions();
 
         //List of all ACTUAL month <options> as a string
-        List<String> actualOptionsAsString= new ArrayList<>();
+        List<String> actualOptionsAsString = new ArrayList<>();
 
         for (WebElement each : actualOptionsAsWebElement) {
             actualOptionsAsString.add(each.getText());
         }
 
-        return  actualOptionsAsString;
+        return actualOptionsAsString;
 
     }
 
@@ -86,14 +92,15 @@ public class BrowserUtils {
     /**
      * This method will accept a group radio buttons as a List of WebElement.
      * It will loop through the List, and click to the radio button with provided attributeValue
+     *
      * @param radioButtons
      * @param attributeValue
      */
-    public static void clickRadioButton(List<WebElement> radioButtons, String attributeValue){
+    public static void clickRadioButton(List<WebElement> radioButtons, String attributeValue) {
 
         for (WebElement each : radioButtons) {
 
-            if (each.getAttribute("value").equalsIgnoreCase(attributeValue)){
+            if (each.getAttribute("value").equalsIgnoreCase(attributeValue)) {
                 each.click();
             }
         }
@@ -101,6 +108,7 @@ public class BrowserUtils {
 
     /**
      * Switches to new window by the exact title. Returns to original window if target title not found
+     *
      * @param targetTitle
      */
     public static void switchToWindow(String targetTitle) {
@@ -358,6 +366,7 @@ public class BrowserUtils {
 
     /**
      * Highlighs an element by changing its background and border color
+     *
      * @param element
      */
     public static void highlight(WebElement element) {
@@ -453,8 +462,9 @@ public class BrowserUtils {
     }
 
     /**
-     *  checks that an element is present on the DOM of a page. This does not
-     *    * necessarily mean that the element is visible.
+     * checks that an element is present on the DOM of a page. This does not
+     * * necessarily mean that the element is visible.
+     *
      * @param by
      * @param time
      */
@@ -463,22 +473,56 @@ public class BrowserUtils {
     }
 
     /**
-     *  checks that an element is enabled or not. on the DOM of a page.
-     *    * time = waiting for each time (in seconds)
-     *    * count = system check an element is enabled or not ... times
+     * checks that an element is enabled or not. on the DOM of a page.
+     * * time = waiting for each time (in seconds)
+     * * count = system check an element is enabled or not ... times
+     *
      * @param element
      * @param time
      * @param count
      */
-    public static void waitForElementIsEnable(WebElement element, int time, int count){
+    public static void waitForElementIsEnable(WebElement element, int time, int count) {
 
         int num = 1;
-        while ( !(element.isEnabled()) ){
+        while (!(element.isEnabled())) {
             waitFor(time);
             num++;
-            if(num==count) {break;}
+            if (num == count) {
+                break;
+            }
         }
 
+    }
+
+    /**
+     * login to hiDoctor
+     */
+
+    public static void login() {
+        SignUp_PopUp signUp_popUp = new SignUp_PopUp();
+        SignIn_PopUp signIn_popUp = new SignIn_PopUp();
+        MainPage mainPage = new MainPage();
+
+        Driver.getDriver().get(ConfigurationReader.getProperty("platformURL"));
+        mainPage.LOGIN_REGISTER.click();
+        BrowserUtils.waitForVisibility(signIn_popUp.LOGIN, 10);
+        signUp_popUp.ENTER_COUNTRY_CODE_BOX.click();
+        signUp_popUp.ENTER_COUNTRY.sendKeys(ConfigurationReader.getProperty("userCountry"));
+        signUp_popUp.TOP_OF_COUNTRY_LIST.click();
+        signUp_popUp.USER_PHONE_NUMBER.clear();
+        signUp_popUp.USER_PHONE_NUMBER.sendKeys(ConfigurationReader.getProperty("userPhoneNumber"));
+        signIn_popUp.LOGIN.click();
+    }
+
+    /**
+     * logout from hiDoctor
+     */
+    public static void logout() {
+        MainPage mainPage = new MainPage();
+
+        mainPage.PROFILE.click();
+        mainPage.LOGOUT.click();
+        mainPage.YES.click();
     }
 
 
