@@ -506,10 +506,6 @@ public class BrowserUtils {
         Driver.getDriver().get(ConfigurationReader.getProperty("platformURL"));
         mainPage.LOGIN_REGISTER.click();
         BrowserUtils.waitForVisibility(signIn_popUp.LOGIN, 10);
-        signUp_popUp.ENTER_COUNTRY_CODE_BOX.click();
-        signUp_popUp.ENTER_COUNTRY.sendKeys(ConfigurationReader.getProperty("userCountry"));
-        signUp_popUp.TOP_OF_COUNTRY_LIST.click();
-        signUp_popUp.USER_PHONE_NUMBER.clear();
         signUp_popUp.USER_PHONE_NUMBER.sendKeys(ConfigurationReader.getProperty("userPhoneNumber"));
         signIn_popUp.LOGIN.click();
     }
@@ -519,7 +515,9 @@ public class BrowserUtils {
      */
     public static void logout() {
         MainPage mainPage = new MainPage();
-
+        BrowserUtils.waitForVisibility(mainPage.X_BUTTON_IN_POPUP,10);
+        mainPage.X_BUTTON_IN_POPUP.click();
+        BrowserUtils.waitForClickablility(mainPage.PROFILE,10);
         mainPage.PROFILE.click();
         mainPage.LOGOUT.click();
         mainPage.YES.click();

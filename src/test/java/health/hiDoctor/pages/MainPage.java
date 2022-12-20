@@ -17,6 +17,17 @@ public class MainPage extends BasePage{
     @FindBy(xpath="//img[@alt='Online Diyetisyen']")
     public WebElement ONLINE_DIETITIAN;
 
+    @FindBy(xpath = "//a[@data-testid='sub-header-promotion']/div/div")
+    public WebElement BANNER_TEXT_ON_THE_TOP;
+
+    @FindBy(xpath = "//a[@data-testid='sub-header-promotion']/div/div/span[1]")
+    public WebElement BANNER_TEXT_PART_1;
+
+    @FindBy(xpath = "//a[@data-testid='sub-header-promotion']/div/div/span[2]")
+    public WebElement BANNER_TEXT_PART_2;
+
+    @FindBy(xpath = "//a[@data-testid='sub-header-promotion']/div/div/span[3]")
+    public WebElement BANNER_TEXT_PART_3;
 
 
 
