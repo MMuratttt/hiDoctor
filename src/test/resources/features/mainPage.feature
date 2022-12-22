@@ -4,12 +4,15 @@ Feature: Main page functionalities are working fine
   Background: For the scenarios in the feature file, user is expected to be on main page as logged in
     Given User is on the main page as logged in
 
-
-  Scenario: All buttons are working fine and functional
+    @wip
+  Scenario: Elements that in the banner which is at the top of the page should work properly
     Then The title should be displayed correctly
     Then The banner at the top of the page should display correct text
     When User clicks on the banner at the top of the page
     Then User should land All Psychologist page
+
+
+  Scenario: All buttons are working fine and functional in the Headers section
     Then User clicks on below buttons, should land related pages.Home button redirect to main page
       | HiDoctor            |
       | Online Psychologist |
@@ -19,6 +22,7 @@ Feature: Main page functionalities are working fine
       | About Us            |
       | Contact Us          |
       | Become a Consultant |
+      | Chat                |
     Then Texts are correct on the Header segments
     Then Phone number is correct at the top right of the page
     When User clicks on Language

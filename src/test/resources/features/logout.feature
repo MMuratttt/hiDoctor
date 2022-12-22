@@ -4,7 +4,7 @@ Feature: Logout feature
   Background: For the scenarios in the feature file, user is expected to be on main page as logged in
     Given User is on the main page as logged in
 
-  @wip
+
   Scenario: Logging out with Logout button
     When User clicks on Profile Menu
     Then User should see the exact number which already entered
@@ -17,16 +17,7 @@ Feature: Logout feature
     Then User is on the main page as logging out
 
 
-  Scenario: Logging out with closing the tab
+  Scenario: New tab
     When User open another tab
-    When User closes the tab
-    And User is on the main page
-    Then User should land on main page as signed in
-    And Logout
-
-
-  Scenario: Logging out with closing the window
-    When User closes the window
-    And User is on the main page
     Then User should land on main page as signed in
     And Logout

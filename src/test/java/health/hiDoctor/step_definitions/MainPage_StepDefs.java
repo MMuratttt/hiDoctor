@@ -1,14 +1,19 @@
 package health.hiDoctor.step_definitions;
 
+import health.hiDoctor.pages.AllPsychologists;
 import health.hiDoctor.pages.MainPage;
+import health.hiDoctor.utilities.BrowserUtils;
 import health.hiDoctor.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import java.util.List;
+
 public class MainPage_StepDefs {
 
     MainPage mainPage = new MainPage();
+    AllPsychologists allPsychologists = new AllPsychologists();
     @Then("The title should be displayed correctly")
     public void the_title_should_be_displayed_correctly() {
         String actualResult = Driver.getDriver().getTitle();
@@ -29,10 +34,11 @@ public class MainPage_StepDefs {
     }
     @Then("User should land All Psychologist page")
     public void user_should_land_all_psychologist_page() {
-
+        BrowserUtils.waitForVisibility(allPsychologists.ALL_PSYCHOLOGISTS_TITLE,10);
+        Assert.assertTrue(allPsychologists.ALL_PSYCHOLOGISTS_TITLE.isDisplayed());
     }
     @Then("User clicks on below buttons, should land related pages.Home button redirect to main page")
-    public void user_clicks_on_below_buttons_should_land_related_pages_home_button_redirect_to_main_page(io.cucumber.datatable.DataTable dataTable) {
+    public void user_clicks_on_below_buttons_should_land_related_pages_home_button_redirect_to_main_page(List<String> list) {
         // Write code here that turns the phrase above into concrete actions
         // For automatic transformation, change DataTable to one of
         // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or

@@ -13,6 +13,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
@@ -279,12 +281,12 @@ public class Login_StepDefs {
     public void user_enters_the_otp_code_after_clearing_the_fields() {
         BrowserUtils.waitForVisibility(signUp_popUp.OTP_COUNTER, 10);
 
-        signUp_popUp.OTP_DIGIT_1.clear();
-        signUp_popUp.OTP_DIGIT_2.clear();
-        signUp_popUp.OTP_DIGIT_3.clear();
-        signUp_popUp.OTP_DIGIT_4.clear();
-        signUp_popUp.OTP_DIGIT_5.clear();
-        signUp_popUp.OTP_DIGIT_6.clear();
+        signUp_popUp.OTP_DIGIT_1.sendKeys(Keys.DELETE);
+        signUp_popUp.OTP_DIGIT_1.sendKeys(Keys.DELETE);
+        signUp_popUp.OTP_DIGIT_1.sendKeys(Keys.DELETE);
+        signUp_popUp.OTP_DIGIT_1.sendKeys(Keys.DELETE);
+        signUp_popUp.OTP_DIGIT_1.sendKeys(Keys.DELETE);
+        signUp_popUp.OTP_DIGIT_1.sendKeys(Keys.DELETE);
 
         signUp_popUp.OTP_DIGIT_1.sendKeys(ConfigurationReader.getProperty("OTPDigit1"));
         signUp_popUp.OTP_DIGIT_2.sendKeys(ConfigurationReader.getProperty("OTPDigit2"));

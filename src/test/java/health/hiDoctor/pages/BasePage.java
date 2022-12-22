@@ -40,4 +40,34 @@ public abstract class BasePage {
 
     public String areYouSureLogout = "Çıkış yapmak istediğinizden emin misiniz?";
 
+    @FindBy(xpath = "//a[@data-testid='HiDoctor-logo-link-desktop']")
+    public WebElement HIDOCTOR_MAINPAGE_ICON;
+
+    @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[1]")
+    public WebElement SERVICES;
+
+    @FindBy(xpath = "")
+    public WebElement ONLINE_PSYCHOLOGIST;
+
+    @FindBy(xpath = "")
+    public WebElement ONLINE_DIETITIAN;
+
+    @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[2]")
+    public WebElement BLOG;
+
+    @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[3]")
+    public WebElement B2B_APPLICATION;
+
+    @FindBy(xpath = "")
+    public WebElement ABOUT_US;
+
+    @FindBy(xpath = "")
+    public WebElement CONTACT_US;
+
+    @FindBy(xpath = "")
+    public WebElement BECOME_A_CONSULTANT;
+
+    @FindBy(xpath = "")
+    public WebElement CHAT;
+
 }

@@ -508,6 +508,15 @@ public class BrowserUtils {
         BrowserUtils.waitForVisibility(signIn_popUp.LOGIN, 10);
         signUp_popUp.USER_PHONE_NUMBER.sendKeys(ConfigurationReader.getProperty("userPhoneNumber"));
         signIn_popUp.LOGIN.click();
+
+        BrowserUtils.waitForVisibility(signUp_popUp.OTP_COUNTER, 10);
+        signUp_popUp.OTP_DIGIT_1.sendKeys(ConfigurationReader.getProperty("OTPDigit1"));
+        signUp_popUp.OTP_DIGIT_2.sendKeys(ConfigurationReader.getProperty("OTPDigit2"));
+        signUp_popUp.OTP_DIGIT_3.sendKeys(ConfigurationReader.getProperty("OTPDigit3"));
+        signUp_popUp.OTP_DIGIT_4.sendKeys(ConfigurationReader.getProperty("OTPDigit4"));
+        signUp_popUp.OTP_DIGIT_5.sendKeys(ConfigurationReader.getProperty("OTPDigit5"));
+        signUp_popUp.OTP_DIGIT_6.sendKeys(ConfigurationReader.getProperty("OTPDigit6"));
+
     }
 
     /**

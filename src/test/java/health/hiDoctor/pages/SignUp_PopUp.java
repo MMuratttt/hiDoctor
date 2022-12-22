@@ -41,7 +41,7 @@ public class SignUp_PopUp extends MainPage{
 
     @FindBy(name = "mobile.phoneNumber")
     public WebElement PHONE_NUMBER;
-    //*[@id="login"]/div[1]/div/div/div/div[1]
+
     @FindBy(xpath = "//*[@id=\"register\"]/div[1]/div/div/div/div[1]")
     public WebElement ENTER_COUNTRY_CODE_BOX;
 
