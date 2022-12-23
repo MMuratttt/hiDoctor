@@ -13,7 +13,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 
+import java.awt.*;
 import java.util.Random;
 
 public class Logout_StepDefs {
@@ -31,13 +36,14 @@ public class Logout_StepDefs {
 
     @When("User clicks on Profile Menu")
     public void user_clicks_on_profile_menu() {
+        mainPage.X_BUTTON_IN_POPUP.click();
         mainPage.PROFILE.click();
     }
 
     @Then("User should see the exact number which already entered")
     public void user_should_see_the_exact_number_which_already_entered() {
         String expectedResult = ConfigurationReader.getProperty("userCountryCode") + ConfigurationReader.getProperty("userPhoneNumber");
-        String actualResult = mainPage.PHONE_NUMBER.getText();
+        String actualResult = mainPage.PHONE_NUMBER.getAttribute("textContent").replaceAll("\\s+", "");
         Assert.assertEquals(expectedResult, actualResult);
     }
 
@@ -58,11 +64,6 @@ public class Logout_StepDefs {
         Driver.getDriver().close();
     }
 
-    @When("User closes the window")
-    public void user_closes_the_window() {
-        Driver.closeDriver();
-    }
-
     @Then("User see the are you sure pop up")
     public void user_see_the_are_you_sure_pop_up() {
         BrowserUtils.waitForVisibility(mainPage.ARE_YOU_SURE_LOGOUT_TEXT, 10);
@@ -70,14 +71,17 @@ public class Logout_StepDefs {
         String actualResult = mainPage.ARE_YOU_SURE_LOGOUT_TEXT.getAttribute("textContent");
         Assert.assertEquals(expectedResult, actualResult);
     }
+
     @When("User clicks on No")
     public void user_clicks_on_no() {
         mainPage.NO.click();
     }
+
     @Then("User is on the main page and profile dropdown is open")
     public void user_is_on_the_main_page_and_profile_dropdown_is_open() {
         Assert.assertTrue(mainPage.PHONE_NUMBER.isDisplayed());
     }
+
     @When("User clicks on Yes")
     public void user_clicks_on_yes() {
         mainPage.YES.click();
@@ -90,10 +94,12 @@ public class Logout_StepDefs {
 
     @When("User open another tab")
     public void user_Open_Another_Tab() {
-        Driver.getDriver().switchTo().window("Yeni Sekme");
-        Driver.getDriver().navigate().to("https://www.google.com/");
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("window.open('" + ConfigurationReader.getProperty("platformURL") + "','_blank');");
     }
 
 
-
+    @And("User open a new tab")
+    public void userOpenANewTab() {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("window.open('" + ConfigurationReader.getProperty("platformURL") + "','_blank');");
+    }
 }
