@@ -11,6 +11,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
@@ -35,8 +37,13 @@ public class Driver {
                     }
                     break;
                 case "chrome":
+                    Map<String, Object> prefs = new HashMap<String, Object>();
+                    prefs.put("profile.default_content_setting_values.notifications", 2);
+                    ChromeOptions options = new ChromeOptions();
+                    options.setExperimentalOption("prefs", prefs);
+
                     WebDriverManager.chromedriver().setup();
-                    driverPool.set(new ChromeDriver());
+                    driverPool.set(new ChromeDriver(options)); //options
                     driverPool.get().manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;

@@ -1,5 +1,6 @@
 package health.hiDoctor.utilities;
 
+import health.hiDoctor.pages.BasePage;
 import health.hiDoctor.pages.MainPage;
 import health.hiDoctor.pages.SignIn_PopUp;
 import health.hiDoctor.pages.SignUp_PopUp;

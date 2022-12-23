@@ -41,33 +41,63 @@ public abstract class BasePage {
     public String areYouSureLogout = "Çıkış yapmak istediğinizden emin misiniz?";
 
     @FindBy(xpath = "//a[@data-testid='HiDoctor-logo-link-desktop']")
-    public WebElement HIDOCTOR_MAINPAGE_ICON;
+    public static WebElement HIDOCTOR_MAINPAGE_ICON;
 
     @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[1]")
-    public WebElement SERVICES;
+    public static WebElement SERVICES;
 
-    @FindBy(xpath = "")
-    public WebElement ONLINE_PSYCHOLOGIST;
+    @FindBy(xpath = "//a[@data-testid='header-menu-layout.online-psychologist']")
+    public static WebElement ONLINE_PSYCHOLOGIST;
 
-    @FindBy(xpath = "")
-    public WebElement ONLINE_DIETITIAN;
+    @FindBy(xpath = "//a[@data-testid='header-menu-layout.online-dietitian']")
+    public static WebElement ONLINE_DIETITIAN;
 
     @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[2]")
-    public WebElement BLOG;
+    public static WebElement BLOG;
 
     @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[3]")
-    public WebElement B2B_APPLICATION;
+    public static WebElement B2B_APPLICATION;
 
-    @FindBy(xpath = "")
-    public WebElement ABOUT_US;
+    @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[4]")
+    public static WebElement ABOUT_US;
 
-    @FindBy(xpath = "")
-    public WebElement CONTACT_US;
+    @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[5]")
+    public static WebElement CONTACT_US;
 
-    @FindBy(xpath = "")
-    public WebElement BECOME_A_CONSULTANT;
+    @FindBy(xpath = "//div[@class='md:flex-1 flex justify-end space-x-4 items-center']/div/div/a")
+    public static WebElement BECOME_A_CONSULTANT;
 
-    @FindBy(xpath = "")
-    public WebElement CHAT;
+    @FindBy(xpath = "//img[@alt='HiDoctor-header-chat']//ancestor::span")
+    public static WebElement CHAT;
+
+    @FindBy(xpath = "//div[@class='flex items-center min-w-fit']/p")
+    public static WebElement CX_PHONE;
+
+    @FindBy(xpath = "h-full language-box")
+    public WebElement LANGUAGE_DROPDOWN;
+
+    @FindBy(xpath = "//div[@class='absolute top-1 rounded-md text-sm shadow-md w-40 right-0']/a")
+    public WebElement ALL_LANGUAGES;
+
+    @FindBy(xpath = "//div[@class='absolute top-1 rounded-md text-sm shadow-md w-40 right-0']/a[1]/span/span")
+    public WebElement TR_LANG;
+
+    @FindBy(xpath = "//div[@class='absolute top-1 rounded-md text-sm shadow-md w-40 right-0']/a[2]/span/span")
+    public WebElement EN_LANG;
+
+    @FindBy(xpath = "//div[@class='absolute top-1 rounded-md text-sm shadow-md w-40 right-0']/a[3]/span/span")
+    public WebElement ES_LANG;
+
+    @FindBy(xpath = "//div[@class='absolute top-1 rounded-md text-sm shadow-md w-40 right-0']/a[4]/span/span")
+    public WebElement DE_LANG;
+
+    @FindBy(xpath = "//div[@class='absolute top-1 rounded-md text-sm shadow-md w-40 right-0']/a[5]/span/span")
+    public WebElement AE_LANG;
+
+    @FindBy(xpath = "//div[@class='absolute top-1 rounded-md text-sm shadow-md w-40 right-0']/a[6]/span/span")
+    public WebElement RU_LANG;
+
+    @FindBy(xpath = "//div[@class='absolute top-1 rounded-md text-sm shadow-md w-40 right-0']/a[7]/span/span")
+    public WebElement UA_LANG;
 
 }
