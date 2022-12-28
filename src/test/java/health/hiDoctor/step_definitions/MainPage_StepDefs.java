@@ -132,5 +132,21 @@ public class MainPage_StepDefs {
         Assert.assertEquals(becomeAConsultant.header, becomeAConsultant.HEADER.getText());
     }
 
+    @Then("Online Psychologist and Online Dietitian texts are correct")
+    public void onlinePsychologistAndOnlineDietitianTextsAreCorrect() {
+        BrowserUtils.waitForVisibility(mainPage.ONLINE_DIETITIAN_TEXT_IN_BOX,10);
+        Assert.assertEquals(mainPage.onlinePsychologist,mainPage.ONLINE_PSYCHOLOGIST_TEXT_IN_BOX.getText());
+        Assert.assertEquals(mainPage.onlineDietitian,mainPage.ONLINE_DIETITIAN_TEXT_IN_BOX.getText());
+    }
 
+    @Then("What and why question texts are correct")
+    public void whatAndWhyQuestionTextsAreCorrect() {
+        BrowserUtils.scrollToElement(mainPage.WHAT_IS_ONLINE_THERAPY_TEXT);
+        Assert.assertEquals(mainPage.whatIsOnlineTherapy,mainPage.WHAT_IS_ONLINE_THERAPY_TEXT.getText());
+        Assert.assertEquals(mainPage.whatIsOnlineTherapy_Desc,mainPage.WHAT_IS_ONLINE_THERAPY_DESC_TEXT.getText());
+        Assert.assertEquals(mainPage.whyHidoctorOnlineTherapy,mainPage.WHY_HIDOCTOR_ONLINE_THERAPY_TEXT.getText());
+        Assert.assertEquals(mainPage.whyHidoctorOnlineTherapy_Desc,mainPage.WHY_HIDOCTOR_ONLINE_THERAPY_DESC_TEXT.getText());
+        Assert.assertEquals(mainPage.whyHidoctorOnlineTherapy_HelperText,mainPage.WHY_HIDOCTOR_ONLINE_THERAPY_HELPER_TEXT.getText());
+
+    }
 }

@@ -49,6 +49,15 @@ Feature: Main page functionalities are working fine
     And User returns to Main Page
 
 
+  Scenario: All texts are being displayed properly
+    Then Online Psychologist and Online Dietitian texts are correct
+    Then What and why question texts are correct
+
+
+
+
+
+
 
 
 
