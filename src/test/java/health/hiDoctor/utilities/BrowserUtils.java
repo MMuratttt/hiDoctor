@@ -1,10 +1,8 @@
 package health.hiDoctor.utilities;
 
-import health.hiDoctor.pages.BasePage;
 import health.hiDoctor.pages.MainPage;
 import health.hiDoctor.pages.SignIn_PopUp;
 import health.hiDoctor.pages.SignUp_PopUp;
-import io.cucumber.java.it.Ma;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -533,15 +531,13 @@ public class BrowserUtils {
      */
     public static void logout() {
         MainPage mainPage = new MainPage();
-        BrowserUtils.waitForVisibility(mainPage.X_BUTTON_IN_POPUP,10);
+        BrowserUtils.waitForVisibility(mainPage.X_BUTTON_IN_POPUP, 10);
         mainPage.X_BUTTON_IN_POPUP.click();
-        BrowserUtils.waitForClickablility(mainPage.PROFILE,10);
+        BrowserUtils.waitForClickablility(mainPage.PROFILE, 10);
         mainPage.PROFILE.click();
         mainPage.LOGOUT.click();
         mainPage.YES.click();
     }
-
-
 
 
 }

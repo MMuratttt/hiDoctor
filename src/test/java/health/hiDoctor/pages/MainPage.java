@@ -1,7 +1,6 @@
 package health.hiDoctor.pages;
 
 import health.hiDoctor.utilities.BrowserUtils;
-import health.hiDoctor.utilities.ConfigurationReader;
 import health.hiDoctor.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -77,26 +76,26 @@ public class MainPage extends BasePage {
         return languagesWE.get(randomLangNo);
     }
 
-    public static void goToPageAndVerifyTitle(Map<String, String> titles) {
+    public void goToPageAndVerifyTitle(Map<String, String> titles) {
 
         for (Map.Entry<String, String> each : titles.entrySet()) {
 
             switch (each.getKey()) {
                 case "Online Psychologist":
                     SERVICES.click();
-                    BasePage.ONLINE_PSYCHOLOGIST.click();
+                    ONLINE_PSYCHOLOGIST.click();
                     BrowserUtils.waitFor(2);
                     Assert.assertEquals(Driver.getDriver().getTitle(), each.getValue());
-                    BrowserUtils.waitForClickablility(BasePage.HIDOCTOR_MAINPAGE_ICON, 10);
-                    BasePage.HIDOCTOR_MAINPAGE_ICON.click();
+                    BrowserUtils.waitForClickablility(HIDOCTOR_MAINPAGE_ICON, 10);
+                    HIDOCTOR_MAINPAGE_ICON.click();
                     break;
                 case "Online Dietitian":
                     SERVICES.click();
-                    BasePage.ONLINE_DIETITIAN.click();
+                    ONLINE_DIETITIAN.click();
                     BrowserUtils.waitFor(2);
                     Assert.assertEquals(Driver.getDriver().getTitle(), each.getValue());
-                    BrowserUtils.waitForClickablility(BasePage.HIDOCTOR_MAINPAGE_ICON, 10);
-                    BasePage.HIDOCTOR_MAINPAGE_ICON.click();
+                    BrowserUtils.waitForClickablility(HIDOCTOR_MAINPAGE_ICON, 10);
+                    HIDOCTOR_MAINPAGE_ICON.click();
                     break;
                 //        case "Blog":
                 //  BasePage.BLOG.click();
@@ -105,39 +104,39 @@ public class MainPage extends BasePage {
                 //   BasePage.HIDOCTOR_MAINPAGE_ICON.click();
                 //            break;
                 case "B2B Application":
-                    BasePage.B2B_APPLICATION.click();
+                    B2B_APPLICATION.click();
                     BrowserUtils.waitFor(2);
                     Assert.assertEquals(Driver.getDriver().getTitle(), each.getValue());
-                    BrowserUtils.waitForClickablility(BasePage.HIDOCTOR_MAINPAGE_ICON, 10);
-                    BasePage.HIDOCTOR_MAINPAGE_ICON.click();
+                    BrowserUtils.waitForClickablility(HIDOCTOR_MAINPAGE_ICON, 10);
+                    HIDOCTOR_MAINPAGE_ICON.click();
                     break;
                 case "About Us":
-                    BasePage.ABOUT_US.click();
+                    ABOUT_US.click();
                     BrowserUtils.waitFor(2);
                     Assert.assertEquals(Driver.getDriver().getTitle(), each.getValue());
-                    BrowserUtils.waitForClickablility(BasePage.HIDOCTOR_MAINPAGE_ICON, 10);
-                    BasePage.HIDOCTOR_MAINPAGE_ICON.click();
+                    BrowserUtils.waitForClickablility(HIDOCTOR_MAINPAGE_ICON, 10);
+                    HIDOCTOR_MAINPAGE_ICON.click();
                     break;
                 case "Contact Us":
-                    BasePage.CONTACT_US.click();
+                    CONTACT_US.click();
                     BrowserUtils.waitFor(2);
                     Assert.assertEquals(Driver.getDriver().getTitle(), each.getValue());
-                    BrowserUtils.waitForClickablility(BasePage.HIDOCTOR_MAINPAGE_ICON, 10);
-                    BasePage.HIDOCTOR_MAINPAGE_ICON.click();
+                    BrowserUtils.waitForClickablility(HIDOCTOR_MAINPAGE_ICON, 10);
+                    HIDOCTOR_MAINPAGE_ICON.click();
                     break;
                 case "Become a Consultant":
-                    BasePage.BECOME_A_CONSULTANT.click();
+                    BECOME_A_CONSULTANT.click();
                     BrowserUtils.waitFor(2);
                     Assert.assertEquals(Driver.getDriver().getTitle(), each.getValue());
-                    BrowserUtils.waitForClickablility(BasePage.HIDOCTOR_MAINPAGE_ICON, 10);
-                    BasePage.HIDOCTOR_MAINPAGE_ICON.click();
+                    BrowserUtils.waitForClickablility(HIDOCTOR_MAINPAGE_ICON, 10);
+                    HIDOCTOR_MAINPAGE_ICON.click();
                     break;
                 case "Chat":
-                    BasePage.CHAT.click();
+                    CHAT.click();
                     BrowserUtils.waitFor(2);
                     Assert.assertEquals(Driver.getDriver().getTitle(), each.getValue());
-                    BrowserUtils.waitForClickablility(BasePage.HIDOCTOR_MAINPAGE_ICON, 10);
-                    BasePage.HIDOCTOR_MAINPAGE_ICON.click();
+                    BrowserUtils.waitForClickablility(HIDOCTOR_MAINPAGE_ICON, 10);
+                    HIDOCTOR_MAINPAGE_ICON.click();
                     break;
             }
 

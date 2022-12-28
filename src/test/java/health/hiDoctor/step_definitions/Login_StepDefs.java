@@ -1,7 +1,6 @@
 package health.hiDoctor.step_definitions;
 
 import com.github.javafaker.Faker;
-import health.hiDoctor.pages.BasePage;
 import health.hiDoctor.pages.MainPage;
 import health.hiDoctor.pages.SignIn_PopUp;
 import health.hiDoctor.pages.SignUp_PopUp;
@@ -12,13 +11,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Login_StepDefs {
@@ -251,7 +246,7 @@ public class Login_StepDefs {
         String expectedResult = signIn_popUp.invalidOTPText;
         String actualResult = signIn_popUp.INVALID_OTP_TEXT.getAttribute("textContent");
         Assert.assertEquals(expectedResult, actualResult);
-        BrowserUtils.waitForClickablility(signUp_popUp.RESEND_CODE_BUTTON,125);
+        BrowserUtils.waitForClickablility(signUp_popUp.RESEND_CODE_BUTTON, 125);
     }
 
 

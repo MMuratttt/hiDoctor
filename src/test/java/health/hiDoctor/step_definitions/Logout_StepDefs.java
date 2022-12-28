@@ -1,7 +1,6 @@
 package health.hiDoctor.step_definitions;
 
 import com.github.javafaker.Faker;
-import health.hiDoctor.pages.BasePage;
 import health.hiDoctor.pages.MainPage;
 import health.hiDoctor.pages.SignIn_PopUp;
 import health.hiDoctor.pages.SignUp_PopUp;
@@ -13,12 +12,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 
-import java.awt.*;
 import java.util.Random;
 
 public class Logout_StepDefs {
@@ -96,7 +91,6 @@ public class Logout_StepDefs {
     public void user_Open_Another_Tab() {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("window.open('" + ConfigurationReader.getProperty("platformURL") + "','_blank');");
     }
-
 
     @And("User open a new tab")
     public void userOpenANewTab() {
