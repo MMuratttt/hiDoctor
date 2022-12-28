@@ -43,6 +43,34 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//div[@class='w-full lg:flex-1 lg:my-12']/a")
     public WebElement APPLY_BUTTON;
 
+    @FindBy(xpath = "//h1[@data-testid='service-test-title']")
+    public WebElement ONLINE_PSYCHOLOGIST_TEXT_IN_BOX;
+
+    @FindBy(xpath = "(//h2[@data-testid='service-test-title'])[2]")
+    public WebElement ONLINE_DIETITIAN_TEXT_IN_BOX;
+
+    @FindBy(xpath = "(//div[@class='space-y-2 md:space-y-6 py-2 md:py-4 flex-1 text-start'])[1]/h2")
+    public WebElement WHAT_IS_ONLINE_THERAPY_TEXT;
+
+    @FindBy(xpath = "(//div[@class='space-y-2 md:space-y-6 py-2 md:py-4 flex-1 text-start'])[1]/p")
+    public WebElement WHAT_IS_ONLINE_THERAPY_DESC_TEXT;
+
+    @FindBy(xpath = "(//div[@class='space-y-2 md:space-y-6 py-2 md:py-4 flex-1 text-start'])[2]/h2")
+    public WebElement WHY_HIDOCTOR_ONLINE_THERAPY_TEXT;
+
+    @FindBy(xpath = "(//div[@class='space-y-2 md:space-y-6 py-2 md:py-4 flex-1 text-start'])[2]/p[1]")
+    public WebElement WHY_HIDOCTOR_ONLINE_THERAPY_DESC_TEXT;
+
+    @FindBy(xpath = "(//div[@class='space-y-2 md:space-y-6 py-2 md:py-4 flex-1 text-start'])[2]/p[2]")
+    public WebElement WHY_HIDOCTOR_ONLINE_THERAPY_HELPER_TEXT;
+
+    public String onlinePsychologist = "Online Psikolog";
+    public String onlineDietitian = "Online Diyetisyen";
+    public String whatIsOnlineTherapy = "Online Terapi Hizmeti Nedir?";
+    public String whatIsOnlineTherapy_Desc = "Stres, uykusuzluk, ilişki sorunları ve daha birçok psikolojik durumla tek başına mücadele etmek zorunda değilsin! Online terapi hizmeti, web sitesi veya HiDoctor uygulaması aracılığıyla uzman bir psikoloğa dilediğin yerde dilediğin zamanda danışabilmeni sağlar.";
+    public String whyHidoctorOnlineTherapy = "Neden HiDoctor Online Terapi?";
+    public String whyHidoctorOnlineTherapy_Desc = "HiDoctor, alanında uzman psikologlar ile danışanları buluşturan online bir mecradır. İhtiyacına göre psikologların uzmanlık alanlarını inceleyebilir, sana en uygun uzmanı tercih edebilirsin. Daha mutlu bir yaşama kavuşmak işte bu kadar kolay!";
+    public String whyHidoctorOnlineTherapy_HelperText = "*HiDoctor; tanı, teşhis ve tedavi kapsamında olmayan danışmanlık hizmetlerini danışanlarla buluşturan online bir mecradır.";
     public static WebElement randomLanguage() {
         List<WebElement> languagesWE = Driver.getDriver().findElements(By.xpath("//div[@class='absolute top-1 rounded-md text-sm shadow-md w-40 right-0']/a"));
         int randomLangNo = random.nextInt(1, 6);
