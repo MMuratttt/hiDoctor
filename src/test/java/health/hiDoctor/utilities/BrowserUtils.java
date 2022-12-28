@@ -474,6 +474,14 @@ public class BrowserUtils {
     }
 
     /**
+     * clicking on an empty area
+     */
+    public static void clickOutside() {
+        Actions action = new Actions(Driver.getDriver());
+        action.moveByOffset(0, 0).click().build().perform();
+    }
+
+    /**
      * checks that an element is enabled or not. on the DOM of a page.
      * * time = waiting for each time (in seconds)
      * * count = system check an element is enabled or not ... times
@@ -532,6 +540,8 @@ public class BrowserUtils {
         mainPage.LOGOUT.click();
         mainPage.YES.click();
     }
+
+
 
 
 }
