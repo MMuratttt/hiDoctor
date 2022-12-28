@@ -1,7 +1,6 @@
 package health.hiDoctor.step_definitions;
 
 import health.hiDoctor.pages.AllPsychologists;
-import health.hiDoctor.pages.BasePage;
 import health.hiDoctor.pages.BecomeAConsultant;
 import health.hiDoctor.pages.MainPage;
 import health.hiDoctor.utilities.BrowserUtils;
@@ -13,7 +12,6 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -61,11 +59,11 @@ public class MainPage_StepDefs {
 
     @Then("Texts are correct on the Header segments")
     public void texts_are_correct_on_the_header_segments() {
-        Assert.assertEquals(BLOG, mainPage.blogText);
-        Assert.assertEquals(B2B_APPLICATION, mainPage.b2bText);
-        Assert.assertEquals(ABOUT_US, mainPage.aboutUsText);
-        Assert.assertEquals(CONTACT_US, mainPage.contactText);
-        Assert.assertEquals(BECOME_A_CONSULTANT, mainPage.becomeAConsultantText);
+        Assert.assertEquals(BLOG.getText(), mainPage.blogText);
+        Assert.assertEquals(B2B_APPLICATION.getText(), mainPage.b2bText);
+        Assert.assertEquals(ABOUT_US.getText(), mainPage.aboutUsText);
+        Assert.assertEquals(CONTACT_US.getText(), mainPage.contactText);
+        Assert.assertEquals(BECOME_A_CONSULTANT.getText(), mainPage.becomeAConsultantText);
         Assert.assertEquals(SERVICES_HEADER_TEXT.getText(), mainPage.servicesText);
         SERVICES.click();
         Assert.assertEquals(ONLINE_PSYCHOLOGIST.getText(), mainPage.onlinePsychologistText);
