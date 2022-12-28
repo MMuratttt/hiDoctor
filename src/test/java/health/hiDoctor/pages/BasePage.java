@@ -46,22 +46,25 @@ public abstract class BasePage {
     @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[1]")
     public static WebElement SERVICES;
 
+    @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[1]/span/span/span")
+    public static WebElement SERVICES_HEADER_TEXT;
+
     @FindBy(xpath = "//a[@data-testid='header-menu-layout.online-psychologist']")
     public static WebElement ONLINE_PSYCHOLOGIST;
 
     @FindBy(xpath = "//a[@data-testid='header-menu-layout.online-dietitian']")
     public static WebElement ONLINE_DIETITIAN;
 
-    @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[2]")
+    @FindBy(xpath = "//a[@data-testid='header-menu-blog']]")
     public static WebElement BLOG;
 
-    @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[3]")
+    @FindBy(xpath = "//a[@data-testid='header-menu-b2b']")
     public static WebElement B2B_APPLICATION;
 
-    @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[4]")
+    @FindBy(xpath = "//a[@data-testid='header-menu-about-us']")
     public static WebElement ABOUT_US;
 
-    @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[5]")
+    @FindBy(xpath = "//a[@data-testid='header-menu-contact-us']")
     public static WebElement CONTACT_US;
 
     @FindBy(xpath = "//div[@class='md:flex-1 flex justify-end space-x-4 items-center']/div/div/a")
@@ -73,11 +76,24 @@ public abstract class BasePage {
     @FindBy(xpath = "//div[@class='flex items-center min-w-fit']/p")
     public static WebElement CX_PHONE;
 
+    public String servicesText = "Hizmetler";
+    public String onlinePsychologistText = "Online Psikolog";
+    public String onlineDietitianText = "Online Diyetisyen";
+    public String blogText = "Blog";
+    public String b2bText = "Kurumsal";
+    public String aboutUsText = "Hakkımızda";
+    public String contactText = "Bize Ulaşın";
+    public String becomeAConsultantText = "Danışman Başvuru Formu";
+
     @FindBy(xpath = "h-full language-box")
     public WebElement LANGUAGE_DROPDOWN;
 
     @FindBy(xpath = "//div[@class='absolute top-1 rounded-md text-sm shadow-md w-40 right-0']/a")
     public WebElement ALL_LANGUAGES;
+
+    @FindBy(xpath = "//div[@class='h-full language-box']/div/span")
+    public WebElement LANGUAGE_SELECTED;
+
 
     @FindBy(xpath = "//div[@class='absolute top-1 rounded-md text-sm shadow-md w-40 right-0']/a[1]/span/span")
     public WebElement TR_LANG;

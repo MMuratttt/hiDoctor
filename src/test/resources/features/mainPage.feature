@@ -12,7 +12,7 @@ Feature: Main page functionalities are working fine
     Then User should land All Psychologist page
     And Logout
 
-  @wip
+  @needToCheck
   Scenario: All buttons are working fine and functional in the Headers section
     Then User clicks on below buttons, should land related pages.Home button redirect to main page
       | Online Psychologist | Online Psikolog ile Online Terapi Ayarla \| HiDoctor                           |
@@ -34,7 +34,21 @@ Feature: Main page functionalities are working fine
       | العربية - AE |
       | русский - RU |
       | Україна - UA |
+    When User clicks on any language rather than default
+    And User clicks out of the language dropdown
+    Then User should see the language that last clicked
     And Logout
+
+  @wip
+  Scenario: All buttons are working fine and functional in the rest of the page
+    When User clicks on the banner
+    Then User should land All Psychologist page
+    And User returns to Main Page
+    When User clicks on Apply button
+    Then User should see Consultant Application Form
+    And User returns to Main Page
+
+
 
 
 
