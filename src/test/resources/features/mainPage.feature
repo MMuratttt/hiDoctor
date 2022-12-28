@@ -39,7 +39,7 @@ Feature: Main page functionalities are working fine
     Then User should see the language that last clicked
     And Logout
 
-  @wip
+
   Scenario: All buttons are working fine and functional in the rest of the page
     When User clicks on the banner
     Then User should land All Psychologist page

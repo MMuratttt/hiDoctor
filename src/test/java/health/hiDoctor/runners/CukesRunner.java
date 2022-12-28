@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         glue = "health/hiDoctor/step_definitions",
         dryRun = false,
         tags = "@wip",
-        publish = true
+        publish = false
 )
 public class CukesRunner {
 
