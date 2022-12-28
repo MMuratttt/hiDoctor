@@ -16,8 +16,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import static health.hiDoctor.pages.BasePage.*;
-
 public class MainPage_StepDefs {
 
     MainPage mainPage = new MainPage();
@@ -59,21 +57,21 @@ public class MainPage_StepDefs {
 
     @Then("Texts are correct on the Header segments")
     public void texts_are_correct_on_the_header_segments() {
-        Assert.assertEquals(BLOG.getText(), mainPage.blogText);
-        Assert.assertEquals(B2B_APPLICATION.getText(), mainPage.b2bText);
-        Assert.assertEquals(ABOUT_US.getText(), mainPage.aboutUsText);
-        Assert.assertEquals(CONTACT_US.getText(), mainPage.contactText);
-        Assert.assertEquals(BECOME_A_CONSULTANT.getText(), mainPage.becomeAConsultantText);
-        Assert.assertEquals(SERVICES_HEADER_TEXT.getText(), mainPage.servicesText);
-        SERVICES.click();
-        Assert.assertEquals(ONLINE_PSYCHOLOGIST.getText(), mainPage.onlinePsychologistText);
-        Assert.assertEquals(ONLINE_DIETITIAN.getText(), mainPage.onlineDietitianText);
+        Assert.assertEquals(mainPage.BLOG.getText(), mainPage.blogText);
+        Assert.assertEquals(mainPage.B2B_APPLICATION.getText(), mainPage.b2bText);
+        Assert.assertEquals(mainPage.ABOUT_US.getText(), mainPage.aboutUsText);
+        Assert.assertEquals(mainPage.CONTACT_US.getText(), mainPage.contactText);
+        Assert.assertEquals(mainPage.BECOME_A_CONSULTANT.getText(), mainPage.becomeAConsultantText);
+        Assert.assertEquals(mainPage.SERVICES_HEADER_TEXT.getText(), mainPage.servicesText);
+        mainPage.SERVICES.click();
+        Assert.assertEquals(mainPage.ONLINE_PSYCHOLOGIST.getText(), mainPage.onlinePsychologistText);
+        Assert.assertEquals(mainPage.ONLINE_DIETITIAN.getText(), mainPage.onlineDietitianText);
 
     }
 
     @Then("Phone number {string} is correct at the top right of the page")
     public void phone_number_is_correct_at_the_top_right_of_the_page(String companyNumber) {
-        String actualResult = CX_PHONE.getText();
+        String actualResult = mainPage.CX_PHONE.getText();
         Assert.assertEquals(companyNumber, actualResult);
     }
 
@@ -109,15 +107,15 @@ public class MainPage_StepDefs {
 
     @When("User clicks on the banner")
     public void user_clicks_on_the_banner() {
-        BrowserUtils.waitForVisibility(mainPage.BANNER_MAIN,10);
+        BrowserUtils.waitForVisibility(mainPage.BANNER_MAIN, 10);
         mainPage.BANNER_MAIN.click();
     }
 
     @Then("User returns to Main Page")
     public void user_returns_to_main_page() {
-        BrowserUtils.waitForClickablility(allPsychologists.HIDOCTOR_MAINPAGE_ICON,10);
+        BrowserUtils.waitForClickablility(allPsychologists.HIDOCTOR_MAINPAGE_ICON, 10);
         AllPsychologists.HIDOCTOR_MAINPAGE_ICON.click();
-        BrowserUtils.waitForVisibility(HIDOCTOR_MAINPAGE_ICON, 10);
+        BrowserUtils.waitForVisibility(mainPage.HIDOCTOR_MAINPAGE_ICON, 10);
     }
 
     @When("User clicks on Apply button")
@@ -132,19 +130,19 @@ public class MainPage_StepDefs {
 
     @Then("Online Psychologist and Online Dietitian texts are correct")
     public void onlinePsychologistAndOnlineDietitianTextsAreCorrect() {
-        BrowserUtils.waitForVisibility(mainPage.ONLINE_DIETITIAN_TEXT_IN_BOX,10);
-        Assert.assertEquals(mainPage.onlinePsychologist,mainPage.ONLINE_PSYCHOLOGIST_TEXT_IN_BOX.getText());
-        Assert.assertEquals(mainPage.onlineDietitian,mainPage.ONLINE_DIETITIAN_TEXT_IN_BOX.getText());
+        BrowserUtils.waitForVisibility(mainPage.ONLINE_DIETITIAN_TEXT_IN_BOX, 10);
+        Assert.assertEquals(mainPage.onlinePsychologist, mainPage.ONLINE_PSYCHOLOGIST_TEXT_IN_BOX.getText());
+        Assert.assertEquals(mainPage.onlineDietitian, mainPage.ONLINE_DIETITIAN_TEXT_IN_BOX.getText());
     }
 
     @Then("What and why question texts are correct")
     public void whatAndWhyQuestionTextsAreCorrect() {
         BrowserUtils.scrollToElement(mainPage.WHAT_IS_ONLINE_THERAPY_TEXT);
-        Assert.assertEquals(mainPage.whatIsOnlineTherapy,mainPage.WHAT_IS_ONLINE_THERAPY_TEXT.getText());
-        Assert.assertEquals(mainPage.whatIsOnlineTherapy_Desc,mainPage.WHAT_IS_ONLINE_THERAPY_DESC_TEXT.getText());
-        Assert.assertEquals(mainPage.whyHidoctorOnlineTherapy,mainPage.WHY_HIDOCTOR_ONLINE_THERAPY_TEXT.getText());
-        Assert.assertEquals(mainPage.whyHidoctorOnlineTherapy_Desc,mainPage.WHY_HIDOCTOR_ONLINE_THERAPY_DESC_TEXT.getText());
-        Assert.assertEquals(mainPage.whyHidoctorOnlineTherapy_HelperText,mainPage.WHY_HIDOCTOR_ONLINE_THERAPY_HELPER_TEXT.getText());
+        Assert.assertEquals(mainPage.whatIsOnlineTherapy, mainPage.WHAT_IS_ONLINE_THERAPY_TEXT.getText());
+        Assert.assertEquals(mainPage.whatIsOnlineTherapy_Desc, mainPage.WHAT_IS_ONLINE_THERAPY_DESC_TEXT.getText());
+        Assert.assertEquals(mainPage.whyHidoctorOnlineTherapy, mainPage.WHY_HIDOCTOR_ONLINE_THERAPY_TEXT.getText());
+        Assert.assertEquals(mainPage.whyHidoctorOnlineTherapy_Desc, mainPage.WHY_HIDOCTOR_ONLINE_THERAPY_DESC_TEXT.getText());
+        Assert.assertEquals(mainPage.whyHidoctorOnlineTherapy_HelperText, mainPage.WHY_HIDOCTOR_ONLINE_THERAPY_HELPER_TEXT.getText());
 
     }
 }

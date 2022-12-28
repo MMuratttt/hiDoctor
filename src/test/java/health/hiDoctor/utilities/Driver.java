@@ -4,8 +4,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-//import org.openqa.selenium.devtools.DevTools;
-//import org.openqa.selenium.devtools.v107.emulation.Emulation;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -60,43 +58,44 @@ public class Driver {
         return driverPool.get();
 
     }
-/*
-    public static WebDriver getMobileDriver() {
 
-        if (driverPool.get() == null) {
+    /*
+        public static WebDriver getMobileDriver() {
 
-            String mobileBrowserType = ConfigurationReader.getProperty("mobileBrowser");
+            if (driverPool.get() == null) {
 
-            switch (mobileBrowserType) {
-                case "chrome":
-                    // driverPool.set(new ChromeDriver());
-                    //  driverPool.get().manage().window().maximize();
-                    ChromeDriver driver = new ChromeDriver();
-                    DevTools devTools = driver.getDevTools();
-                    devTools.createSession();
-                    devTools.send(Emulation.setDeviceMetricsOverride(390,  // iPhone 12Pro
-                            844,
-                            75,
-                            true,
-                            Optional.empty(),
-                            Optional.empty(),
-                            Optional.empty(),
-                            Optional.empty(),
-                            Optional.empty(),
-                            Optional.empty(),
-                            Optional.empty(),
-                            Optional.empty(),
-                            Optional.empty()));
-                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-                    break;
+                String mobileBrowserType = ConfigurationReader.getProperty("mobileBrowser");
+
+                switch (mobileBrowserType) {
+                    case "chrome":
+                        // driverPool.set(new ChromeDriver());
+                        //  driverPool.get().manage().window().maximize();
+                        ChromeDriver driver = new ChromeDriver();
+                        DevTools devTools = driver.getDevTools();
+                        devTools.createSession();
+                        devTools.send(Emulation.setDeviceMetricsOverride(390,  // iPhone 12Pro
+                                844,
+                                75,
+                                true,
+                                Optional.empty(),
+                                Optional.empty(),
+                                Optional.empty(),
+                                Optional.empty(),
+                                Optional.empty(),
+                                Optional.empty(),
+                                Optional.empty(),
+                                Optional.empty(),
+                                Optional.empty()));
+                        driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                        break;
+                }
+
             }
 
+            return driverPool.get();
+
         }
-
-        return driverPool.get();
-
-    }
-*/
+    */
     public static void closeDriver() {
         if (driverPool.get() != null) {
             driverPool.get().quit(); // this line will terminate the existing session. value will not even be null

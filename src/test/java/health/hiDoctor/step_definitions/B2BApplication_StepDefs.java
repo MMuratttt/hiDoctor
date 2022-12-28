@@ -14,8 +14,6 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-import static health.hiDoctor.pages.BasePage.B2B_APPLICATION;
-
 public class B2BApplication_StepDefs {
 
     B2bApplication b2bApplication = new B2bApplication();
@@ -24,7 +22,7 @@ public class B2BApplication_StepDefs {
 
     @Given("User clicks on the B2B Application button")
     public void user_clicks_on_the_b2b_application_button() {
-        B2B_APPLICATION.click();
+        b2bApplication.B2B_APPLICATION.click();
     }
     @Then("User should land on B2B Application page")
     public void user_should_land_on_b2b_application_page() {

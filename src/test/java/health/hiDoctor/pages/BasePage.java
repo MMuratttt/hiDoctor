@@ -1,7 +1,5 @@
 package health.hiDoctor.pages;
 
-import health.hiDoctor.utilities.BrowserUtils;
-import health.hiDoctor.utilities.ConfigurationReader;
 import health.hiDoctor.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -41,40 +39,40 @@ public abstract class BasePage {
     public String areYouSureLogout = "Çıkış yapmak istediğinizden emin misiniz?";
 
     @FindBy(xpath = "//a[@data-testid='HiDoctor-logo-link-desktop']")
-    public static WebElement HIDOCTOR_MAINPAGE_ICON;
+    public WebElement HIDOCTOR_MAINPAGE_ICON;
 
     @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[1]")
-    public static WebElement SERVICES;
+    public WebElement SERVICES;
 
     @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[1]/span/span/span")
-    public static WebElement SERVICES_HEADER_TEXT;
+    public WebElement SERVICES_HEADER_TEXT;
 
     @FindBy(xpath = "//a[@data-testid='header-menu-layout.online-psychologist']")
-    public static WebElement ONLINE_PSYCHOLOGIST;
+    public WebElement ONLINE_PSYCHOLOGIST;
 
     @FindBy(xpath = "//a[@data-testid='header-menu-layout.online-dietitian']")
-    public static WebElement ONLINE_DIETITIAN;
+    public WebElement ONLINE_DIETITIAN;
 
     @FindBy(xpath = "//a[@data-testid='header-menu-blog']]")
-    public static WebElement BLOG;
+    public WebElement BLOG;
 
     @FindBy(xpath = "//a[@data-testid='header-menu-b2b']")
-    public static WebElement B2B_APPLICATION;
+    public WebElement B2B_APPLICATION;
 
     @FindBy(xpath = "//a[@data-testid='header-menu-about-us']")
-    public static WebElement ABOUT_US;
+    public WebElement ABOUT_US;
 
     @FindBy(xpath = "//a[@data-testid='header-menu-contact-us']")
-    public static WebElement CONTACT_US;
+    public WebElement CONTACT_US;
 
     @FindBy(xpath = "//div[@class='md:flex-1 flex justify-end space-x-4 items-center']/div/div/a")
-    public static WebElement BECOME_A_CONSULTANT;
+    public WebElement BECOME_A_CONSULTANT;
 
     @FindBy(xpath = "//img[@alt='HiDoctor-header-chat']//ancestor::span")
-    public static WebElement CHAT;
+    public WebElement CHAT;
 
     @FindBy(xpath = "//div[@class='flex items-center min-w-fit']/p")
-    public static WebElement CX_PHONE;
+    public WebElement CX_PHONE;
 
     public String servicesText = "Hizmetler";
     public String onlinePsychologistText = "Online Psikolog";
