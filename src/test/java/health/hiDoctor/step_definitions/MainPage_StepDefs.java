@@ -120,11 +120,14 @@ public class MainPage_StepDefs {
 
     @When("User clicks on Apply button")
     public void user_clicks_on_apply_button() {
+        BrowserUtils.scrollToElement(mainPage.APPLY_BUTTON);
+        BrowserUtils.waitFor(1);
         mainPage.APPLY_BUTTON.click();
     }
 
     @Then("User should see Consultant Application Form")
     public void user_should_see_consultant_application_form() {
+        BrowserUtils.waitForVisibility(becomeAConsultant.HEADER,10);
         Assert.assertEquals(becomeAConsultant.header, becomeAConsultant.HEADER.getText());
     }
 
@@ -144,5 +147,23 @@ public class MainPage_StepDefs {
         Assert.assertEquals(mainPage.whyHidoctorOnlineTherapy_Desc, mainPage.WHY_HIDOCTOR_ONLINE_THERAPY_DESC_TEXT.getText());
         Assert.assertEquals(mainPage.whyHidoctorOnlineTherapy_HelperText, mainPage.WHY_HIDOCTOR_ONLINE_THERAPY_HELPER_TEXT.getText());
 
+    }
+
+    @Then("Trustworthy texts are correct")
+    public void trustworthyTextsAreCorrect() {
+        BrowserUtils.scrollToElement(mainPage.WHY_SHOULD_I_CHOOSE_ONLINE_ADVICE_TITLE);
+        Assert.assertEquals(mainPage.whyShouldIChooseOnlineAdvice,mainPage.WHY_SHOULD_I_CHOOSE_ONLINE_ADVICE_TITLE.getText());
+        Assert.assertEquals(mainPage.secureAndPrivateTitle,mainPage.SECURE_AND_PRIVATE_TITLE.getText());
+        Assert.assertEquals(mainPage.secureAndPrivateText,mainPage.SECURE_AND_PRIVATE_TEXT.getText());
+        Assert.assertEquals(mainPage.guaranteedTitle,mainPage.GUARANTEED_TITLE.getText());
+        Assert.assertEquals(mainPage.guaranteedText,mainPage.GUARANTEED_TEXT.getText());
+        Assert.assertEquals(mainPage.expertClinicalPsychologistsTitle,mainPage.EXPERT_CLINICAL_PSYCHOLOGISTS_TITLE.getText());
+        Assert.assertEquals(mainPage.expertClinicalPsychologistsText,mainPage.EXPERT_CLINICAL_PSYCHOLOGISTS_TEXT.getText());
+        Assert.assertEquals(mainPage.evidencedBasedTherapyTitle,mainPage.EVIDENCE_BASED_THERAPY_TITLE.getText());
+        Assert.assertEquals(mainPage.evidencedBasedTherapyText,mainPage.EVIDENCE_BASED_THERAPY_TEXT.getText());
+        Assert.assertEquals(mainPage.voiceAndVideoCallsTitle,mainPage.VOICE_AND_VIDEO_CALLS_TITLE.getText());
+        Assert.assertEquals(mainPage.voiceAndVideoCallsText,mainPage.VOICE_AND_VIDEO_CALLS_TEXT.getText());
+        Assert.assertEquals(mainPage.accessibleAndTimesavingTitle,mainPage.ACCESSIBLE_AND_TIMESAVING_TITLE.getText());
+        Assert.assertEquals(mainPage.accessibleAndTimesavingText,mainPage.ACCESSIBLE_AND_TIMESAVING_TEXT.getText());
     }
 }

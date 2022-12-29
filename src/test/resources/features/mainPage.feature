@@ -46,12 +46,26 @@ Feature: Main page functionalities are working fine
     And User returns to Main Page
     When User clicks on Apply button
     Then User should see Consultant Application Form
-    And User returns to Main Page
+    And Logout
 
-
+  @wip
   Scenario: All texts are being displayed properly
     Then Online Psychologist and Online Dietitian texts are correct
     Then What and why question texts are correct
+    Then Trustworthy texts are correct
+    Then Certificate texts are correct
+    Then Certificate icons are proper
+    Then Become a consultant texts are correct
+    Then FAQ title and question texts are correct
+    When Click on first question
+    Then First dropdown should be opened and answer is correct
+    When Click on second question
+    Then Second dropdown should be opened and answer is correct
+    When Click on third question
+    Then Third dropdown should be opened and answer is correct
+    When Click on fourth question
+    Then Fourth dropdown should be opened and answer is correct
+
 
 
 

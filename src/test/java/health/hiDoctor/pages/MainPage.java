@@ -70,6 +70,66 @@ public class MainPage extends BasePage {
     public String whyHidoctorOnlineTherapy = "Neden HiDoctor Online Terapi?";
     public String whyHidoctorOnlineTherapy_Desc = "HiDoctor, alanında uzman psikologlar ile danışanları buluşturan online bir mecradır. İhtiyacına göre psikologların uzmanlık alanlarını inceleyebilir, sana en uygun uzmanı tercih edebilirsin. Daha mutlu bir yaşama kavuşmak işte bu kadar kolay!";
     public String whyHidoctorOnlineTherapy_HelperText = "*HiDoctor; tanı, teşhis ve tedavi kapsamında olmayan danışmanlık hizmetlerini danışanlarla buluşturan online bir mecradır.";
+
+    @FindBy(xpath = "//h3[@class='text-gray-500 text-xl md:mt-4 md:text-3xl font-semibold text-center pb-6 pt-2']")
+    public WebElement WHY_SHOULD_I_CHOOSE_ONLINE_ADVICE_TITLE;
+
+    @FindBy(xpath = "//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div[1]/h2")
+    public WebElement SECURE_AND_PRIVATE_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div/p)[1]")
+    public WebElement SECURE_AND_PRIVATE_TEXT;
+
+    @FindBy(xpath = "//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div[2]/h2")
+    public WebElement GUARANTEED_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div/p)[2]")
+    public WebElement GUARANTEED_TEXT;
+
+    @FindBy(xpath = "//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div[3]/h2")
+    public WebElement EXPERT_CLINICAL_PSYCHOLOGISTS_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div/p)[3]")
+    public WebElement EXPERT_CLINICAL_PSYCHOLOGISTS_TEXT;
+
+    @FindBy(xpath = "//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div[4]/h2")
+    public WebElement EVIDENCE_BASED_THERAPY_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div/p)[4]")
+    public WebElement EVIDENCE_BASED_THERAPY_TEXT;
+
+    @FindBy(xpath = "//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div[5]/h2")
+    public WebElement VOICE_AND_VIDEO_CALLS_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div/p)[5]")
+    public WebElement VOICE_AND_VIDEO_CALLS_TEXT;
+
+    @FindBy(xpath = "//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div[6]/h2")
+    public WebElement ACCESSIBLE_AND_TIMESAVING_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div/p)[6]")
+    public WebElement ACCESSIBLE_AND_TIMESAVING_TEXT;
+
+
+    public String whyShouldIChooseOnlineAdvice = "Neden Online Danışmanlığı Tercih Etmeliyim?";
+    public String secureAndPrivateTitle = "Güvenli ve Gizli";
+    public String secureAndPrivateText = "Görüşmelerine HiDoctor veya üçüncü şahıslar erişemez, bilgiler şifrelenerek korunur. Ad-soyad paylaşmadan, sadece telefon numaran ile kayıt olabilir, seansını gerçekleştirebilirsin.";
+    public String guaranteedTitle = "Koşulsuz İade";
+    public String guaranteedText = "Seans sırasında oluşabilecek herhangi bir aksilik durumunda seans sonrası bizimle iletişime geçebilir, seans ücretinin iadesini talep edebilirsin.";
+    public String expertClinicalPsychologistsTitle = "Alanında Uzman Psikologlar";
+    public String expertClinicalPsychologistsText = "Yüksek lisansını tamamlamış psikoterapistlerden oluşan deneyimli danışmanlar ile ihtiyacına en uygun psikologları bulabilir, randevunu oluşturabilirsin.";
+    public String evidencedBasedTherapyTitle = "Kanıta Dayalı Terapi";
+    public String evidencedBasedTherapyText = "Çeşitli kazanımlara sahip, tecrübeli danışmanlarımızın uyguladıkları psikoterapi yaklaşımları, American Psychological Association (APA)’da yer verilen yaklaşımlara dayanmaktadır.";
+    public String voiceAndVideoCallsTitle = "Sesli ve Görüntülü Görüşme";
+    public String voiceAndVideoCallsText = "Seçtiğin psikolog ile seanslarına sesli veya görüntülü olarak katılabilir, ev konforunda online terapi hizmetinden yararlanabilirsin.";
+    public String accessibleAndTimesavingTitle = "Erişilebilir ve Zaman Tasarruflu";
+    public String accessibleAndTimesavingText = "Nerede olursan ol, online danışmanına her an her yerden ulaşabilirsin. Seansına bilgisayar, tablet veya HiDoctor uygulaması ile katılabilirsin.";
+
+
+
+
+
+
     public static WebElement randomLanguage() {
         List<WebElement> languagesWE = Driver.getDriver().findElements(By.xpath("//div[@class='absolute top-1 rounded-md text-sm shadow-md w-40 right-0']/a"));
         int randomLangNo = random.nextInt(1, 6);
