@@ -110,7 +110,6 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "(//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div/p)[6]")
     public WebElement ACCESSIBLE_AND_TIMESAVING_TEXT;
 
-
     public String whyShouldIChooseOnlineAdvice = "Neden Online Danışmanlığı Tercih Etmeliyim?";
     public String secureAndPrivateTitle = "Güvenli ve Gizli";
     public String secureAndPrivateText = "Görüşmelerine HiDoctor veya üçüncü şahıslar erişemez, bilgiler şifrelenerek korunur. Ad-soyad paylaşmadan, sadece telefon numaran ile kayıt olabilir, seansını gerçekleştirebilirsin.";
@@ -125,6 +124,26 @@ public class MainPage extends BasePage {
     public String accessibleAndTimesavingTitle = "Erişilebilir ve Zaman Tasarruflu";
     public String accessibleAndTimesavingText = "Nerede olursan ol, online danışmanına her an her yerden ulaşabilirsin. Seansına bilgisayar, tablet veya HiDoctor uygulaması ile katılabilirsin.";
 
+    @FindBy(xpath = "(//div[contains(@id,'swiper-wrapper-')])[3]/div[1]/div/div")
+    public WebElement I_SECURITY_M_S_TEXT;
+
+    @FindBy(xpath = "(//div[contains(@id,'swiper-wrapper-')])[3]/div[2]/div/div")
+    public WebElement S_P_I_C_D_TEXT;
+
+    @FindBy(xpath = "(//div[contains(@id,'swiper-wrapper-')])[3]/div[3]/div/div")
+    public WebElement I_T_SERVICE_MANAGEMENT_S_TEXT;
+
+    @FindBy(xpath = "(//div[contains(@id,'swiper-wrapper-')])[3]/div[4]/div/div")
+    public WebElement I_HEALTH_TOURISM_A_C_TEXT;
+
+    @FindBy(xpath = "(//div[contains(@id,'swiper-wrapper-')])[3]/div[5]/div/div")
+    public WebElement E_COMMERCE_I_S_TEXT;
+
+    public String iSecurityMS_Text = "Bilgi Güvenliği Yönetim Sistemi";
+    public String sPICD_Text = "(SPICE) Yazılım Süreç Değerlendirme Sistemi";
+    public String iTServiceManagementS_Text = "Bilgi Teknolojileri Hizmet Yönetim Sistemi";
+    public String iHealthTourismAC_Text = "Uluslararası Sağlık Turizmi Yetki Belgesi";
+    public String eCommerceIS_Text = "Elektronik Ticaret Bilgi Sistemi";
 
 
 

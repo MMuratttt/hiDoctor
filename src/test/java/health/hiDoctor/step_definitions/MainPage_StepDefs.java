@@ -166,4 +166,61 @@ public class MainPage_StepDefs {
         Assert.assertEquals(mainPage.accessibleAndTimesavingTitle,mainPage.ACCESSIBLE_AND_TIMESAVING_TITLE.getText());
         Assert.assertEquals(mainPage.accessibleAndTimesavingText,mainPage.ACCESSIBLE_AND_TIMESAVING_TEXT.getText());
     }
+
+    @Then("Certificate texts are correct")
+    public void certificate_texts_are_correct() {
+        BrowserUtils.scrollToElement(mainPage.I_SECURITY_M_S_TEXT);
+        Assert.assertEquals(mainPage.iSecurityMS_Text,mainPage.I_SECURITY_M_S_TEXT.getText());
+        Assert.assertEquals(mainPage.sPICD_Text,mainPage.S_P_I_C_D_TEXT.getText());
+        Assert.assertEquals(mainPage.iTServiceManagementS_Text,mainPage.I_T_SERVICE_MANAGEMENT_S_TEXT.getText());
+        Assert.assertEquals(mainPage.iHealthTourismAC_Text,mainPage.I_HEALTH_TOURISM_A_C_TEXT.getText());
+        Assert.assertEquals(mainPage.eCommerceIS_Text,mainPage.E_COMMERCE_I_S_TEXT.getText());
+    }
+    @Then("Certificate icons are proper")
+    public void certificate_icons_are_proper() {
+
+    }
+    @Then("Become a consultant texts are correct")
+    public void become_a_consultant_texts_are_correct() {
+
+    }
+    @Then("FAQ title and question texts are correct")
+    public void faq_title_and_question_texts_are_correct() {
+
+    }
+    @When("Click on first question")
+    public void click_on_first_question() {
+
+    }
+    @Then("First dropdown should be opened and answer is correct")
+    public void first_dropdown_should_be_opened_and_answer_is_correct() {
+
+    }
+    @When("Click on second question")
+    public void click_on_second_question() {
+
+    }
+    @Then("Second dropdown should be opened and answer is correct")
+    public void second_dropdown_should_be_opened_and_answer_is_correct() {
+
+    }
+    @When("Click on third question")
+    public void click_on_third_question() {
+
+    }
+    @Then("Third dropdown should be opened and answer is correct")
+    public void third_dropdown_should_be_opened_and_answer_is_correct() {
+
+    }
+    @When("Click on fourth question")
+    public void click_on_fourth_question() {
+
+    }
+    @Then("Fourth dropdown should be opened and answer is correct")
+    public void fourth_dropdown_should_be_opened_and_answer_is_correct() {
+
+    }
+
+
+
 }
