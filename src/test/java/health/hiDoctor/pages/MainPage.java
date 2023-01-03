@@ -160,6 +160,19 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//img[@alt='Elektronik Ticaret Bilgi Sistemi']")
     public WebElement E_COMMERCE_I_S_LOGO;
 
+    @FindBy(xpath = "//h2[@class='text-3xl font-semibold text-themeBlack text-center']")
+    public WebElement BECOME_A_CONSULTANT_TITLE;
+
+    @FindBy(xpath = "//li[@class='mb-6']")
+    public WebElement BECOME_A_CONSULTANT_TEXT;
+
+    public String becomeAConsultantTitle_Text = "Danışman Olun";
+    public String becomeAConsultantText_Text = "HiDoctor sistemine katılmak ve online danışmanlık hizmeti vermek için aşağıdaki form üzerinden bizimle iletişime geçebilirsiniz. ";
+
+
+
+
+
 
 
 
