@@ -178,7 +178,11 @@ public class MainPage_StepDefs {
     }
     @Then("Certificate icons are proper")
     public void certificate_icons_are_proper() {
-
+        Assert.assertTrue(mainPage.I_SECURITY_M_S_LOGO.isDisplayed());
+        Assert.assertTrue(mainPage.S_P_I_C_D_LOGO.isDisplayed());
+        Assert.assertTrue(mainPage.I_T_SERVICE_MANAGEMENT_S_LOGO.isDisplayed());
+        Assert.assertTrue(mainPage.I_HEALTH_TOURISM_A_C_LOGO.isDisplayed());
+        Assert.assertTrue(mainPage.E_COMMERCE_I_S_LOGO.isDisplayed());
     }
     @Then("Become a consultant texts are correct")
     public void become_a_consultant_texts_are_correct() {

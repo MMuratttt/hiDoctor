@@ -145,6 +145,22 @@ public class MainPage extends BasePage {
     public String iHealthTourismAC_Text = "Uluslararası Sağlık Turizmi Yetki Belgesi";
     public String eCommerceIS_Text = "Elektronik Ticaret Bilgi Sistemi";
 
+    @FindBy(xpath = "//*[contains(@id,'swiper-wrapper-')]/div[1]/div/span")
+    public WebElement I_SECURITY_M_S_LOGO;
+
+    @FindBy(xpath = "//*[contains(@id,'swiper-wrapper-')]/div[2]/div/span")
+    public WebElement S_P_I_C_D_LOGO;
+
+    @FindBy(xpath = "//*[contains(@id,'swiper-wrapper-')]/div[3]/div/span")
+    public WebElement I_T_SERVICE_MANAGEMENT_S_LOGO;
+
+    @FindBy(xpath = "//*[contains(@id,'swiper-wrapper-')]/div[4]/div/span")
+    public WebElement I_HEALTH_TOURISM_A_C_LOGO;
+
+    @FindBy(xpath = "//img[@alt='Elektronik Ticaret Bilgi Sistemi']")
+    public WebElement E_COMMERCE_I_S_LOGO;
+
+
 
 
 
