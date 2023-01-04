@@ -144,4 +144,37 @@ public abstract class BasePage {
 
     public String socialsTitle = "Sosyal Medya";
 
+    @FindBy(xpath = "//div[@class='md:flex-1 md:block']/h3[2]")
+    public WebElement SOCIALS_TITLE_TEXT;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[1]")
+    public WebElement INSTAGRAM;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[2]")
+    public WebElement YOUTUBE;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[3]")
+    public WebElement FACEBOOK;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[4]")
+    public WebElement TWITTER;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[5]")
+    public WebElement LINKEDIN;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[1]/p")
+    public WebElement INSTAGRAM_TEXT;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[2]/p")
+    public WebElement YOUTUBE_TEXT;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[3]/p")
+    public WebElement FACEBOOK_TEXT;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[4]/p")
+    public WebElement TWITTER_TEXT;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[5]/p")
+    public WebElement LINKEDIN_TEXT;
+
 }

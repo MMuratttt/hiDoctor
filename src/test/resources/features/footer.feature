@@ -17,16 +17,23 @@ Feature: Footer
     When User navigates back
     Then Title and texts are correct in Download section
 
-  @wip
+
   Scenario: Socials
     Then Texts are correct in Socials section
     When User clicks on Instagram
     Then User should land Instagram page
-    When User clicks on YouTube
+    When User switch to hiDoctor window
+    And User clicks on YouTube
     Then User should land YouTube page
-    When User clicks on Facebook
+    When User switch to hiDoctor window
+    And User clicks on Facebook
     Then User should land Facebook page
-    When User clicks on Twitter
+    When User switch to hiDoctor window
+    And User clicks on Twitter
     Then User should land Twitter page
-    When User clicks on Linkedin
+    When User switch to hiDoctor window
+    And User clicks on Linkedin
     Then User should land Linkedin page
+
+  @wip
+  Scenario:
