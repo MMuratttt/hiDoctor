@@ -70,6 +70,173 @@ public class MainPage extends BasePage {
     public String whyHidoctorOnlineTherapy = "Neden HiDoctor Online Terapi?";
     public String whyHidoctorOnlineTherapy_Desc = "HiDoctor, alanında uzman psikologlar ile danışanları buluşturan online bir mecradır. İhtiyacına göre psikologların uzmanlık alanlarını inceleyebilir, sana en uygun uzmanı tercih edebilirsin. Daha mutlu bir yaşama kavuşmak işte bu kadar kolay!";
     public String whyHidoctorOnlineTherapy_HelperText = "*HiDoctor; tanı, teşhis ve tedavi kapsamında olmayan danışmanlık hizmetlerini danışanlarla buluşturan online bir mecradır.";
+
+    @FindBy(xpath = "//h3[@class='text-gray-500 text-xl md:mt-4 md:text-3xl font-semibold text-center pb-6 pt-2']")
+    public WebElement WHY_SHOULD_I_CHOOSE_ONLINE_ADVICE_TITLE;
+
+    @FindBy(xpath = "//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div[1]/h2")
+    public WebElement SECURE_AND_PRIVATE_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div/p)[1]")
+    public WebElement SECURE_AND_PRIVATE_TEXT;
+
+    @FindBy(xpath = "//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div[2]/h2")
+    public WebElement GUARANTEED_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div/p)[2]")
+    public WebElement GUARANTEED_TEXT;
+
+    @FindBy(xpath = "//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div[3]/h2")
+    public WebElement EXPERT_CLINICAL_PSYCHOLOGISTS_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div/p)[3]")
+    public WebElement EXPERT_CLINICAL_PSYCHOLOGISTS_TEXT;
+
+    @FindBy(xpath = "//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div[4]/h2")
+    public WebElement EVIDENCE_BASED_THERAPY_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div/p)[4]")
+    public WebElement EVIDENCE_BASED_THERAPY_TEXT;
+
+    @FindBy(xpath = "//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div[5]/h2")
+    public WebElement VOICE_AND_VIDEO_CALLS_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div/p)[5]")
+    public WebElement VOICE_AND_VIDEO_CALLS_TEXT;
+
+    @FindBy(xpath = "//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div[6]/h2")
+    public WebElement ACCESSIBLE_AND_TIMESAVING_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 grid grid-cols-3 gap-1 md:gap-12 pb-0 md:pb-8']/div/p)[6]")
+    public WebElement ACCESSIBLE_AND_TIMESAVING_TEXT;
+
+    public String whyShouldIChooseOnlineAdvice = "Neden Online Danışmanlığı Tercih Etmeliyim?";
+    public String secureAndPrivateTitle = "Güvenli ve Gizli";
+    public String secureAndPrivateText = "Görüşmelerine HiDoctor veya üçüncü şahıslar erişemez, bilgiler şifrelenerek korunur. Ad-soyad paylaşmadan, sadece telefon numaran ile kayıt olabilir, seansını gerçekleştirebilirsin.";
+    public String guaranteedTitle = "Koşulsuz İade";
+    public String guaranteedText = "Seans sırasında oluşabilecek herhangi bir aksilik durumunda seans sonrası bizimle iletişime geçebilir, seans ücretinin iadesini talep edebilirsin.";
+    public String expertClinicalPsychologistsTitle = "Alanında Uzman Psikologlar";
+    public String expertClinicalPsychologistsText = "Yüksek lisansını tamamlamış psikoterapistlerden oluşan deneyimli danışmanlar ile ihtiyacına en uygun psikologları bulabilir, randevunu oluşturabilirsin.";
+    public String evidencedBasedTherapyTitle = "Kanıta Dayalı Terapi";
+    public String evidencedBasedTherapyText = "Çeşitli kazanımlara sahip, tecrübeli danışmanlarımızın uyguladıkları psikoterapi yaklaşımları, American Psychological Association (APA)’da yer verilen yaklaşımlara dayanmaktadır.";
+    public String voiceAndVideoCallsTitle = "Sesli ve Görüntülü Görüşme";
+    public String voiceAndVideoCallsText = "Seçtiğin psikolog ile seanslarına sesli veya görüntülü olarak katılabilir, ev konforunda online terapi hizmetinden yararlanabilirsin.";
+    public String accessibleAndTimesavingTitle = "Erişilebilir ve Zaman Tasarruflu";
+    public String accessibleAndTimesavingText = "Nerede olursan ol, online danışmanına her an her yerden ulaşabilirsin. Seansına bilgisayar, tablet veya HiDoctor uygulaması ile katılabilirsin.";
+
+    @FindBy(xpath = "(//div[contains(@id,'swiper-wrapper-')])[3]/div[1]/div/div")
+    public WebElement I_SECURITY_M_S_TEXT;
+
+    @FindBy(xpath = "(//div[contains(@id,'swiper-wrapper-')])[3]/div[2]/div/div")
+    public WebElement S_P_I_C_D_TEXT;
+
+    @FindBy(xpath = "(//div[contains(@id,'swiper-wrapper-')])[3]/div[3]/div/div")
+    public WebElement I_T_SERVICE_MANAGEMENT_S_TEXT;
+
+    @FindBy(xpath = "(//div[contains(@id,'swiper-wrapper-')])[3]/div[4]/div/div")
+    public WebElement I_HEALTH_TOURISM_A_C_TEXT;
+
+    @FindBy(xpath = "(//div[contains(@id,'swiper-wrapper-')])[3]/div[5]/div/div")
+    public WebElement E_COMMERCE_I_S_TEXT;
+
+    public String iSecurityMS_Text = "Bilgi Güvenliği Yönetim Sistemi";
+    public String sPICD_Text = "(SPICE) Yazılım Süreç Değerlendirme Sistemi";
+    public String iTServiceManagementS_Text = "Bilgi Teknolojileri Hizmet Yönetim Sistemi";
+    public String iHealthTourismAC_Text = "Uluslararası Sağlık Turizmi Yetki Belgesi";
+    public String eCommerceIS_Text = "Elektronik Ticaret Bilgi Sistemi";
+
+    @FindBy(xpath = "//*[contains(@id,'swiper-wrapper-')]/div[1]/div/span")
+    public WebElement I_SECURITY_M_S_LOGO;
+
+    @FindBy(xpath = "//*[contains(@id,'swiper-wrapper-')]/div[2]/div/span")
+    public WebElement S_P_I_C_D_LOGO;
+
+    @FindBy(xpath = "//*[contains(@id,'swiper-wrapper-')]/div[3]/div/span")
+    public WebElement I_T_SERVICE_MANAGEMENT_S_LOGO;
+
+    @FindBy(xpath = "//*[contains(@id,'swiper-wrapper-')]/div[4]/div/span")
+    public WebElement I_HEALTH_TOURISM_A_C_LOGO;
+
+    @FindBy(xpath = "//img[@alt='Elektronik Ticaret Bilgi Sistemi']")
+    public WebElement E_COMMERCE_I_S_LOGO;
+
+    @FindBy(xpath = "//h2[@class='text-3xl font-semibold text-themeBlack text-center']")
+    public WebElement BECOME_A_CONSULTANT_TITLE;
+
+    @FindBy(xpath = "//li[@class='mb-6']")
+    public WebElement BECOME_A_CONSULTANT_TEXT;
+
+    public String becomeAConsultantTitle_Text = "Danışman Olun";
+    public String becomeAConsultantText_Text = "HiDoctor sistemine katılmak ve online danışmanlık hizmeti vermek için aşağıdaki form üzerinden bizimle iletişime geçebilirsiniz. ";
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/h4")
+    public WebElement FAQ_TITLE;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[1]/button")
+    public WebElement QUESTION_ONE_BTN;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[2]/button")
+    public WebElement QUESTION_TWO_BTN;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[3]/button")
+    public WebElement QUESTION_THREE_BTN;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[4]/button")
+    public WebElement QUESTION_FOUR_BTN;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[1]/button/span")
+    public WebElement QUESTION_ONE_TEXT;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[2]/button/span")
+    public WebElement QUESTION_TWO_TEXT;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[3]/button/span")
+    public WebElement QUESTION_THREE_TEXT;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[4]/button/span")
+    public WebElement QUESTION_FOUR_TEXT;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[1]/div/div")
+    public WebElement ANSWER_ONE;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[2]/div/div")
+    public WebElement ANSWER_TWO;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[3]/div/div")
+    public WebElement ANSWER_THREE;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[4]/div/div")
+    public WebElement ANSWER_FOUR;
+
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-')])[1]")
+    public WebElement ANSWER_ONE_BTN;
+
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-')])[2]")
+    public WebElement ANSWER_TWO_BTN;
+
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-')])[3]")
+    public WebElement ANSWER_THREE_BTN;
+
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-')])[4]")
+    public WebElement ANSWER_FOUR_BTN;
+
+    public String FAQ_Title = "Sıkça Sorulan Sorular";
+    public String questionOne = "HiDoctor ile nasıl iletişime geçebilirim?";
+    public String questionTwo = "Yüz yüze danışmanlık hizmeti alabilir miyim?";
+    public String questionThree = "Uygulamanızı ücretsiz indirebilir miyim?";
+    public String questionFour = "24 saat hizmetiniz bulunuyor mu?";
+    public String answerOne = "Bizimle 0850 700 03 03 - müşteri hizmetleri numaramızdan, Whatsapp ve destek e-mail adresimiz üzerinden iletişime geçebilirsiniz. Detaylı bilgilendirme için Bize Ulaşın kısmına bakabilirsiniz. Haftanın her günü 09:00-23:59 arasında hizmet verilmektedir.";
+    public String answerTwo = "HiDoctor danışmanlık hizmetleri sadece online olarak sunulmaktadır. Seçtiğiniz danışmanla web sitemiz ya da HiDoctor uygulaması üzerinden sesli veya görüntülü görüşme yapabilirsiniz.";
+    public String answerThree = "Uygulamamızı App Store, Google Play veya App Gallery üzerinden ücretsiz olarak indirebilirsiniz.";
+    public String answerFour = "Sistemdeki uzmanların hizmet verdikleri saat aralıkları değişiklik göstermektedir. Seçtiğiniz danışmanın çalışma saatlerine profilinde bulunan ‘Takvim’ bölümünden ulaşabilir, çevrim içi ise anında görüşmeye başlayabilirsiniz.";
+
+
+
+
+
+
+
+
     public static WebElement randomLanguage() {
         List<WebElement> languagesWE = Driver.getDriver().findElements(By.xpath("//div[@class='absolute top-1 rounded-md text-sm shadow-md w-40 right-0']/a"));
         int randomLangNo = random.nextInt(1, 6);

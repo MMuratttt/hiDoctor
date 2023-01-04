@@ -4,7 +4,7 @@ Feature: B2B Application page functionalities are working fine
   Background: For the scenarios in the feature file, user is expected to be on main page as logged in
     Given User is on the main page
 
-  @wip
+
   Scenario: Elements that in the B2B application page should work properly
     Given User clicks on the B2B Application button
     Then User should land on B2B Application page

@@ -92,7 +92,6 @@ public abstract class BasePage {
     @FindBy(xpath = "//div[@class='h-full language-box']/div/span")
     public WebElement LANGUAGE_SELECTED;
 
-
     @FindBy(xpath = "//div[@class='absolute top-1 rounded-md text-sm shadow-md w-40 right-0']/a[1]/span/span")
     public WebElement TR_LANG;
 
@@ -113,5 +112,8 @@ public abstract class BasePage {
 
     @FindBy(xpath = "//div[@class='absolute top-1 rounded-md text-sm shadow-md w-40 right-0']/a[7]/span/span")
     public WebElement UA_LANG;
+
+    @FindBy(xpath = "//*[@id=\"__next\"]/footer/div[2]/div/div/div[1]/p")
+    public WebElement ALL_RIGHTS_RESERVED_TEXT;
 
 }

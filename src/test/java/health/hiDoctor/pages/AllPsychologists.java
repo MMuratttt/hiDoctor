@@ -8,7 +8,7 @@ public class AllPsychologists extends BasePage{
     @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[1]/div/div[2]/span[3]")
     public WebElement ALL_PSYCHOLOGISTS_TITLE;
 
-    @FindBy(xpath = "//a[@data-testid='HiDoctor-logo-link-mobile']")
+    @FindBy(xpath = "//a[contains(@data-testid,'HiDoctor-logo-link-')]")
     public static WebElement HIDOCTOR_MAINPAGE_ICON;
 
 
