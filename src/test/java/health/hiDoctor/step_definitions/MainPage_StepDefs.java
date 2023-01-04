@@ -208,8 +208,8 @@ public class MainPage_StepDefs {
 
     @When("Click on first question")
     public void click_on_first_question() {
-        BrowserUtils.waitForClickablility(mainPage.QUESTION_ONE_BTN, 10);
         Assert.assertEquals("false",mainPage.ANSWER_ONE_BTN.getAttribute("aria-expanded"));
+        BrowserUtils.waitFor(2);
         mainPage.QUESTION_ONE_BTN.click();
     }
 
@@ -222,8 +222,8 @@ public class MainPage_StepDefs {
 
     @When("Click on second question")
     public void click_on_second_question() {
-        BrowserUtils.waitForClickablility(mainPage.QUESTION_TWO_BTN, 10);
         Assert.assertEquals("false",mainPage.ANSWER_TWO_BTN.getAttribute("aria-expanded"));
+        BrowserUtils.waitFor(2);
         mainPage.QUESTION_TWO_BTN.click();
     }
 
@@ -236,8 +236,8 @@ public class MainPage_StepDefs {
 
     @When("Click on third question")
     public void click_on_third_question() {
-        BrowserUtils.waitForClickablility(mainPage.QUESTION_THREE_BTN, 10);
         Assert.assertEquals("false",mainPage.ANSWER_THREE_BTN.getAttribute("aria-expanded"));
+        BrowserUtils.waitFor(2);
         mainPage.QUESTION_THREE_BTN.click();
     }
 
@@ -250,8 +250,8 @@ public class MainPage_StepDefs {
 
     @When("Click on fourth question")
     public void click_on_fourth_question() {
-        BrowserUtils.waitForClickablility(mainPage.QUESTION_FOUR_BTN, 10);
         Assert.assertEquals("false",mainPage.ANSWER_FOUR_BTN.getAttribute("aria-expanded"));
+        BrowserUtils.waitFor(2);
         mainPage.QUESTION_FOUR_BTN.click();
     }
 

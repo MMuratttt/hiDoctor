@@ -8,10 +8,13 @@ Feature: Footer
   Scenario: Download the app from stores
     When User clicks on App Store button
     Then User should land App Store page
-    When User clicks on Google Play button
+    When User navigates back
+    And User clicks on Google Play button
     Then User should land Google Play page
-    When User clicks on App Gallery button
+    When User navigates back
+    And User clicks on App Gallery button
     Then User should land App Gallery page
+    When User navigates back
     Then Title and texts are correct in Download section
 
   @wip
