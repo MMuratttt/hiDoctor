@@ -23,7 +23,6 @@ public class MainPage_StepDefs {
     MainPage mainPage = new MainPage();
     AllPsychologists allPsychologists = new AllPsychologists();
     BecomeAConsultant becomeAConsultant = new BecomeAConsultant();
-    Random random = new Random();
 
     @Then("The title should be displayed correctly")
     public void the_title_should_be_displayed_correctly() {
