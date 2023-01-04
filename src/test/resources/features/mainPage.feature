@@ -48,7 +48,7 @@ Feature: Main page functionalities are working fine
     Then User should see Consultant Application Form
     And Logout
 
-  @wip
+
   Scenario: All texts are being displayed properly
     Then Online Psychologist and Online Dietitian texts are correct
     Then What and why question texts are correct

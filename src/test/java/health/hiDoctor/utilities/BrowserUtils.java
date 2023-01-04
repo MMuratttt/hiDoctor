@@ -106,7 +106,7 @@ public class BrowserUtils {
     }
 
     /**
-     * Switches to new window by the exact title. Returns to original window if target title not found
+     * Switches to new window by the exact title.
      *
      * @param targetTitle
      */
@@ -118,7 +118,6 @@ public class BrowserUtils {
                 return;
             }
         }
-        Driver.getDriver().switchTo().window(origin);
     }
 
     /**

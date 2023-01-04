@@ -116,4 +116,65 @@ public abstract class BasePage {
     @FindBy(xpath = "//*[@id=\"__next\"]/footer/div[2]/div/div/div[1]/p")
     public WebElement ALL_RIGHTS_RESERVED_TEXT;
 
+    @FindBy(xpath = "//div[@class='hidden md:flex-1 md:block pl-12']/h3")
+    public WebElement DOWNLOAD_TITLE;
+
+    @FindBy(xpath = "//a[@data-testid='download-app-link-App Store']")
+    public WebElement APP_STORE_BTN;
+
+    @FindBy(xpath = "//a[@data-testid='download-app-link-Google Play']")
+    public WebElement GOOGLE_PLAY_BTN;
+
+    @FindBy(xpath = "//a[@data-testid='download-app-link-App Gallery']")
+    public WebElement APP_GALLERY_BTN;
+
+    @FindBy(xpath = "//a[@data-testid='download-app-link-App Store']/span[2]")
+    public WebElement APP_STORE_TEXT;
+
+    @FindBy(xpath = "//a[@data-testid='download-app-link-Google Play']/span[2]")
+    public WebElement GOOGLE_PLAY_TEXT;
+
+    @FindBy(xpath = "//a[@data-testid='download-app-link-App Gallery']/span[2]")
+    public WebElement APP_GALLERY_TEXT;
+
+    public String download = "Uygulamayı İndir";
+    public String appStoreText = "App Store";
+    public String googlePlayText = "Google Play";
+    public String appGalleryText = "App Gallery";
+
+    public String socialsTitle = "Sosyal Medya";
+
+    @FindBy(xpath = "//div[@class='md:flex-1 md:block']/h3[2]")
+    public WebElement SOCIALS_TITLE_TEXT;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[1]")
+    public WebElement INSTAGRAM;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[2]")
+    public WebElement YOUTUBE;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[3]")
+    public WebElement FACEBOOK;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[4]")
+    public WebElement TWITTER;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[5]")
+    public WebElement LINKEDIN;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[1]/p")
+    public WebElement INSTAGRAM_TEXT;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[2]/p")
+    public WebElement YOUTUBE_TEXT;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[3]/p")
+    public WebElement FACEBOOK_TEXT;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[4]/p")
+    public WebElement TWITTER_TEXT;
+
+    @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[5]/p")
+    public WebElement LINKEDIN_TEXT;
+
 }
