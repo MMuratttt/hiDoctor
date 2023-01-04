@@ -169,7 +169,66 @@ public class MainPage extends BasePage {
     public String becomeAConsultantTitle_Text = "Danışman Olun";
     public String becomeAConsultantText_Text = "HiDoctor sistemine katılmak ve online danışmanlık hizmeti vermek için aşağıdaki form üzerinden bizimle iletişime geçebilirsiniz. ";
 
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/h4")
+    public WebElement FAQ_TITLE;
 
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[1]/button")
+    public WebElement QUESTION_ONE_BTN;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[2]/button")
+    public WebElement QUESTION_TWO_BTN;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[3]/button")
+    public WebElement QUESTION_THREE_BTN;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[4]/button")
+    public WebElement QUESTION_FOUR_BTN;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[1]/button/span")
+    public WebElement QUESTION_ONE_TEXT;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[2]/button/span")
+    public WebElement QUESTION_TWO_TEXT;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[3]/button/span")
+    public WebElement QUESTION_THREE_TEXT;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[4]/button/span")
+    public WebElement QUESTION_FOUR_TEXT;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[1]/div/div")
+    public WebElement ANSWER_ONE;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[2]/div/div")
+    public WebElement ANSWER_TWO;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[3]/div/div")
+    public WebElement ANSWER_THREE;
+
+    @FindBy(xpath = "//div[@class=\" mx-auto container \"]/div[4]/div/div")
+    public WebElement ANSWER_FOUR;
+
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-')])[1]")
+    public WebElement ANSWER_ONE_BTN;
+
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-')])[2]")
+    public WebElement ANSWER_TWO_BTN;
+
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-')])[3]")
+    public WebElement ANSWER_THREE_BTN;
+
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-')])[4]")
+    public WebElement ANSWER_FOUR_BTN;
+
+    public String FAQ_Title = "Sıkça Sorulan Sorular";
+    public String questionOne = "HiDoctor ile nasıl iletişime geçebilirim?";
+    public String questionTwo = "Yüz yüze danışmanlık hizmeti alabilir miyim?";
+    public String questionThree = "Uygulamanızı ücretsiz indirebilir miyim?";
+    public String questionFour = "24 saat hizmetiniz bulunuyor mu?";
+    public String answerOne = "Bizimle 0850 700 03 03 - müşteri hizmetleri numaramızdan, Whatsapp ve destek e-mail adresimiz üzerinden iletişime geçebilirsiniz. Detaylı bilgilendirme için Bize Ulaşın kısmına bakabilirsiniz. Haftanın her günü 09:00-23:59 arasında hizmet verilmektedir.";
+    public String answerTwo = "HiDoctor danışmanlık hizmetleri sadece online olarak sunulmaktadır. Seçtiğiniz danışmanla web sitemiz ya da HiDoctor uygulaması üzerinden sesli veya görüntülü görüşme yapabilirsiniz.";
+    public String answerThree = "Uygulamamızı App Store, Google Play veya App Gallery üzerinden ücretsiz olarak indirebilirsiniz.";
+    public String answerFour = "Sistemdeki uzmanların hizmet verdikleri saat aralıkları değişiklik göstermektedir. Seçtiğiniz danışmanın çalışma saatlerine profilinde bulunan ‘Takvim’ bölümünden ulaşabilir, çevrim içi ise anında görüşmeye başlayabilirsiniz.";
 
 
 

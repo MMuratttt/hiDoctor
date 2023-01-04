@@ -5,11 +5,13 @@ import health.hiDoctor.pages.BecomeAConsultant;
 import health.hiDoctor.pages.MainPage;
 import health.hiDoctor.utilities.BrowserUtils;
 import health.hiDoctor.utilities.Driver;
+import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -152,25 +154,25 @@ public class MainPage_StepDefs {
     @Then("Trustworthy texts are correct")
     public void trustworthyTextsAreCorrect() {
         BrowserUtils.scrollToElement(mainPage.WHY_SHOULD_I_CHOOSE_ONLINE_ADVICE_TITLE);
-        Assert.assertEquals(mainPage.whyShouldIChooseOnlineAdvice, mainPage.WHY_SHOULD_I_CHOOSE_ONLINE_ADVICE_TITLE.getText());
-        Assert.assertEquals(mainPage.secureAndPrivateTitle, mainPage.SECURE_AND_PRIVATE_TITLE.getText());
-        Assert.assertEquals(mainPage.secureAndPrivateText, mainPage.SECURE_AND_PRIVATE_TEXT.getText());
-        Assert.assertEquals(mainPage.guaranteedTitle, mainPage.GUARANTEED_TITLE.getText());
-        Assert.assertEquals(mainPage.guaranteedText, mainPage.GUARANTEED_TEXT.getText());
-        Assert.assertEquals(mainPage.expertClinicalPsychologistsTitle, mainPage.EXPERT_CLINICAL_PSYCHOLOGISTS_TITLE.getText());
-        Assert.assertEquals(mainPage.expertClinicalPsychologistsText, mainPage.EXPERT_CLINICAL_PSYCHOLOGISTS_TEXT.getText());
-        Assert.assertEquals(mainPage.evidencedBasedTherapyTitle, mainPage.EVIDENCE_BASED_THERAPY_TITLE.getText());
-        Assert.assertEquals(mainPage.evidencedBasedTherapyText, mainPage.EVIDENCE_BASED_THERAPY_TEXT.getText());
-        Assert.assertEquals(mainPage.voiceAndVideoCallsTitle, mainPage.VOICE_AND_VIDEO_CALLS_TITLE.getText());
-        Assert.assertEquals(mainPage.voiceAndVideoCallsText, mainPage.VOICE_AND_VIDEO_CALLS_TEXT.getText());
-        Assert.assertEquals(mainPage.accessibleAndTimesavingTitle, mainPage.ACCESSIBLE_AND_TIMESAVING_TITLE.getText());
-        Assert.assertEquals(mainPage.accessibleAndTimesavingText, mainPage.ACCESSIBLE_AND_TIMESAVING_TEXT.getText());
+        Assert.assertEquals(mainPage.whyShouldIChooseOnlineAdvice, mainPage.WHY_SHOULD_I_CHOOSE_ONLINE_ADVICE_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.secureAndPrivateTitle, mainPage.SECURE_AND_PRIVATE_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.secureAndPrivateText, mainPage.SECURE_AND_PRIVATE_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.guaranteedTitle, mainPage.GUARANTEED_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.guaranteedText, mainPage.GUARANTEED_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.expertClinicalPsychologistsTitle, mainPage.EXPERT_CLINICAL_PSYCHOLOGISTS_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.expertClinicalPsychologistsText, mainPage.EXPERT_CLINICAL_PSYCHOLOGISTS_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.evidencedBasedTherapyTitle, mainPage.EVIDENCE_BASED_THERAPY_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.evidencedBasedTherapyText, mainPage.EVIDENCE_BASED_THERAPY_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.voiceAndVideoCallsTitle, mainPage.VOICE_AND_VIDEO_CALLS_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.voiceAndVideoCallsText, mainPage.VOICE_AND_VIDEO_CALLS_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.accessibleAndTimesavingTitle, mainPage.ACCESSIBLE_AND_TIMESAVING_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.accessibleAndTimesavingText, mainPage.ACCESSIBLE_AND_TIMESAVING_TEXT.getAttribute("textContent"));
     }
 
     @Then("Certificate texts are correct")
     public void certificate_texts_are_correct() {
         BrowserUtils.scrollToElement(mainPage.I_SECURITY_M_S_TEXT);
-        Assert.assertEquals(mainPage.iSecurityMS_Text, mainPage.I_SECURITY_M_S_TEXT.getText());
+        Assert.assertEquals(mainPage.iSecurityMS_Text, mainPage.I_SECURITY_M_S_TEXT.getAttribute("textContent"));
         Assert.assertEquals(mainPage.sPICD_Text, mainPage.S_P_I_C_D_TEXT.getAttribute("textContent"));
         Assert.assertEquals(mainPage.iTServiceManagementS_Text, mainPage.I_T_SERVICE_MANAGEMENT_S_TEXT.getAttribute("textContent"));
         Assert.assertEquals(mainPage.iHealthTourismAC_Text, mainPage.I_HEALTH_TOURISM_A_C_TEXT.getAttribute("textContent"));
@@ -190,53 +192,75 @@ public class MainPage_StepDefs {
     @Then("Become a consultant texts are correct")
     public void become_a_consultant_texts_are_correct() {
         BrowserUtils.scrollToElement(mainPage.BECOME_A_CONSULTANT_TITLE);
-        Assert.assertEquals(mainPage.becomeAConsultantTitle_Text, mainPage.BECOME_A_CONSULTANT_TITLE.getText());
-        Assert.assertEquals(mainPage.becomeAConsultantText_Text, mainPage.BECOME_A_CONSULTANT_TEXT.getText());
+        Assert.assertEquals(mainPage.becomeAConsultantTitle_Text, mainPage.BECOME_A_CONSULTANT_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.becomeAConsultantText_Text, mainPage.BECOME_A_CONSULTANT_TEXT.getAttribute("textContent"));
     }
 
     @Then("FAQ title and question texts are correct")
     public void faq_title_and_question_texts_are_correct() {
-
+        BrowserUtils.scrollToElement(mainPage.ALL_RIGHTS_RESERVED_TEXT);
+        BrowserUtils.waitForVisibility(mainPage.QUESTION_ONE_BTN, 10);
+        Assert.assertEquals(mainPage.FAQ_Title, mainPage.FAQ_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.questionOne, mainPage.QUESTION_ONE_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.questionTwo, mainPage.QUESTION_TWO_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.questionThree, mainPage.QUESTION_THREE_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.questionFour, mainPage.QUESTION_FOUR_TEXT.getAttribute("textContent"));
     }
 
     @When("Click on first question")
     public void click_on_first_question() {
-
+        BrowserUtils.waitForClickablility(mainPage.QUESTION_ONE_BTN, 10);
+        Assert.assertEquals("false",mainPage.ANSWER_ONE_BTN.getAttribute("aria-expanded"));
+        mainPage.QUESTION_ONE_BTN.click();
     }
 
     @Then("First dropdown should be opened and answer is correct")
     public void first_dropdown_should_be_opened_and_answer_is_correct() {
-
+        Assert.assertEquals(mainPage.answerOne, mainPage.ANSWER_ONE.getAttribute("textContent"));
+        mainPage.QUESTION_ONE_BTN.click();
+        Assert.assertEquals("false",mainPage.ANSWER_ONE_BTN.getAttribute("aria-expanded"));
     }
 
     @When("Click on second question")
     public void click_on_second_question() {
-
+        BrowserUtils.waitForClickablility(mainPage.QUESTION_TWO_BTN, 10);
+        Assert.assertEquals("false",mainPage.ANSWER_TWO_BTN.getAttribute("aria-expanded"));
+        mainPage.QUESTION_TWO_BTN.click();
     }
 
     @Then("Second dropdown should be opened and answer is correct")
     public void second_dropdown_should_be_opened_and_answer_is_correct() {
-
+        Assert.assertEquals(mainPage.answerTwo, mainPage.ANSWER_TWO.getAttribute("textContent"));
+        mainPage.QUESTION_TWO_BTN.click();
+        Assert.assertEquals("false",mainPage.ANSWER_TWO_BTN.getAttribute("aria-expanded"));
     }
 
     @When("Click on third question")
     public void click_on_third_question() {
-
+        BrowserUtils.waitForClickablility(mainPage.QUESTION_THREE_BTN, 10);
+        Assert.assertEquals("false",mainPage.ANSWER_THREE_BTN.getAttribute("aria-expanded"));
+        mainPage.QUESTION_THREE_BTN.click();
     }
 
     @Then("Third dropdown should be opened and answer is correct")
     public void third_dropdown_should_be_opened_and_answer_is_correct() {
-
+        Assert.assertEquals(mainPage.answerThree, mainPage.ANSWER_THREE.getAttribute("textContent"));
+        mainPage.QUESTION_THREE_BTN.click();
+        Assert.assertEquals("false",mainPage.ANSWER_THREE_BTN.getAttribute("aria-expanded"));
     }
 
     @When("Click on fourth question")
     public void click_on_fourth_question() {
-
+        BrowserUtils.waitForClickablility(mainPage.QUESTION_FOUR_BTN, 10);
+        Assert.assertEquals("false",mainPage.ANSWER_FOUR_BTN.getAttribute("aria-expanded"));
+        mainPage.QUESTION_FOUR_BTN.click();
     }
 
     @Then("Fourth dropdown should be opened and answer is correct")
     public void fourth_dropdown_should_be_opened_and_answer_is_correct() {
-
+        Assert.assertEquals(mainPage.answerFour, mainPage.ANSWER_FOUR.getAttribute("textContent"));
+        mainPage.QUESTION_FOUR_BTN.click();
+        Assert.assertEquals("false",mainPage.ANSWER_FOUR_BTN.getAttribute("aria-expanded"));
     }
 
 
