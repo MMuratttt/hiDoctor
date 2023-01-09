@@ -1,9 +1,9 @@
+@wip
 Feature: B2B Application page functionalities are working fine
   All WebElements should behave as expected
 
   Background: For the scenarios in the feature file, user is expected to be on main page as logged in
     Given User is on the main page
-
 
   Scenario: Elements that in the B2B application page should work properly
     Given User clicks on the B2B Application button
@@ -25,7 +25,7 @@ Feature: B2B Application page functionalities are working fine
       | İhtiyaç duydukları konulara özel, alanında uzman psikologlarımız ile destek olmak |
       | Bireysel, kurumsal ve toplumsal faydayı en üst noktaya taşımak                    |
     When User scrolls down the page until How To Use? are visible
-    Then User should see the all answers
+    Then User should see the all answers of how to use
       | 1 - HiDoctor Kurumsal Talep Başvuru Formu doldurulur.                                   |
       | 2 - Başvuru değerlendirilerek sizinle iletişime geçilir.                                |
       | 3 - Kurumunuz çalışanlarına kişiye özel kod ve link iletilir.                           |
@@ -41,29 +41,13 @@ Feature: B2B Application page functionalities are working fine
   Scenario: Corporate Application Form function works correctly
     Given User clicks on the B2B Application button
     Then User should land on B2B Application page
-    When User clicks on "Ücretsiz Fiyat Teklifi Al" button
-    Then User should redirect to the "Kurumsal İş Birliği Başvuru Formu"
-    And User enters Your Company Name "Test Company"
-    And User enters Authorized Person Name "John"
-    And User enters Authorized Person Surname "Who"
-    And User enters Authorized Person Phone Number "+905325323232"
-    And User enters Authorized Person Corporate Email "johnwhotest5@gmail.com"
-    And User enters Information about the service you want to receive "Lorem ipsum dolor sit amet"
+    When User clicks on Get Offer For Free button
+    Then User should redirect to the Corporate Application Form
+    And User enters Your Company Name
+    And User enters Authorized Person Name
+    And User enters Authorized Person Surname
+    And User enters Authorized Person Phone Number
+    And User enters Authorized Person Corporate Email
+    And User enters Information about the service you want to receive
     And User clicks on apply button
     Then B2B Application Form should send successfully
-
-  ##Scenario: Corporate Application Form field validations
-
-
-
-
-
-  ## Görsel düzgün görünür.  +++
-  ## Görsel üzerindeki "Çalışan Mutluluğu Paketi" yazısı ve buton düzgün görünür. +++
-  ## "Ücretsiz Fiyat Teklifi Al" butonu forma yönlendirir.  +++
-  ## "İş Ortaklarımız" kısmı düzgün görünür. ++
-  ## "Neden HiDoctor’dan Kurumsal Hizmet Almalıyım?" Kısmındaki görsel ve textler düzgündür. ++
-  ## "Nasıl Kullanılır?" başlığındaki textler ve görsel düzgündür. ++
-  ## "Hepsi Güvenli ve Gizli" başlığındaki textler doğrudur. ++
-  ## "Kurumsal İş Birliği Başvuru Formu" ve görsel doğrudur.
-  ## "Kurumsal İş Birliği Başvuru Formu"ndaki Başvur butonu çalışır ve düzgün görünür.
