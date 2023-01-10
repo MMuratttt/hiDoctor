@@ -36,4 +36,43 @@ Feature: Footer
     Then User should land Linkedin page
 
   @wip
+  Scenario: Services Title
+    Then Texts are correct in Services Section
+    When User clicks on Online Psychologist
+    Then User should land Online Psychologist page
+    When User navigates back
+    And User clicks on Online Dietitian page
+    Then User should land Online Dietitian page
+
+  @wip
+  Scenario: HiDoctor Title
+    Then Texts are correct in Hidoctor Section
+    When User clicks on About Us
+    Then User should land About Us page
+    When User navigates back
+    When User clicks on FAQ
+    Then User should land FAQ page
+    When User navigates back
+    When User clicks on Blog
+    Then User should land Blog page
+    When User navigates back
+    When User clicks on Promotion
+    Then User should land Promotion page
+    When User navigates back
+    When User clicks on Areas of Expertise
+    Then User should land tags page
+    When User navigates back
+
+  @wip
   Scenario:
+    Then Text in the footer is correct
+    Then Regulatory texts are correct
+    Then All rights reserved text is correct
+    When User clicks on Privacy Policy
+    Then User should land privacy policy page
+    When User navigates back
+    And User clicks on User Agreement
+    Then User should land user agreement page
+    When User navigates back
+    And User clicks on KVKK Agreement
+    Then User should land KVKK agreement page
