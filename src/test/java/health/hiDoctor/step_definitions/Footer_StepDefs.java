@@ -1,10 +1,8 @@
 package health.hiDoctor.step_definitions;
 
-import health.hiDoctor.pages.AllPsychologists;
-import health.hiDoctor.pages.BasePage;
-import health.hiDoctor.pages.Footer;
-import health.hiDoctor.pages.MainPage;
+import health.hiDoctor.pages.*;
 import health.hiDoctor.pages.headers.AboutUs;
+import health.hiDoctor.pages.headers.Blog;
 import health.hiDoctor.pages.headers.services.OnlineDietitian;
 import health.hiDoctor.pages.headers.services.OnlinePsychologist;
 import health.hiDoctor.utilities.BrowserUtils;
@@ -20,6 +18,10 @@ public class Footer_StepDefs {
     OnlineDietitian onlineDietitian = new OnlineDietitian();
     AboutUs aboutUs = new AboutUs();
     Footer footer = new Footer();
+    FAQ faq = new FAQ();
+    Blog blog = new Blog();
+    Promotion promotion = new Promotion();
+    Tags tags = new Tags();
 
     @When("User clicks on App Store button")
     public void user_clicks_on_app_store_button() {
@@ -215,7 +217,7 @@ public class Footer_StepDefs {
 
     @When("User clicks on About Us")
     public void user_clicks_on_about_us() {
-mainPage.ABOUT_US_FOOTER.click();
+        mainPage.ABOUT_US_FOOTER.click();
     }
 
     @Then("User should land About Us page")
@@ -233,7 +235,8 @@ mainPage.ABOUT_US_FOOTER.click();
 
     @Then("User should land FAQ page")
     public void user_should_land_faq_page() {
-
+        BrowserUtils.waitFor(2);
+        Assert.assertTrue(faq.FAQ_TITLE.isDisplayed());
     }
 
     @When("User clicks on Blog")
@@ -245,7 +248,8 @@ mainPage.ABOUT_US_FOOTER.click();
 
     @Then("User should land Blog page")
     public void user_should_land_blog_page() {
-
+        BrowserUtils.waitFor(2);
+        Assert.assertTrue(blog.ONLINE_PSYCHOLOGY_GUIDE_TITLE.isDisplayed());
     }
 
     @When("User clicks on Promotion")
@@ -257,7 +261,8 @@ mainPage.ABOUT_US_FOOTER.click();
 
     @Then("User should land Promotion page")
     public void user_should_land_promotion_page() {
-
+        BrowserUtils.waitFor(2);
+        Assert.assertTrue(promotion.FIRST_IMAGE_PROMOTION.isDisplayed());
     }
 
     @When("User clicks on Areas of Expertise")
@@ -269,7 +274,8 @@ mainPage.ABOUT_US_FOOTER.click();
 
     @Then("User should land tags page")
     public void user_should_land_tags_page() {
-
+        BrowserUtils.waitFor(2);
+        Assert.assertEquals(tags.tagsPageTitle,Driver.getDriver().getTitle());
     }
 
     @Then("Text in the footer is correct")

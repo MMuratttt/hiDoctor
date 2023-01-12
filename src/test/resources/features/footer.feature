@@ -44,7 +44,7 @@ Feature: Footer
     And User clicks on Online Dietitian page
     Then User should land Online Dietitian page
 
-  @wip
+
   Scenario: HiDoctor Title
     Then Texts are correct in Hidoctor Section
     When User clicks on About Us
@@ -61,9 +61,8 @@ Feature: Footer
     When User navigates back
     When User clicks on Areas of Expertise
     Then User should land tags page
-    When User navigates back
 
-
+  @wip
   Scenario:
     Then Text in the footer is correct
     Then Regulatory texts are correct
