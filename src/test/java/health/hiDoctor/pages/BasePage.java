@@ -177,4 +177,16 @@ public abstract class BasePage {
     @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[5]/p")
     public WebElement LINKEDIN_TEXT;
 
+    @FindBy(xpath = "(//h3[@class='mb-1 text-xs font-bold text-white'])[2]")
+    public WebElement SERVICES_FOOTER;
+
+    @FindBy(xpath = "//a[@data-testid='services-link-online-psychologist']")
+    public WebElement ONLINE_PSYCHOLOGIST_FOOTER;
+
+    @FindBy(xpath = "//a[@data-testid='services-link-online-dietitian']")
+    public WebElement ONLINE_DIETITIAN_FOOTER;
+
+    @FindBy(xpath = "(//h3[@class='mb-1 text-xs font-bold text-white'])[1]")
+    public WebElement HIDOCTOR_FOOTER;
+
 }

@@ -1,4 +1,4 @@
-@wip
+
 Feature: B2B Application page functionalities are working fine
   All WebElements should behave as expected
 

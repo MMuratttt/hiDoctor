@@ -1,8 +1,11 @@
 package health.hiDoctor.step_definitions;
 
+import health.hiDoctor.pages.AllPsychologists;
 import health.hiDoctor.pages.BasePage;
 import health.hiDoctor.pages.Footer;
 import health.hiDoctor.pages.MainPage;
+import health.hiDoctor.pages.headers.services.OnlineDietitian;
+import health.hiDoctor.pages.headers.services.OnlinePsychologist;
 import health.hiDoctor.utilities.BrowserUtils;
 import health.hiDoctor.utilities.Driver;
 import io.cucumber.java.en.Then;
@@ -12,6 +15,8 @@ import org.junit.Assert;
 public class Footer_StepDefs {
 
     MainPage mainPage = new MainPage();
+    OnlinePsychologist onlinePsychologist = new OnlinePsychologist();
+    OnlineDietitian onlineDietitian = new OnlineDietitian();
     Footer footer = new Footer();
 
     @When("User clicks on App Store button")
@@ -147,6 +152,7 @@ public class Footer_StepDefs {
     @When("User navigates back")
     public void user_navigates_back() {
         Driver.getDriver().navigate().back();
+        BrowserUtils.waitFor(2);
     }
 
     @When("User switch to hiDoctor window")
@@ -157,101 +163,134 @@ public class Footer_StepDefs {
 
     @Then("Texts are correct in Services Section")
     public void texts_are_correct_in_services_section() {
+        BrowserUtils.waitForPageToLoad(10);
+        BrowserUtils.scrollToElement(mainPage.ALL_RIGHTS_RESERVED_TEXT);
+        BrowserUtils.waitFor(1);
+        Assert.assertEquals(mainPage.servicesText, mainPage.SERVICES_FOOTER.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.onlinePsychologistText, mainPage.ONLINE_PSYCHOLOGIST_FOOTER.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.onlineDietitianText, mainPage.ONLINE_DIETITIAN_FOOTER.getAttribute("textContent"));
 
     }
+
     @When("User clicks on Online Psychologist")
     public void user_clicks_on_online_psychologist() {
-
+        mainPage.ONLINE_PSYCHOLOGIST_FOOTER.click();
     }
+
     @Then("User should land Online Psychologist page")
     public void user_should_land_online_psychologist_page() {
-
+        BrowserUtils.waitFor(2);
+        Assert.assertEquals(onlinePsychologist.onlinePsychologistPageTitle, Driver.getDriver().getTitle());
     }
+
     @When("User clicks on Online Dietitian page")
     public void user_clicks_on_online_dietitian_page() {
-
+        BrowserUtils.scrollToElement(mainPage.ALL_RIGHTS_RESERVED_TEXT);
+        BrowserUtils.waitFor(1);
+        mainPage.ONLINE_DIETITIAN_FOOTER.click();
     }
+
     @Then("User should land Online Dietitian page")
     public void user_should_land_online_dietitian_page() {
-
+        BrowserUtils.waitFor(2);
+        Assert.assertEquals(onlineDietitian.onlineDietitianPageTitle, Driver.getDriver().getTitle());
     }
 
     @Then("Texts are correct in Hidoctor Section")
     public void texts_are_correct_in_hidoctor_section() {
 
     }
+
     @When("User clicks on About Us")
     public void user_clicks_on_about_us() {
 
     }
+
     @Then("User should land About Us page")
     public void user_should_land_about_us_page() {
 
     }
+
     @When("User clicks on FAQ")
     public void user_clicks_on_faq() {
 
     }
+
     @Then("User should land FAQ page")
     public void user_should_land_faq_page() {
 
     }
+
     @When("User clicks on Blog")
     public void user_clicks_on_blog() {
 
     }
+
     @Then("User should land Blog page")
     public void user_should_land_blog_page() {
 
     }
+
     @When("User clicks on Promotion")
     public void user_clicks_on_promotion() {
 
     }
+
     @Then("User should land Promotion page")
     public void user_should_land_promotion_page() {
 
     }
+
     @When("User clicks on Areas of Expertise")
     public void user_clicks_on_areas_of_expertise() {
 
     }
+
     @Then("User should land tags page")
     public void user_should_land_tags_page() {
 
     }
+
     @Then("Text in the footer is correct")
     public void text_in_the_footer_is_correct() {
 
     }
+
     @Then("Regulatory texts are correct")
     public void regulatory_texts_are_correct() {
 
     }
+
     @Then("All rights reserved text is correct")
     public void all_rights_reserved_text_is_correct() {
 
     }
+
     @When("User clicks on Privacy Policy")
     public void user_clicks_on_privacy_policy() {
 
     }
+
     @Then("User should land privacy policy page")
     public void user_should_land_privacy_policy_page() {
 
     }
+
     @When("User clicks on User Agreement")
     public void user_clicks_on_user_agreement() {
 
     }
+
     @Then("User should land user agreement page")
     public void user_should_land_user_agreement_page() {
 
     }
+
     @When("User clicks on KVKK Agreement")
     public void user_clicks_on_kvkk_agreement() {
 
     }
+
     @Then("User should land KVKK agreement page")
     public void user_should_land_kvkk_agreement_page() {
 
