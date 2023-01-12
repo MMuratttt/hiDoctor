@@ -5,7 +5,7 @@ Feature: Footer
     Given User is on the main page
 
 
-  Scenario: Download the app from stores
+  Scenario: Download the app from stores is correct
     When User clicks on App Store button
     Then User should land App Store page
     When User navigates back
@@ -18,7 +18,7 @@ Feature: Footer
     Then Title and texts are correct in Download section
 
 
-  Scenario: Socials
+  Scenario: Socials are correct
     Then Texts are correct in Socials section
     When User clicks on Instagram
     Then User should land Instagram page
@@ -36,7 +36,7 @@ Feature: Footer
     Then User should land Linkedin page
 
 
-  Scenario: Services Title
+  Scenario: Services Title is correct
     Then Texts are correct in Services Section
     When User clicks on Online Psychologist
     Then User should land Online Psychologist page
@@ -45,7 +45,7 @@ Feature: Footer
     Then User should land Online Dietitian page
 
 
-  Scenario: HiDoctor Title
+  Scenario: HiDoctor Title is correct
     Then Texts are correct in Hidoctor Section
     When User clicks on About Us
     Then User should land About Us page
@@ -63,8 +63,9 @@ Feature: Footer
     Then User should land tags page
 
   @wip
-  Scenario:
-    Then Text in the footer is correct
+  Scenario: Regulatory texts and other fields in the footer is correct
+    Then Hidoctor icon is displayed in footer
+    Then Text under the hiDoctor icon in the footer is correct
     Then Regulatory texts are correct
     Then All rights reserved text is correct
     When User clicks on Privacy Policy

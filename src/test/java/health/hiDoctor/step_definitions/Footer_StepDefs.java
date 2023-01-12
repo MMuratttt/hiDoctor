@@ -278,14 +278,17 @@ public class Footer_StepDefs {
         Assert.assertEquals(tags.tagsPageTitle,Driver.getDriver().getTitle());
     }
 
-    @Then("Text in the footer is correct")
-    public void text_in_the_footer_is_correct() {
-       /* BrowserUtils.waitForPageToLoad(10);
+    @Then("Hidoctor icon is displayed in footer")
+    public void hidoctorIconIsDisplayedInFooter() {
+        BrowserUtils.waitForPageToLoad(10);
         BrowserUtils.scrollToElement(mainPage.ALL_RIGHTS_RESERVED_TEXT);
         BrowserUtils.waitFor(1);
-        Assert.assertEquals(mainPage.servicesText, mainPage.SERVICES_FOOTER.getAttribute("textContent"));
-        Assert.assertEquals(mainPage.onlinePsychologistText, mainPage.ONLINE_PSYCHOLOGIST_FOOTER.getAttribute("textContent"));
-        */
+        Assert.assertTrue(mainPage.HIDOCTOR_ICON_FOOTER.isDisplayed());
+    }
+    @Then("Text under the hiDoctor icon in the footer is correct")
+    public void text_under_the_hiDoctor_icon_in_the_footer_is_correct() {
+        Assert.assertEquals(mainPage.footerTextUnderHiDoctor, mainPage.FOOTER_TEXT_UNDER_HIDOCTOR.getAttribute("textContent"));
+
     }
 
     @Then("Regulatory texts are correct")
@@ -327,6 +330,5 @@ public class Footer_StepDefs {
     public void user_should_land_kvkk_agreement_page() {
 
     }
-
 
 }

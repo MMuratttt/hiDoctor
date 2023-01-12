@@ -209,4 +209,13 @@ public abstract class BasePage {
     public String promotionText_Footer = "Kampanyalar";
     public String areasOfExpertiseText_Footer = "Uzmanlık Alanları";
 
+    @FindBy(xpath = "//span[@title='footer-hidoctor-logo']")
+    public WebElement HIDOCTOR_ICON_FOOTER;
+
+    public String footerTextUnderHiDoctor = "Binlerce danışanımız güvenle ve zahmetsizce online danışmanlık hizmeti aldı, HiDoctor’la daha iyi hissetmeye başladı.";
+
+    @FindBy(xpath = "//div[@class='md:w-96']/p")
+    public WebElement FOOTER_TEXT_UNDER_HIDOCTOR;
+
+
 }
