@@ -35,7 +35,7 @@ Feature: Footer
     And User clicks on Linkedin
     Then User should land Linkedin page
 
-  @wip
+
   Scenario: Services Title
     Then Texts are correct in Services Section
     When User clicks on Online Psychologist
@@ -63,7 +63,7 @@ Feature: Footer
     Then User should land tags page
     When User navigates back
 
-  @wip
+
   Scenario:
     Then Text in the footer is correct
     Then Regulatory texts are correct
