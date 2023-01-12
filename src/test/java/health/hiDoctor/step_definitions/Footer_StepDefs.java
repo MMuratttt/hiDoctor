@@ -4,6 +4,7 @@ import health.hiDoctor.pages.AllPsychologists;
 import health.hiDoctor.pages.BasePage;
 import health.hiDoctor.pages.Footer;
 import health.hiDoctor.pages.MainPage;
+import health.hiDoctor.pages.headers.AboutUs;
 import health.hiDoctor.pages.headers.services.OnlineDietitian;
 import health.hiDoctor.pages.headers.services.OnlinePsychologist;
 import health.hiDoctor.utilities.BrowserUtils;
@@ -17,6 +18,7 @@ public class Footer_StepDefs {
     MainPage mainPage = new MainPage();
     OnlinePsychologist onlinePsychologist = new OnlinePsychologist();
     OnlineDietitian onlineDietitian = new OnlineDietitian();
+    AboutUs aboutUs = new AboutUs();
     Footer footer = new Footer();
 
     @When("User clicks on App Store button")
@@ -198,22 +200,35 @@ public class Footer_StepDefs {
 
     @Then("Texts are correct in Hidoctor Section")
     public void texts_are_correct_in_hidoctor_section() {
+        BrowserUtils.waitForPageToLoad(10);
+        BrowserUtils.scrollToElement(mainPage.ALL_RIGHTS_RESERVED_TEXT);
+        BrowserUtils.waitFor(1);
+        Assert.assertEquals(mainPage.hiDoctorText_Footer, mainPage.HIDOCTOR_FOOTER.getAttribute("textContent"));
+
+        Assert.assertEquals(mainPage.aboutUsText, mainPage.ABOUT_US_FOOTER.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.FAQText_Footer, mainPage.FAQ_FOOTER.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.blogText, mainPage.BLOG_FOOTER.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.promotionText_Footer, mainPage.PROMOTION_FOOTER.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.areasOfExpertiseText_Footer, mainPage.AREAS_OF_EXPERTISE_FOOTER.getAttribute("textContent"));
 
     }
 
     @When("User clicks on About Us")
     public void user_clicks_on_about_us() {
-
+mainPage.ABOUT_US_FOOTER.click();
     }
 
     @Then("User should land About Us page")
     public void user_should_land_about_us_page() {
-
+        BrowserUtils.waitFor(2);
+        Assert.assertEquals(aboutUs.aboutUsPageTitle, Driver.getDriver().getTitle());
     }
 
     @When("User clicks on FAQ")
     public void user_clicks_on_faq() {
-
+        BrowserUtils.scrollToElement(mainPage.ALL_RIGHTS_RESERVED_TEXT);
+        BrowserUtils.waitFor(1);
+        mainPage.FAQ_FOOTER.click();
     }
 
     @Then("User should land FAQ page")
@@ -223,7 +238,9 @@ public class Footer_StepDefs {
 
     @When("User clicks on Blog")
     public void user_clicks_on_blog() {
-
+        BrowserUtils.scrollToElement(mainPage.ALL_RIGHTS_RESERVED_TEXT);
+        BrowserUtils.waitFor(1);
+        mainPage.BLOG_FOOTER.click();
     }
 
     @Then("User should land Blog page")
@@ -233,7 +250,9 @@ public class Footer_StepDefs {
 
     @When("User clicks on Promotion")
     public void user_clicks_on_promotion() {
-
+        BrowserUtils.scrollToElement(mainPage.ALL_RIGHTS_RESERVED_TEXT);
+        BrowserUtils.waitFor(1);
+        mainPage.PROMOTION_FOOTER.click();
     }
 
     @Then("User should land Promotion page")
@@ -243,7 +262,9 @@ public class Footer_StepDefs {
 
     @When("User clicks on Areas of Expertise")
     public void user_clicks_on_areas_of_expertise() {
-
+        BrowserUtils.scrollToElement(mainPage.ALL_RIGHTS_RESERVED_TEXT);
+        BrowserUtils.waitFor(1);
+        mainPage.AREAS_OF_EXPERTISE_FOOTER.click();
     }
 
     @Then("User should land tags page")
@@ -253,7 +274,12 @@ public class Footer_StepDefs {
 
     @Then("Text in the footer is correct")
     public void text_in_the_footer_is_correct() {
-
+       /* BrowserUtils.waitForPageToLoad(10);
+        BrowserUtils.scrollToElement(mainPage.ALL_RIGHTS_RESERVED_TEXT);
+        BrowserUtils.waitFor(1);
+        Assert.assertEquals(mainPage.servicesText, mainPage.SERVICES_FOOTER.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.onlinePsychologistText, mainPage.ONLINE_PSYCHOLOGIST_FOOTER.getAttribute("textContent"));
+        */
     }
 
     @Then("Regulatory texts are correct")
