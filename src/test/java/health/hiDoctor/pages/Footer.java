@@ -1,5 +1,8 @@
 package health.hiDoctor.pages;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
 public class Footer extends BasePage {
 
     public String appStorePageTitle = "HiDoctor: Home Healthcare on the App";
@@ -14,4 +17,7 @@ public class Footer extends BasePage {
     public String linkedinPageTitle = "HiDoctor | LinkedIn";
     public String linkedinPageTitleLogOut = "Sign In | LinkedIn";
 
+    public String privacyPolicyPageHeader = "GİZLİLİK SÖZLEŞMESİ";
+    public String userAgreementPageHeader = "HIDOCTOR PLATFORM KULLANICI SÖZLEŞMESİ";
+    public String KVKKAgreementPageHeader = "HIDOCTOR UYGULAMASI KİŞİSEL VERİLERİN İŞLENMESİNE İLİŞKİN KULLANICI AYDINLATMA METNİ";
 }
