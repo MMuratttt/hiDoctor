@@ -293,42 +293,51 @@ public class Footer_StepDefs {
 
     @Then("Regulatory texts are correct")
     public void regulatory_texts_are_correct() {
-
+        Assert.assertEquals(mainPage.privacyPolicyFooter, mainPage.PRIVACY_POLICY_FOOTER.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.userAgreementFooter, mainPage.USER_AGREEMENT_FOOTER.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.KVKKAgreementFooter, mainPage.KVKK_AGREEMENT_FOOTER.getAttribute("textContent"));
     }
 
     @Then("All rights reserved text is correct")
     public void all_rights_reserved_text_is_correct() {
-
+        Assert.assertEquals(mainPage.allRightsReserved,mainPage.ALL_RIGHTS_RESERVED_TEXT.getAttribute("textContent"));
     }
 
     @When("User clicks on Privacy Policy")
     public void user_clicks_on_privacy_policy() {
-
+        mainPage.PRIVACY_POLICY_FOOTER.click();
     }
 
     @Then("User should land privacy policy page")
     public void user_should_land_privacy_policy_page() {
-
+        BrowserUtils.waitFor(2);
+        Assert.assertEquals(footer.privacyPolicyPageHeader, mainPage.REGULATORY_TEXTS_COMMON_TITLE.getAttribute("textContent"));
     }
 
     @When("User clicks on User Agreement")
     public void user_clicks_on_user_agreement() {
-
+        BrowserUtils.scrollToElement(mainPage.ALL_RIGHTS_RESERVED_TEXT);
+        BrowserUtils.waitFor(1);
+        mainPage.USER_AGREEMENT_FOOTER.click();
     }
 
     @Then("User should land user agreement page")
     public void user_should_land_user_agreement_page() {
-
+        BrowserUtils.waitFor(2);
+        Assert.assertEquals(footer.userAgreementPageHeader, mainPage.REGULATORY_TEXTS_COMMON_TITLE.getAttribute("textContent"));
     }
 
     @When("User clicks on KVKK Agreement")
     public void user_clicks_on_kvkk_agreement() {
-
+        BrowserUtils.scrollToElement(mainPage.ALL_RIGHTS_RESERVED_TEXT);
+        BrowserUtils.waitFor(1);
+        mainPage.KVKK_AGREEMENT_FOOTER.click();
     }
 
     @Then("User should land KVKK agreement page")
     public void user_should_land_kvkk_agreement_page() {
-
+        BrowserUtils.waitFor(2);
+        Assert.assertEquals(footer.KVKKAgreementPageHeader, mainPage.REGULATORY_TEXTS_COMMON_TITLE.getAttribute("textContent"));
     }
 
 }

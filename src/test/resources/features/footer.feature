@@ -62,7 +62,7 @@ Feature: Footer
     When User clicks on Areas of Expertise
     Then User should land tags page
 
-  @wip
+
   Scenario: Regulatory texts and other fields in the footer is correct
     Then Hidoctor icon is displayed in footer
     Then Text under the hiDoctor icon in the footer is correct

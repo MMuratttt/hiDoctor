@@ -116,7 +116,7 @@ public abstract class BasePage {
     @FindBy(xpath = "//*[@id=\"__next\"]/footer/div[2]/div/div/div[1]/p")
     public WebElement ALL_RIGHTS_RESERVED_TEXT;
 
-    @FindBy(xpath = "//div[@class='hidden md:flex-1 md:block pl-12']/h3")
+    @FindBy(xpath = "//a[@data-testid='download-app-link-App Store']/../h3")
     public WebElement DOWNLOAD_TITLE;
 
     @FindBy(xpath = "//a[@data-testid='download-app-link-App Store']")
@@ -144,7 +144,7 @@ public abstract class BasePage {
 
     public String socialsTitle = "Sosyal Medya";
 
-    @FindBy(xpath = "//div[@class='md:flex-1 md:block']/h3[2]")
+    @FindBy(xpath = "//a[@data-testid='download-app-link-App Store']/../../div[2]/div[2]/h3[2]")
     public WebElement SOCIALS_TITLE_TEXT;
 
     @FindBy(xpath = "//div[@class='flex space-s-6 md:block md:space-s-0']/a[1]")
@@ -216,6 +216,26 @@ public abstract class BasePage {
 
     @FindBy(xpath = "//div[@class='md:w-96']/p")
     public WebElement FOOTER_TEXT_UNDER_HIDOCTOR;
+
+    @FindBy(xpath = "//a[@data-testid='sub-menu-links-privacy-policy']")
+    public WebElement PRIVACY_POLICY_FOOTER;
+
+    @FindBy(xpath = "//a[@data-testid='sub-menu-links-hidoctor-user-agreement']")
+    public WebElement USER_AGREEMENT_FOOTER;
+
+    @FindBy(xpath = "//a[@data-testid='sub-menu-links-kvkk-agreement']")
+    public WebElement KVKK_AGREEMENT_FOOTER;
+
+    public String privacyPolicyFooter = "Gizlilik Sözleşmesi";
+    public String userAgreementFooter = "HiDoctor Kullanıcı Sözleşmesi";
+    public String KVKKAgreementFooter = "KVKK Aydınlatma Metni";
+    public String allRightsReserved = "© 2022 HiDoctor Tüm Hakları Saklıdır";
+
+    @FindBy(xpath = "//div[@class='container my-12 md:my-28']/h1")
+    public WebElement REGULATORY_TEXTS_COMMON_TITLE;
+
+
+
 
 
 }
