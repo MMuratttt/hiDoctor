@@ -2,7 +2,7 @@ Feature: Online Psychologist Page
   All WebElements should behave as expected
 
   Background: For the scenarios in the feature file, user is expected to be on the Online Psychologist page
-    Given User is on the Online Psychologist page as logged in
+    Given User is on the Online Psychologist page
 
 @wip
   Scenario: FAQ section
@@ -24,16 +24,5 @@ Feature: Online Psychologist Page
     When Click on eighth question on the Online Psychologist
     Then Eighth dropdown should be opened and answer is correct on the Online Psychologist
     When Click on ninth question on the Online Psychologist
-    Then ninth dropdown should be opened and answer is correct on the Online Psychologist
+    Then Ninth dropdown should be opened and answer is correct on the Online Psychologist
 
-
-
-    Then FAQ title and question texts are correct
-    When Click on first question
-    Then First dropdown should be opened and answer is correct
-    When Click on second question
-    Then Second dropdown should be opened and answer is correct
-    When Click on third question
-    Then Third dropdown should be opened and answer is correct
-    When Click on fourth question
-    Then Fourth dropdown should be opened and answer is correct

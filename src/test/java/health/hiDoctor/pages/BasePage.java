@@ -12,7 +12,7 @@ public abstract class BasePage {
     }
 
 
-    @FindBy(xpath = "//*[@id=\"__next\"]/div[2]/div[2]/div/div[2]/div/button")
+    @FindBy(xpath = "//button[@class='btn btn-primary text-xs']")
     public WebElement LOGIN_REGISTER;
 
     @FindBy(xpath = "//*[@id=\"__next\"]/div[2]/div[2]/div/div[2]/div/div[3]/div[1]")
@@ -41,7 +41,7 @@ public abstract class BasePage {
     @FindBy(xpath = "//a[@data-testid='HiDoctor-logo-link-desktop']")
     public WebElement HIDOCTOR_MAINPAGE_ICON;
 
-    @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[1]")
+    @FindBy(xpath = "//ul[@class='mt-2 hidden select-none items-center space-s-1 md:flex']/li[1]")
     public WebElement SERVICES;
 
     @FindBy(xpath = "//ul[@class='hidden md:flex space-s-1 items-center select-none mt-2']/li[1]/span/span/span")
