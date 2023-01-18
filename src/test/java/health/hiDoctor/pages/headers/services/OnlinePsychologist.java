@@ -8,61 +8,61 @@ public class OnlinePsychologist extends BasePage {
 
     public String onlinePsychologistPageTitle = "Online Psikolog ile Online Terapi Ayarla | HiDoctor";
 
-    @FindBy(xpath = "//button[@id='headlessui-disclosure-button-:r0:']/../../h4")
+    @FindBy(xpath = "//button[contains(@id,'headlessui-disclosure-button-:r')]/../../h4")
     public WebElement FAQ_TITLE;
 
-    @FindBy(id = "headlessui-disclosure-button-:r0:")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[1]")
     public WebElement QUESTION_ONE_BTN;
 
-    @FindBy(id = "headlessui-disclosure-button-:r1:")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[2]")
     public WebElement QUESTION_TWO_BTN;
 
-    @FindBy(id = "headlessui-disclosure-button-:r2:")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[3]")
     public WebElement QUESTION_THREE_BTN;
 
-    @FindBy(id = "headlessui-disclosure-button-:r3:")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[4]")
     public WebElement QUESTION_FOUR_BTN;
 
-    @FindBy(id = "headlessui-disclosure-button-:r4:")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[5]")
     public WebElement QUESTION_FIVE_BTN;
 
-    @FindBy(id = "headlessui-disclosure-button-:r5:")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[6]")
     public WebElement QUESTION_SIX_BTN;
 
-    @FindBy(id = "headlessui-disclosure-button-:r6:")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[7]")
     public WebElement QUESTION_SEVEN_BTN;
 
-    @FindBy(id = "headlessui-disclosure-button-:r7:")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[8]")
     public WebElement QUESTION_EIGHT_BTN;
 
-    @FindBy(id = "headlessui-disclosure-button-:r8:")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[9]")
     public WebElement QUESTION_NINE_BTN;
 
-    @FindBy(xpath = "//button[@id='headlessui-disclosure-button-:r0:']/span")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[1]/span")
     public WebElement QUESTION_ONE_TEXT;
 
-    @FindBy(xpath = "//button[@id='headlessui-disclosure-button-:r1:']/span")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[2]/span")
     public WebElement QUESTION_TWO_TEXT;
 
-    @FindBy(xpath = "//button[@id='headlessui-disclosure-button-:r2:']/span")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[3]/span")
     public WebElement QUESTION_THREE_TEXT;
 
-    @FindBy(xpath = "//button[@id='headlessui-disclosure-button-:r3:']/span")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[4]/span")
     public WebElement QUESTION_FOUR_TEXT;
 
-    @FindBy(xpath = "//button[@id='headlessui-disclosure-button-:r4:']/span")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[5]/span")
     public WebElement QUESTION_FIVE_TEXT;
 
-    @FindBy(xpath = "//button[@id='headlessui-disclosure-button-:r5:']/span")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[6]/span")
     public WebElement QUESTION_SIX_TEXT;
 
-    @FindBy(xpath = "//button[@id='headlessui-disclosure-button-:r6:']/span")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[7]/span")
     public WebElement QUESTION_SEVEN_TEXT;
 
-    @FindBy(xpath = "//button[@id='headlessui-disclosure-button-:r7:']/span")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[8]/span")
     public WebElement QUESTION_EIGHT_TEXT;
 
-    @FindBy(xpath = "//button[@id='headlessui-disclosure-button-:r8:']/span")
+    @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[9]/span")
     public WebElement QUESTION_NINE_TEXT;
 
     public String FAQ_Title = "Sıkça Sorulan Sorular";

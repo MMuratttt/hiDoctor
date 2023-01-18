@@ -39,7 +39,9 @@ public class OnlinePsychologist_StepDefs {
     }
     @When("Click on first question on the Online Psychologist")
     public void click_on_first_question_on_the_online_psychologist() {
-
+        Assert.assertEquals("false",onlinePsychologist.QUESTION_ONE_BTN.getAttribute("aria-expanded"));
+        BrowserUtils.waitFor(2);
+        onlinePsychologist.QUESTION_ONE_BTN.click();
     }
     @Then("First dropdown should be opened and answer is correct on the Online Psychologist")
     public void first_dropdown_should_be_opened_and_answer_is_correct_on_the_online_psychologist() {
@@ -47,7 +49,9 @@ public class OnlinePsychologist_StepDefs {
     }
     @When("Click on second question on the Online Psychologist")
     public void click_on_second_question_on_the_online_psychologist() {
-
+        Assert.assertEquals("false",onlinePsychologist.QUESTION_TWO_BTN.getAttribute("aria-expanded"));
+        BrowserUtils.waitFor(2);
+        onlinePsychologist.QUESTION_TWO_BTN.click();
     }
     @Then("Second dropdown should be opened and answer is correct on the Online Psychologist")
     public void second_dropdown_should_be_opened_and_answer_is_correct_on_the_online_psychologist() {
@@ -55,7 +59,9 @@ public class OnlinePsychologist_StepDefs {
     }
     @When("Click on third question on the Online Psychologist")
     public void click_on_third_question_on_the_online_psychologist() {
-
+        Assert.assertEquals("false",onlinePsychologist.QUESTION_THREE_BTN.getAttribute("aria-expanded"));
+        BrowserUtils.waitFor(2);
+        onlinePsychologist.QUESTION_THREE_BTN.click();
     }
     @Then("Third dropdown should be opened and answer is correct on the Online Psychologist")
     public void third_dropdown_should_be_opened_and_answer_is_correct_on_the_online_psychologist() {
@@ -63,7 +69,9 @@ public class OnlinePsychologist_StepDefs {
     }
     @When("Click on fourth question on the Online Psychologist")
     public void click_on_fourth_question_on_the_online_psychologist() {
-
+        Assert.assertEquals("false",onlinePsychologist.QUESTION_FOUR_BTN.getAttribute("aria-expanded"));
+        BrowserUtils.waitFor(2);
+        onlinePsychologist.QUESTION_FOUR_BTN.click();
     }
     @Then("Fourth dropdown should be opened and answer is correct on the Online Psychologist")
     public void fourth_dropdown_should_be_opened_and_answer_is_correct_on_the_online_psychologist() {
@@ -71,7 +79,9 @@ public class OnlinePsychologist_StepDefs {
     }
     @When("Click on fifth question on the Online Psychologist")
     public void click_on_fifth_question_on_the_online_psychologist() {
-
+        Assert.assertEquals("false",onlinePsychologist.QUESTION_FOUR_BTN.getAttribute("aria-expanded"));
+        BrowserUtils.waitFor(2);
+        onlinePsychologist.QUESTION_FIVE_BTN.click();
     }
     @Then("Fifth dropdown should be opened and answer is correct on the Online Psychologist")
     public void fifth_dropdown_should_be_opened_and_answer_is_correct_on_the_online_psychologist() {
@@ -79,7 +89,9 @@ public class OnlinePsychologist_StepDefs {
     }
     @When("Click on sixth question on the Online Psychologist")
     public void click_on_sixth_question_on_the_online_psychologist() {
-
+        Assert.assertEquals("false",onlinePsychologist.QUESTION_SIX_BTN.getAttribute("aria-expanded"));
+        BrowserUtils.waitFor(2);
+        onlinePsychologist.QUESTION_SIX_BTN.click();
     }
     @Then("Sixth dropdown should be opened and answer is correct on the Online Psychologist")
     public void sixth_dropdown_should_be_opened_and_answer_is_correct_on_the_online_psychologist() {
@@ -87,7 +99,9 @@ public class OnlinePsychologist_StepDefs {
     }
     @When("Click on seventh question on the Online Psychologist")
     public void click_on_seventh_question_on_the_online_psychologist() {
-
+        Assert.assertEquals("false",onlinePsychologist.QUESTION_SEVEN_BTN.getAttribute("aria-expanded"));
+        BrowserUtils.waitFor(2);
+        onlinePsychologist.QUESTION_SEVEN_BTN.click();
     }
     @Then("Seventh dropdown should be opened and answer is correct on the Online Psychologist")
     public void seventh_dropdown_should_be_opened_and_answer_is_correct_on_the_online_psychologist() {
@@ -95,7 +109,9 @@ public class OnlinePsychologist_StepDefs {
     }
     @When("Click on eighth question on the Online Psychologist")
     public void click_on_eighth_question_on_the_online_psychologist() {
-
+        Assert.assertEquals("false",onlinePsychologist.QUESTION_EIGHT_BTN.getAttribute("aria-expanded"));
+        BrowserUtils.waitFor(2);
+        onlinePsychologist.QUESTION_EIGHT_BTN.click();
     }
     @Then("Eighth dropdown should be opened and answer is correct on the Online Psychologist")
     public void eighth_dropdown_should_be_opened_and_answer_is_correct_on_the_online_psychologist() {
@@ -103,7 +119,9 @@ public class OnlinePsychologist_StepDefs {
     }
     @When("Click on ninth question on the Online Psychologist")
     public void click_on_ninth_question_on_the_online_psychologist() {
-
+        Assert.assertEquals("false",onlinePsychologist.QUESTION_NINE_BTN.getAttribute("aria-expanded"));
+        BrowserUtils.waitFor(2);
+        onlinePsychologist.QUESTION_NINE_BTN.click();
     }
     @Then("Ninth dropdown should be opened and answer is correct on the Online Psychologist")
     public void ninth_dropdown_should_be_opened_and_answer_is_correct_on_the_online_psychologist() {
