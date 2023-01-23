@@ -1,4 +1,3 @@
-@demo
 Feature: Footer
   All WebElements should behave as expected
 

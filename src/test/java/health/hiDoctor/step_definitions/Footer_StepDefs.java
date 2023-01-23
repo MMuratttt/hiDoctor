@@ -148,7 +148,7 @@ public class Footer_StepDefs {
     @Then("User should land Linkedin page")
     public void user_should_land_linkedin_page() {
         BrowserUtils.switchToWindow(footer.linkedinPageTitle);
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(3);
         Assert.assertTrue(footer.linkedinPageTitle.equals(Driver.getDriver().getTitle()) ||
                 footer.linkedinPageTitleLogOut.equals(Driver.getDriver().getTitle()));
     }
