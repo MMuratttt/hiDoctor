@@ -43,7 +43,7 @@ Feature: Online Psychologist Page
     When User navigates back
     Then Markets' texts are correct
 
-  @wip
+
   Scenario: Certificates
     Then Certificates title is correct on Online Psychologist page
     Then Previous button is disabled next button is enabled in default on Online Psychologist page
@@ -51,13 +51,13 @@ Feature: Online Psychologist Page
     Then Previous button is enabled next button is disabled in default on Online Psychologist page
     When User clicks on previous button on Online Psychologist page
     Then Previous button is disabled next button is enabled in default on Online Psychologist page
-    Then Subtitle and text is correct for Health certificate and logo is visible
-    Then Subtitle and text is correct for SPICE and logo is visible
-    Then Subtitle and text is correct for ISO 45003 and logo is visible
-    Then Subtitle and text is correct for ISO 27001 and logo is visible
-    Then Subtitle and text is correct for ISO 20000 and logo is visible
+    Then Subtitle and text is correct for Health certificate and logo is visible on Online Psychologist page
+    Then Subtitle and text is correct for SPICE and logo is visible on Online Psychologist page
+    Then Subtitle and text is correct for ISO 45003 and logo is visible on Online Psychologist page
+    Then Subtitle and text is correct for ISO 27001 and logo is visible on Online Psychologist page
+    Then Subtitle and text is correct for ISO 20000 and logo is visible on Online Psychologist page
     When User clicks on next button on Online Psychologist page
-    Then Subtitle and text is correct for ETBIS and logo is visible
+    Then Subtitle and text is correct for ETBIS and logo is visible on Online Psychologist page
 
 
 

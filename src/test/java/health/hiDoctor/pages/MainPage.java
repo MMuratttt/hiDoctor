@@ -230,7 +230,68 @@ public class MainPage extends BasePage {
     public String answerThree = "Uygulamamızı App Store, Google Play veya App Gallery üzerinden ücretsiz olarak indirebilirsiniz.";
     public String answerFour = "Sistemdeki uzmanların hizmet verdikleri saat aralıkları değişiklik göstermektedir. Seçtiğiniz danışmanın çalışma saatlerine profilinde bulunan ‘Takvim’ bölümünden ulaşabilir, çevrim içi ise anında görüşmeye başlayabilirsiniz.";
 
+    @FindBy(xpath = "(//div[@data-testid='carousel-component'])[3]/../h2")
+    public WebElement CERTIFICATES_TITLE;
 
+    @FindBy(xpath = "//button[@aria-label='Previous slide']")
+    public WebElement PREVIOUS_BUTTON_CERTIFICATE;
+
+    @FindBy(xpath = "//button[@aria-label='Next slide']")
+    public WebElement NEXT_BUTTON_CERTIFICATE;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[1]/div/div/span")
+    public WebElement HEALTH_CERTIFICATE_LOGO;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[1]/div/div[2]/p[1]")
+    public WebElement HEALTH_CERTIFICATE_SUBTITLE;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[1]/div/div[2]/p[2]")
+    public WebElement HEALTH_CERTIFICATE_TEXT;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[2]/div/div/span")
+    public WebElement SPICE_LOGO;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[2]/div/div[2]/p[1]")
+    public WebElement SPICE_SUBTITLE;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[2]/div/div[2]/p[2]")
+    public WebElement SPICE_TEXT;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[3]/div/div/span")
+    public WebElement ISO_45003_LOGO;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[3]/div/div[2]/p[1]")
+    public WebElement ISO_45003_SUBTITLE;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[3]/div/div[2]/p[2]")
+    public WebElement ISO_45003_TEXT;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[4]/div/div/span")
+    public WebElement ISO_27001_LOGO;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[4]/div/div[2]/p[1]")
+    public WebElement ISO_27001_SUBTITLE;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[4]/div/div[2]/p[2]")
+    public WebElement ISO_27001_TEXT;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[5]/div/div/span")
+    public WebElement ISO_20000_LOGO;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[5]/div/div[2]/p[1]")
+    public WebElement ISO_20000_SUBTITLE;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[5]/div/div[2]/p[2]")
+    public WebElement ISO_20000_TEXT;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[6]/div/div/span")
+    public WebElement ETBIS_LOGO;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[6]/div/div[2]/p[1]")
+    public WebElement ETBIS_SUBTITLE;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[6]/div/div[2]/p[2]")
+    public WebElement ETBIS_TEXT;
 
 
 

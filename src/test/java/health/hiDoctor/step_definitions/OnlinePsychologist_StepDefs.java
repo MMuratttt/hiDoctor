@@ -223,40 +223,40 @@ public class OnlinePsychologist_StepDefs {
     public void user_clicks_on_previous_button_on_online_psychologist_page() {
         onlinePsychologist.PREVIOUS_BUTTON_CERTIFICATE.click();
     }
-    @Then("Subtitle and text is correct for Health certificate and logo is visible")
-    public void subtitle_and_text_is_correct_for_health_certificate_and_logo_is_visible() {
+    @Then("Subtitle and text is correct for Health certificate and logo is visible on Online Psychologist page")
+    public void subtitle_and_text_is_correct_for_health_certificate_and_logo_is_visible_on_online_psychologist_page() {
         Assert.assertEquals(onlinePsychologist.healthCertificateSubTitle, onlinePsychologist.HEALTH_CERTIFICATE_SUBTITLE.getAttribute("textContent"));
         Assert.assertEquals(onlinePsychologist.healthCertificateText, onlinePsychologist.HEALTH_CERTIFICATE_TEXT.getAttribute("textContent"));
         Assert.assertTrue(onlinePsychologist.HEALTH_CERTIFICATE_LOGO.isDisplayed());
     }
-    @Then("Subtitle and text is correct for SPICE and logo is visible")
-    public void subtitle_and_text_is_correct_for_spice_and_logo_is_visible() {
+    @Then("Subtitle and text is correct for SPICE and logo is visible on Online Psychologist page")
+    public void subtitle_and_text_is_correct_for_spice_and_logo_is_visible_on_online_psychologist_page() {
         Assert.assertEquals(onlinePsychologist.SPICESubTitle, onlinePsychologist.SPICE_SUBTITLE.getAttribute("textContent"));
         Assert.assertEquals(onlinePsychologist.SPICEText, onlinePsychologist.SPICE_TEXT.getAttribute("textContent"));
         Assert.assertTrue(onlinePsychologist.SPICE_LOGO.isDisplayed());
     }
 
-    @Then("Subtitle and text is correct for ISO 45003 and logo is visible")
-    public void subtitle_and_text_is_correct_for_iso_45003_and_logo_is_visible() {
+    @Then("Subtitle and text is correct for ISO 45003 and logo is visible on Online Psychologist page")
+    public void subtitle_and_text_is_correct_for_iso_45003_and_logo_is_visible_on_online_psychologist_page() {
         Assert.assertEquals(onlinePsychologist.ISO45003SubTitle, onlinePsychologist.ISO_45003_SUBTITLE.getAttribute("textContent"));
         Assert.assertEquals(onlinePsychologist.ISO45003SubText, onlinePsychologist.ISO_45003_TEXT.getAttribute("textContent"));
         Assert.assertTrue(onlinePsychologist.ISO_45003_LOGO.isDisplayed());
     }
 
-    @Then("Subtitle and text is correct for ISO 27001 and logo is visible")
-    public void subtitle_and_text_is_correct_for_iso_27001_and_logo_is_visible() {
+    @Then("Subtitle and text is correct for ISO 27001 and logo is visible on Online Psychologist page")
+    public void subtitle_and_text_is_correct_for_iso_27001_and_logo_is_visible_on_online_psychologist_page() {
         Assert.assertEquals(onlinePsychologist.ISO27001SubTitle, onlinePsychologist.ISO_27001_SUBTITLE.getAttribute("textContent"));
         Assert.assertEquals(onlinePsychologist.ISO27001SubText, onlinePsychologist.ISO_27001_TEXT.getAttribute("textContent"));
         Assert.assertTrue(onlinePsychologist.ISO_27001_LOGO.isDisplayed());
     }
-    @Then("Subtitle and text is correct for ISO 20000 and logo is visible")
-    public void subtitle_and_text_is_correct_for_iso_20000_and_logo_is_visible() {
+    @Then("Subtitle and text is correct for ISO 20000 and logo is visible on Online Psychologist page")
+    public void subtitle_and_text_is_correct_for_iso_20000_and_logo_is_visible_on_online_psychologist_page() {
         Assert.assertEquals(onlinePsychologist.ISO20000SubTitle, onlinePsychologist.ISO_20000_SUBTITLE.getAttribute("textContent"));
         Assert.assertEquals(onlinePsychologist.ISO20000SubText, onlinePsychologist.ISO_20000_TEXT.getAttribute("textContent"));
         Assert.assertTrue(onlinePsychologist.ISO_20000_LOGO.isDisplayed());
     }
-    @Then("Subtitle and text is correct for ETBIS and logo is visible")
-    public void subtitle_and_text_is_correct_for_etbis_and_logo_is_visible() {
+    @Then("Subtitle and text is correct for ETBIS and logo is visible on Online Psychologist page")
+    public void subtitle_and_text_is_correct_for_etbis_and_logo_is_visible_on_online_psychologist_page() {
         Assert.assertEquals(onlinePsychologist.ETBISSubTitle, onlinePsychologist.ETBIS_SUBTITLE.getAttribute("textContent"));
         Assert.assertEquals(onlinePsychologist.ETBISText, onlinePsychologist.ETBIS_TEXT.getAttribute("textContent"));
         Assert.assertTrue(onlinePsychologist.ETBIS_LOGO.isDisplayed());

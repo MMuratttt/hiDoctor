@@ -48,13 +48,27 @@ Feature: Main page functionalities are working fine
     Then User should see Consultant Application Form
     And Logout
 
+  @wip
+  Scenario: Certificates are displayed as intended
+    Then Certificates title is correct
+    Then Previous button is disabled next button is enabled in default
+    When User clicks on next button
+    Then Previous button is enabled next button is disabled in default
+    When User clicks on previous button
+    Then Previous button is disabled next button is enabled in default
+    Then Subtitle and text is correct for Health certificate and logo is visible
+    Then Subtitle and text is correct for SPICE and logo is visible
+    Then Subtitle and text is correct for ISO 45003 and logo is visible
+    Then Subtitle and text is correct for ISO 27001 and logo is visible
+    Then Subtitle and text is correct for ISO 20000 and logo is visible
+    When User clicks on next button
+    Then Subtitle and text is correct for ETBIS and logo is visible
+
 
   Scenario: All texts are being displayed properly
     Then Online Psychologist and Online Dietitian texts are correct
     Then What and why question texts are correct
     Then Trustworthy texts are correct
-    Then Certificate texts are correct
-    Then Certificate icons are proper
     Then Become a consultant texts are correct
     Then FAQ title and question texts are correct
     When Click on first question
