@@ -194,6 +194,53 @@ public class OnlinePsychologist_StepDefs {
         Assert.assertEquals(mainPage.appGalleryText, onlinePsychologist.APP_GALLERY_TEXT.getAttribute("textContent"));
     }
 
+    @Then("Certificates title is correct on Online Psychologist page")
+    public void certificates_title_is_correct_on_online_psychologist_page() {
+
+    }
+    @Then("Previous button is disabled next button is enabled in default on Online Psychologist page")
+    public void previous_button_is_disabled_next_button_is_enabled_in_default_on_online_psychologist_page() {
+
+    }
+    @When("User clicks on next button on Online Psychologist page")
+    public void user_clicks_on_next_button_on_online_psychologist_page() {
+
+    }
+    @Then("Previous button is enabled next button is disabled in default on Online Psychologist page")
+    public void previous_button_is_enabled_next_button_is_disabled_in_default_on_online_psychologist_page() {
+
+    }
+    @When("User clicks on previous button on Online Psychologist page")
+    public void user_clicks_on_previous_button_on_online_psychologist_page() {
+
+    }
+    @Then("Subtitle and text is correct for Health certificate and logo is visible")
+    public void subtitle_and_text_is_correct_for_health_certificate_and_logo_is_visible() {
+
+    }
+    @Then("Subtitle and text is correct for SPICE and logo is visible")
+    public void subtitle_and_text_is_correct_for_spice_and_logo_is_visible() {
+
+    }
+
+    @Then("Subtitle and text is correct for ISO 45003 and logo is visible")
+    public void subtitle_and_text_is_correct_for_iso_45003_and_logo_is_visible() {
+
+    }
+
+    @Then("Subtitle and text is correct for ISO 27001 and logo is visible")
+    public void subtitle_and_text_is_correct_for_iso_27001_and_logo_is_visible() {
+
+    }
+    @Then("Subtitle and text is correct for ISO 20000 and logo is visible")
+    public void subtitle_and_text_is_correct_for_iso_20000_and_logo_is_visible() {
+
+    }
+    @Then("Subtitle and text is correct for ETBIS and logo is visible")
+    public void subtitle_and_text_is_correct_for_etbis_and_logo_is_visible() {
+
+    }
+
 
 
 

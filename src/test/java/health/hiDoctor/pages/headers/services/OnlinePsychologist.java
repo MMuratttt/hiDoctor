@@ -146,6 +146,31 @@ public class OnlinePsychologist extends BasePage {
     @FindBy(xpath = "(//a[@data-testid='download-app-link-App Gallery'])[1]/p")
     public WebElement APP_GALLERY_TEXT;
 
+    @FindBy(xpath = "(//div[@data-testid='carousel-component'])[4]/../h2")
+    public WebElement CERTIFICATES_TITLE;
+
+    @FindBy(xpath = "(//button[@aria-label='Previous slide'])[2]")
+    public WebElement PREVIOUS_BUTTON_CERTIFICATE;
+
+    @FindBy(xpath = "(//button[@aria-label='Next slide'])[2]")
+    public WebElement NEXT_BUTTON_CERTIFICATE;
+
+
+
+
+    public String certificatesTitle = "Sertifikalarımız";
+    public String healthCertificateSubTitle = "Tescilli";
+    public String healthCertificateText = "Sağlık Bakanlığı Uzaktan Sağlık Bilgi Sistemi";
+    public String SPICESubTitle = "Nitelikli";
+    public String SPICEText = "(SPICE) Yazılım Süreç Değerlendirme Sistemi";
+    public String ISO45003SubTitle = "Uzman";
+    public String ISO45003SubText = "İş Yerinde Psikolojik Sağlık ve Güvenlik";
+    public String ISO27001SubTitle = "Bilgi Güvenliği";
+    public String ISO27001SubText = "Bilgi Güvenliği Yönetim Sistemi";
+    public String ISO420000SubTitle = "Yetkin";
+    public String ISO20000SubText = "Bilgi Teknolojileri Hizmet Yönetim Sistemi";
+    public String ETBISSubTitle = "Kayıtlı";
+    public String ETBISText = "Elektronik Ticaret Bilgi Sistemi";
 
 
 }
