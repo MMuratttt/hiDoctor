@@ -155,8 +155,59 @@ public class OnlinePsychologist extends BasePage {
     @FindBy(xpath = "(//button[@aria-label='Next slide'])[2]")
     public WebElement NEXT_BUTTON_CERTIFICATE;
 
+    @FindBy(xpath = "(//div[@data-testid='slides'])[1]/div/div/span")
+    public WebElement HEALTH_CERTIFICATE_LOGO;
 
+    @FindBy(xpath = "(//div[@data-testid='slides'])[1]/div/div[2]/p[1]")
+    public WebElement HEALTH_CERTIFICATE_SUBTITLE;
 
+    @FindBy(xpath = "(//div[@data-testid='slides'])[1]/div/div[2]/p[2]")
+    public WebElement HEALTH_CERTIFICATE_TEXT;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[2]/div/div/span")
+    public WebElement SPICE_LOGO;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[2]/div/div[2]/p[1]")
+    public WebElement SPICE_SUBTITLE;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[2]/div/div[2]/p[2]")
+    public WebElement SPICE_TEXT;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[3]/div/div/span")
+    public WebElement ISO_45003_LOGO;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[3]/div/div[2]/p[1]")
+    public WebElement ISO_45003_SUBTITLE;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[3]/div/div[2]/p[2]")
+    public WebElement ISO_45003_TEXT;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[4]/div/div/span")
+    public WebElement ISO_27001_LOGO;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[4]/div/div[2]/p[1]")
+    public WebElement ISO_27001_SUBTITLE;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[4]/div/div[2]/p[2]")
+    public WebElement ISO_27001_TEXT;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[5]/div/div/span")
+    public WebElement ISO_20000_LOGO;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[5]/div/div[2]/p[1]")
+    public WebElement ISO_20000_SUBTITLE;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[5]/div/div[2]/p[2]")
+    public WebElement ISO_20000_TEXT;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[6]/div/div/span")
+    public WebElement ETBIS_LOGO;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[6]/div/div[2]/p[1]")
+    public WebElement ETBIS_SUBTITLE;
+
+    @FindBy(xpath = "(//div[@data-testid='slides'])[6]/div/div[2]/p[2]")
+    public WebElement ETBIS_TEXT;
 
     public String certificatesTitle = "Sertifikalarımız";
     public String healthCertificateSubTitle = "Tescilli";
@@ -167,7 +218,7 @@ public class OnlinePsychologist extends BasePage {
     public String ISO45003SubText = "İş Yerinde Psikolojik Sağlık ve Güvenlik";
     public String ISO27001SubTitle = "Bilgi Güvenliği";
     public String ISO27001SubText = "Bilgi Güvenliği Yönetim Sistemi";
-    public String ISO420000SubTitle = "Yetkin";
+    public String ISO20000SubTitle = "Yetkin";
     public String ISO20000SubText = "Bilgi Teknolojileri Hizmet Yönetim Sistemi";
     public String ETBISSubTitle = "Kayıtlı";
     public String ETBISText = "Elektronik Ticaret Bilgi Sistemi";

@@ -10,6 +10,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import javax.naming.NamingException;
+
 public class OnlinePsychologist_StepDefs {
 
     MainPage mainPage = new MainPage();
@@ -196,49 +198,68 @@ public class OnlinePsychologist_StepDefs {
 
     @Then("Certificates title is correct on Online Psychologist page")
     public void certificates_title_is_correct_on_online_psychologist_page() {
-
+        BrowserUtils.waitFor(1);
+        BrowserUtils.scrollToElement(onlinePsychologist.CERTIFICATES_TITLE);
+        Assert.assertEquals(onlinePsychologist.certificatesTitle, onlinePsychologist.CERTIFICATES_TITLE.getAttribute("textContent"));
     }
     @Then("Previous button is disabled next button is enabled in default on Online Psychologist page")
     public void previous_button_is_disabled_next_button_is_enabled_in_default_on_online_psychologist_page() {
-
+        BrowserUtils.waitForClickablility(onlinePsychologist.NEXT_BUTTON_CERTIFICATE,10);
+        Assert.assertEquals("true",onlinePsychologist.PREVIOUS_BUTTON_CERTIFICATE.getAttribute("aria-disabled"));
+        Assert.assertEquals("false",onlinePsychologist.NEXT_BUTTON_CERTIFICATE.getAttribute("aria-disabled"));
     }
     @When("User clicks on next button on Online Psychologist page")
     public void user_clicks_on_next_button_on_online_psychologist_page() {
-
+        BrowserUtils.waitFor(2);
+        onlinePsychologist.NEXT_BUTTON_CERTIFICATE.click();
     }
     @Then("Previous button is enabled next button is disabled in default on Online Psychologist page")
     public void previous_button_is_enabled_next_button_is_disabled_in_default_on_online_psychologist_page() {
-
+        BrowserUtils.waitForClickablility(onlinePsychologist.PREVIOUS_BUTTON_CERTIFICATE,10);
+        Assert.assertEquals("false",onlinePsychologist.PREVIOUS_BUTTON_CERTIFICATE.getAttribute("aria-disabled"));
+        Assert.assertEquals("true",onlinePsychologist.NEXT_BUTTON_CERTIFICATE.getAttribute("aria-disabled"));
     }
     @When("User clicks on previous button on Online Psychologist page")
     public void user_clicks_on_previous_button_on_online_psychologist_page() {
-
+        onlinePsychologist.PREVIOUS_BUTTON_CERTIFICATE.click();
     }
     @Then("Subtitle and text is correct for Health certificate and logo is visible")
     public void subtitle_and_text_is_correct_for_health_certificate_and_logo_is_visible() {
-
+        Assert.assertEquals(onlinePsychologist.healthCertificateSubTitle, onlinePsychologist.HEALTH_CERTIFICATE_SUBTITLE.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.healthCertificateText, onlinePsychologist.HEALTH_CERTIFICATE_TEXT.getAttribute("textContent"));
+        Assert.assertTrue(onlinePsychologist.HEALTH_CERTIFICATE_LOGO.isDisplayed());
     }
     @Then("Subtitle and text is correct for SPICE and logo is visible")
     public void subtitle_and_text_is_correct_for_spice_and_logo_is_visible() {
-
+        Assert.assertEquals(onlinePsychologist.SPICESubTitle, onlinePsychologist.SPICE_SUBTITLE.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.SPICEText, onlinePsychologist.SPICE_TEXT.getAttribute("textContent"));
+        Assert.assertTrue(onlinePsychologist.SPICE_LOGO.isDisplayed());
     }
 
     @Then("Subtitle and text is correct for ISO 45003 and logo is visible")
     public void subtitle_and_text_is_correct_for_iso_45003_and_logo_is_visible() {
-
+        Assert.assertEquals(onlinePsychologist.ISO45003SubTitle, onlinePsychologist.ISO_45003_SUBTITLE.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.ISO45003SubText, onlinePsychologist.ISO_45003_TEXT.getAttribute("textContent"));
+        Assert.assertTrue(onlinePsychologist.ISO_45003_LOGO.isDisplayed());
     }
 
     @Then("Subtitle and text is correct for ISO 27001 and logo is visible")
     public void subtitle_and_text_is_correct_for_iso_27001_and_logo_is_visible() {
-
+        Assert.assertEquals(onlinePsychologist.ISO27001SubTitle, onlinePsychologist.ISO_27001_SUBTITLE.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.ISO27001SubText, onlinePsychologist.ISO_27001_TEXT.getAttribute("textContent"));
+        Assert.assertTrue(onlinePsychologist.ISO_27001_LOGO.isDisplayed());
     }
     @Then("Subtitle and text is correct for ISO 20000 and logo is visible")
     public void subtitle_and_text_is_correct_for_iso_20000_and_logo_is_visible() {
-
+        Assert.assertEquals(onlinePsychologist.ISO20000SubTitle, onlinePsychologist.ISO_20000_SUBTITLE.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.ISO20000SubText, onlinePsychologist.ISO_20000_TEXT.getAttribute("textContent"));
+        Assert.assertTrue(onlinePsychologist.ISO_20000_LOGO.isDisplayed());
     }
     @Then("Subtitle and text is correct for ETBIS and logo is visible")
     public void subtitle_and_text_is_correct_for_etbis_and_logo_is_visible() {
-
+        Assert.assertEquals(onlinePsychologist.ETBISSubTitle, onlinePsychologist.ETBIS_SUBTITLE.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.ETBISText, onlinePsychologist.ETBIS_TEXT.getAttribute("textContent"));
+        Assert.assertTrue(onlinePsychologist.ETBIS_LOGO.isDisplayed());
     }
 
 
