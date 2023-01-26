@@ -113,5 +113,39 @@ public class OnlinePsychologist extends BasePage {
     @FindBy(xpath = "(//button[contains(@id,'headlessui-disclosure-button-:r')])[9]/../div/div")
     public WebElement ANSWER_NINE;
 
+    @FindBy(xpath = "//img[@alt='app-download-qr']")
+    public WebElement QR_CODE;
+
+    @FindBy(xpath = "//img[@alt='app-download-qr']/../../../div[2]/h3")
+    public WebElement DOWNLOAD_APP_TITLE;
+
+    @FindBy(xpath = "//img[@alt='app-download-qr']/../../../div[2]/h5")
+    public WebElement DOWNLOAD_APP_TEXT;
+
+    public String downloadAppTitle = "Uygulamayı İndir";
+    public String downloadAppText = "İstediğiniz bilgiye, istediğiniz zaman, istediğiniz yerden kolayca ulaşabilirsiniz.";
+
+    @FindBy(xpath = "(//a[@data-testid='download-app-link-App Store'])[1]")
+    public WebElement APP_STORE_BTN;
+
+    @FindBy(xpath = "(//a[@data-testid='download-app-link-Google Play'])[1]")
+    public WebElement GOOGLE_PLAY_BTN;
+
+    @FindBy(xpath = "(//a[@data-testid='download-app-link-App Gallery'])[1]")
+    public WebElement APP_GALLERY_BTN;
+
+    @FindBy(xpath = "//img[@alt='Uygulamayı İndir']")
+    public WebElement DOWNLOAD_APP_IMAGE;
+
+    @FindBy(xpath = "(//a[@data-testid='download-app-link-App Store'])[1]/p")
+    public WebElement APP_STORE_TEXT;
+
+    @FindBy(xpath = "(//a[@data-testid='download-app-link-Google Play'])[1]/p")
+    public WebElement GOOGLE_PLAY_TEXT;
+
+    @FindBy(xpath = "(//a[@data-testid='download-app-link-App Gallery'])[1]/p")
+    public WebElement APP_GALLERY_TEXT;
+
+
 
 }

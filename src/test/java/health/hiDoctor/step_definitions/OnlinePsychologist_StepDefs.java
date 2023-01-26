@@ -148,6 +148,52 @@ public class OnlinePsychologist_StepDefs {
         Assert.assertEquals("false",onlinePsychologist.QUESTION_NINE_BTN.getAttribute("aria-expanded"));
     }
 
+    @Then("Download the app image is visible")
+    public void download_the_app_image_is_visible() {
+        BrowserUtils.waitFor(1);
+        BrowserUtils.scrollToElement(onlinePsychologist.QR_CODE);
+        Assert.assertTrue(onlinePsychologist.DOWNLOAD_APP_IMAGE.isDisplayed());
+    }
+    @Then("Download the app QR code is visible")
+    public void download_the_app_qr_code_is_visible() {
+        Assert.assertTrue(onlinePsychologist.QR_CODE.isDisplayed());
+    }
+    @Then("Download the app title is correct")
+    public void download_the_app_title_is_correct() {
+        Assert.assertEquals(onlinePsychologist.downloadAppTitle,onlinePsychologist.DOWNLOAD_APP_TITLE.getAttribute("textContent"));
+    }
+    @Then("Download the app text is correct")
+    public void download_the_app_text_is_correct() {
+        Assert.assertEquals(onlinePsychologist.downloadAppText,onlinePsychologist.DOWNLOAD_APP_TEXT.getAttribute("textContent"));
+    }
+    @When("User clicks on App Store button on Online Psychologist page")
+    public void user_clicks_on_app_store_button_on_online_psychologist_page() {
+        BrowserUtils.scrollToElement(onlinePsychologist.APP_STORE_TEXT);
+        BrowserUtils.waitFor(1);
+        onlinePsychologist.APP_STORE_BTN.click();
+    }
+    @When("User clicks on Google Play button on Online Psychologist page")
+    public void user_clicks_on_google_play_button_on_online_psychologist_page() {
+        BrowserUtils.scrollToElement(onlinePsychologist.QR_CODE);
+        BrowserUtils.waitFor(2);
+        onlinePsychologist.GOOGLE_PLAY_BTN.click();
+    }
+    @When("User clicks on App Gallery button on Online Psychologist page")
+    public void user_clicks_on_app_gallery_button_on_online_psychologist_page() {
+        BrowserUtils.scrollToElement(onlinePsychologist.QR_CODE);
+        BrowserUtils.waitFor(2);
+        onlinePsychologist.APP_GALLERY_BTN.click();
+    }
+    @Then("Markets' texts are correct")
+    public void markets_texts_are_correct() {
+        BrowserUtils.waitForPageToLoad(10);
+        BrowserUtils.scrollToElement(onlinePsychologist.QR_CODE);
+
+        Assert.assertEquals(mainPage.appStoreText, onlinePsychologist.APP_STORE_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.googlePlayText, onlinePsychologist.GOOGLE_PLAY_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.appGalleryText, onlinePsychologist.APP_GALLERY_TEXT.getAttribute("textContent"));
+    }
+
 
 
 

@@ -4,7 +4,7 @@ Feature: Online Psychologist Page
   Background: For the scenarios in the feature file, user is expected to be on the Online Psychologist page
     Given User is on the Online Psychologist page
 
-@wip
+
   Scenario: FAQ section
     Then FAQ title and question texts are correct on the Online Psychologist
     When Click on first question on the Online Psychologist
@@ -26,3 +26,19 @@ Feature: Online Psychologist Page
     When Click on ninth question on the Online Psychologist
     Then Ninth dropdown should be opened and answer is correct on the Online Psychologist
 
+  @wip
+  Scenario: Download the app
+    Then Download the app image is visible
+    Then Download the app QR code is visible
+    Then Download the app title is correct
+    Then Download the app text is correct
+    When User clicks on App Store button on Online Psychologist page
+    Then User should land App Store page
+    When User navigates back
+    And User clicks on Google Play button on Online Psychologist page
+    Then User should land Google Play page
+    When User navigates back
+    And User clicks on App Gallery button on Online Psychologist page
+    Then User should land App Gallery page
+    When User navigates back
+    Then Markets' texts are correct
