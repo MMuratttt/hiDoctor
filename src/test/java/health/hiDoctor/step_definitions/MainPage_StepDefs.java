@@ -3,6 +3,7 @@ package health.hiDoctor.step_definitions;
 import health.hiDoctor.pages.AllPsychologists;
 import health.hiDoctor.pages.BecomeAConsultant;
 import health.hiDoctor.pages.MainPage;
+import health.hiDoctor.pages.headers.services.OnlinePsychologist;
 import health.hiDoctor.utilities.BrowserUtils;
 import health.hiDoctor.utilities.Driver;
 import io.cucumber.java.bs.A;
@@ -23,6 +24,7 @@ public class MainPage_StepDefs {
     MainPage mainPage = new MainPage();
     AllPsychologists allPsychologists = new AllPsychologists();
     BecomeAConsultant becomeAConsultant = new BecomeAConsultant();
+    OnlinePsychologist onlinePsychologist = new OnlinePsychologist();
 
     @Then("The title should be displayed correctly")
     public void the_title_should_be_displayed_correctly() {
@@ -168,26 +170,6 @@ public class MainPage_StepDefs {
         Assert.assertEquals(mainPage.accessibleAndTimesavingText, mainPage.ACCESSIBLE_AND_TIMESAVING_TEXT.getAttribute("textContent"));
     }
 
-    @Then("Certificate texts are correct")
-    public void certificate_texts_are_correct() {
-        BrowserUtils.scrollToElement(mainPage.I_SECURITY_M_S_TEXT);
-        Assert.assertEquals(mainPage.iSecurityMS_Text, mainPage.I_SECURITY_M_S_TEXT.getAttribute("textContent"));
-        Assert.assertEquals(mainPage.sPICD_Text, mainPage.S_P_I_C_D_TEXT.getAttribute("textContent"));
-        Assert.assertEquals(mainPage.iTServiceManagementS_Text, mainPage.I_T_SERVICE_MANAGEMENT_S_TEXT.getAttribute("textContent"));
-        Assert.assertEquals(mainPage.iHealthTourismAC_Text, mainPage.I_HEALTH_TOURISM_A_C_TEXT.getAttribute("textContent"));
-        Assert.assertEquals(mainPage.eCommerceIS_Text, mainPage.E_COMMERCE_I_S_TEXT.getAttribute("textContent"));
-    }
-
-    @Then("Certificate icons are proper")
-    public void certificate_icons_are_proper() {
-        BrowserUtils.waitForVisibility(mainPage.I_SECURITY_M_S_LOGO, 10);
-        Assert.assertTrue(mainPage.I_SECURITY_M_S_LOGO.isDisplayed());
-        Assert.assertTrue(mainPage.S_P_I_C_D_LOGO.isDisplayed());
-        Assert.assertTrue(mainPage.I_T_SERVICE_MANAGEMENT_S_LOGO.isDisplayed());
-        Assert.assertTrue(mainPage.I_HEALTH_TOURISM_A_C_LOGO.isDisplayed());
-        Assert.assertTrue(mainPage.E_COMMERCE_I_S_LOGO.isDisplayed());
-    }
-
     @Then("Become a consultant texts are correct")
     public void become_a_consultant_texts_are_correct() {
         BrowserUtils.scrollToElement(mainPage.BECOME_A_CONSULTANT_TITLE);
@@ -260,6 +242,73 @@ public class MainPage_StepDefs {
         Assert.assertEquals(mainPage.answerFour, mainPage.ANSWER_FOUR.getAttribute("textContent"));
         mainPage.QUESTION_FOUR_BTN.click();
         Assert.assertEquals("false",mainPage.ANSWER_FOUR_BTN.getAttribute("aria-expanded"));
+    }
+
+    @Then("Certificates title is correct")
+    public void certificates_title_is_correct() {
+        BrowserUtils.waitFor(1);
+        BrowserUtils.scrollToElement(mainPage.CERTIFICATES_TITLE);
+        Assert.assertEquals(onlinePsychologist.certificatesTitle, mainPage.CERTIFICATES_TITLE.getAttribute("textContent"));
+    }
+    @Then("Previous button is disabled next button is enabled in default")
+    public void previous_button_is_disabled_next_button_is_enabled_in_default() {
+        BrowserUtils.waitForClickablility(mainPage.NEXT_BUTTON_CERTIFICATE,10);
+        Assert.assertEquals("true",mainPage.PREVIOUS_BUTTON_CERTIFICATE.getAttribute("aria-disabled"));
+        Assert.assertEquals("false",mainPage.NEXT_BUTTON_CERTIFICATE.getAttribute("aria-disabled"));
+    }
+    @When("User clicks on next button")
+    public void user_clicks_on_next_button() {
+        BrowserUtils.waitFor(2);
+        mainPage.NEXT_BUTTON_CERTIFICATE.click();
+    }
+    @Then("Previous button is enabled next button is disabled in default")
+    public void previous_button_is_enabled_next_button_is_disabled_in_default() {
+        BrowserUtils.waitForClickablility(mainPage.PREVIOUS_BUTTON_CERTIFICATE,10);
+        Assert.assertEquals("false",mainPage.PREVIOUS_BUTTON_CERTIFICATE.getAttribute("aria-disabled"));
+        Assert.assertEquals("true",mainPage.NEXT_BUTTON_CERTIFICATE.getAttribute("aria-disabled"));
+    }
+    @When("User clicks on previous button")
+    public void user_clicks_on_previous_button() {
+        mainPage.PREVIOUS_BUTTON_CERTIFICATE.click();
+    }
+    @Then("Subtitle and text is correct for Health certificate and logo is visible")
+    public void subtitle_and_text_is_correct_for_health_certificate_and_logo_is_visible() {
+        Assert.assertEquals(onlinePsychologist.healthCertificateSubTitle, mainPage.HEALTH_CERTIFICATE_SUBTITLE.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.healthCertificateText, mainPage.HEALTH_CERTIFICATE_TEXT.getAttribute("textContent"));
+        Assert.assertTrue(mainPage.HEALTH_CERTIFICATE_LOGO.isDisplayed());
+    }
+    @Then("Subtitle and text is correct for SPICE and logo is visible")
+    public void subtitle_and_text_is_correct_for_spice_and_logo_is_visible() {
+        Assert.assertEquals(onlinePsychologist.SPICESubTitle, mainPage.SPICE_SUBTITLE.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.SPICEText, mainPage.SPICE_TEXT.getAttribute("textContent"));
+        Assert.assertTrue(mainPage.SPICE_LOGO.isDisplayed());
+    }
+    @Then("Subtitle and text is correct for ISO 45003 and logo is visible")
+    public void subtitle_and_text_is_correct_for_iso_45003_and_logo_is_visible() {
+        Assert.assertEquals(onlinePsychologist.ISO45003SubTitle, mainPage.ISO_45003_SUBTITLE.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.ISO45003SubText, mainPage.ISO_45003_TEXT.getAttribute("textContent"));
+        Assert.assertTrue(mainPage.ISO_45003_LOGO.isDisplayed());
+    }
+
+    @Then("Subtitle and text is correct for ISO 27001 and logo is visible")
+    public void subtitle_and_text_is_correct_for_iso_27001_and_logo_is_visible() {
+        Assert.assertEquals(onlinePsychologist.ISO27001SubTitle, mainPage.ISO_27001_SUBTITLE.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.ISO27001SubText, mainPage.ISO_27001_TEXT.getAttribute("textContent"));
+        Assert.assertTrue(mainPage.ISO_27001_LOGO.isDisplayed());
+    }
+
+    @Then("Subtitle and text is correct for ISO 20000 and logo is visible")
+    public void subtitle_and_text_is_correct_for_iso_20000_and_logo_is_visible() {
+        Assert.assertEquals(onlinePsychologist.ISO20000SubTitle, mainPage.ISO_20000_SUBTITLE.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.ISO20000SubText, mainPage.ISO_20000_TEXT.getAttribute("textContent"));
+        Assert.assertTrue(mainPage.ISO_20000_LOGO.isDisplayed());
+    }
+
+    @Then("Subtitle and text is correct for ETBIS and logo is visible")
+    public void subtitle_and_text_is_correct_for_etbis_and_logo_is_visible() {
+        Assert.assertEquals(onlinePsychologist.ETBISSubTitle, mainPage.ETBIS_SUBTITLE.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.ETBISText, mainPage.ETBIS_TEXT.getAttribute("textContent"));
+        Assert.assertTrue(mainPage.ETBIS_LOGO.isDisplayed());
     }
 
 
