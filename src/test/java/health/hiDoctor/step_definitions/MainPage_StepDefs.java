@@ -312,4 +312,18 @@ public class MainPage_StepDefs {
     }
 
 
+    @Then("Analytics are correct")
+    public void analyticsAreCorrect() {
+        BrowserUtils.scrollToElement(mainPage.USER_ANALYTIC);
+        BrowserUtils.waitFor(1);
+
+        Assert.assertEquals(mainPage.userAnalytic,mainPage.USER_ANALYTIC.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.userText,mainPage.USER_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.videoCallAnalytic,mainPage.VIDEO_CALL_ANALYTIC.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.videoCallText,mainPage.VIDEO_CALL_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.voiceCallAnalytic,mainPage.VOICE_CALL_ANALYTIC.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.voiceCallText,mainPage.VOICE_CALL_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.consultantAnalytic,mainPage.CONSULTANT_ANALYTIC.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.consultantText,mainPage.CONSULTANT_TEXT.getAttribute("textContent"));
+    }
 }

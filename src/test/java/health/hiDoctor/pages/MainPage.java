@@ -293,6 +293,38 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "(//div[@data-testid='slides'])[6]/div/div[2]/p[2]")
     public WebElement ETBIS_TEXT;
 
+    @FindBy(xpath = "//div[@class='md:container']/div/div/div/div[1]/span[1]")
+    public WebElement USER_ANALYTIC;
+
+    @FindBy(xpath = "//div[@class='md:container']/div/div/div/div[1]/span[2]")
+    public WebElement USER_TEXT;
+
+    @FindBy(xpath = "//div[@class='md:container']/div/div/div/div[2]/span[1]")
+    public WebElement VIDEO_CALL_ANALYTIC;
+
+    @FindBy(xpath = "//div[@class='md:container']/div/div/div/div[2]/span[2]")
+    public WebElement VIDEO_CALL_TEXT;
+
+    @FindBy(xpath = "//div[@class='md:container']/div/div/div/div[3]/span[1]")
+    public WebElement VOICE_CALL_ANALYTIC;
+
+    @FindBy(xpath = "//div[@class='md:container']/div/div/div/div[3]/span[2]")
+    public WebElement VOICE_CALL_TEXT;
+
+    @FindBy(xpath = "//div[@class='md:container']/div/div/div/div[4]/span[1]")
+    public WebElement CONSULTANT_ANALYTIC;
+
+    @FindBy(xpath = "//div[@class='md:container']/div/div/div/div[4]/span[2]")
+    public WebElement CONSULTANT_TEXT;
+
+    public String userAnalytic = "20000+";
+    public String userText = "Danışan";
+    public String videoCallAnalytic = "30000+";
+    public String videoCallText = "Görüntülü Görüşme";
+    public String voiceCallAnalytic = "15000+";
+    public String voiceCallText = "Sesli Görüşme";
+    public String consultantAnalytic = "80+";
+    public String consultantText = "Danışman";
 
 
 

@@ -43,8 +43,9 @@ Feature: Online Psychologist Page
     When User navigates back
     Then Markets' texts are correct
 
-
-  Scenario: Certificates
+@wip
+  Scenario: Analytics and Certificates
+    Then Analytics are correct on Online Psychologist page
     Then Certificates title is correct on Online Psychologist page
     Then Previous button is disabled next button is enabled in default on Online Psychologist page
     When User clicks on next button on Online Psychologist page
@@ -58,6 +59,9 @@ Feature: Online Psychologist Page
     Then Subtitle and text is correct for ISO 20000 and logo is visible on Online Psychologist page
     When User clicks on next button on Online Psychologist page
     Then Subtitle and text is correct for ETBIS and logo is visible on Online Psychologist page
+
+
+
 
 
 

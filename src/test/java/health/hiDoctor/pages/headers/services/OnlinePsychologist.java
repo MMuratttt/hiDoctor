@@ -223,5 +223,29 @@ public class OnlinePsychologist extends BasePage {
     public String ETBISSubTitle = "Kayıtlı";
     public String ETBISText = "Elektronik Ticaret Bilgi Sistemi";
 
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[1]/span[1]")
+    public WebElement USER_ANALYTIC;
+
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[1]/span[2]")
+    public WebElement USER_TEXT;
+
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[2]/span[1]")
+    public WebElement VIDEO_CALL_ANALYTIC;
+
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[2]/span[2]")
+    public WebElement VIDEO_CALL_TEXT;
+
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[3]/span[1]")
+    public WebElement VOICE_CALL_ANALYTIC;
+
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[3]/span[2]")
+    public WebElement VOICE_CALL_TEXT;
+
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[4]/span[1]")
+    public WebElement CONSULTANT_ANALYTIC;
+
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[4]/span[2]")
+    public WebElement CONSULTANT_TEXT;
+
 
 }

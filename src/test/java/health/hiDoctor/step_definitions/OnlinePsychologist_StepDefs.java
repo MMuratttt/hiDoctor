@@ -259,11 +259,22 @@ public class OnlinePsychologist_StepDefs {
     public void subtitle_and_text_is_correct_for_etbis_and_logo_is_visible_on_online_psychologist_page() {
         Assert.assertEquals(onlinePsychologist.ETBISSubTitle, onlinePsychologist.ETBIS_SUBTITLE.getAttribute("textContent"));
         Assert.assertEquals(onlinePsychologist.ETBISText, onlinePsychologist.ETBIS_TEXT.getAttribute("textContent"));
+        BrowserUtils.waitFor(1);
         Assert.assertTrue(onlinePsychologist.ETBIS_LOGO.isDisplayed());
     }
 
+    @Then("Analytics are correct on Online Psychologist page")
+    public void analyticsAreCorrectOnOnlinePsychologistPage() {
+        BrowserUtils.scrollToElement(onlinePsychologist.USER_ANALYTIC);
+        BrowserUtils.waitFor(1);
 
-
-
-
+        Assert.assertEquals(mainPage.userAnalytic,onlinePsychologist.USER_ANALYTIC.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.userText,onlinePsychologist.USER_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.videoCallAnalytic,onlinePsychologist.VIDEO_CALL_ANALYTIC.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.videoCallText,onlinePsychologist.VIDEO_CALL_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.voiceCallAnalytic,onlinePsychologist.VOICE_CALL_ANALYTIC.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.voiceCallText,onlinePsychologist.VOICE_CALL_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.consultantAnalytic,onlinePsychologist.CONSULTANT_ANALYTIC.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.consultantText,onlinePsychologist.CONSULTANT_TEXT.getAttribute("textContent"));
+    }
 }
