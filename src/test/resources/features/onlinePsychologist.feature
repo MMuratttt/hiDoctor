@@ -72,8 +72,25 @@ Feature: Online Psychologist Page
     When Scroll to Why should I choose Hidoctor
     Then Texts are correct on Why should I choose Hidoctor
 
+//
+  Scenario: Banner section in Online Psychologist page
+    When User clicks on Home Icon
+    Then User should land on the Main Page
+    When User navigates back
+    And Clicks on Online Psychologist
+    Then User should stay in Online Psychologist page
+    Then Title and sub-titles are correct on Banner section in Online Psychologist page
 
+    Then Horizontal scroll slides automatically
+    Then Horizontal left scroll is working correctly
+    Then Horizontal right scroll is working well
 
+    When User clicks on Find My Psychologists
+    Then User should land Find My Psychologists page
+    When User navigates back
+    And User clicks on Select Psychologist
+    Then User should land Find My Psychologists page
+    When User navigates back
 
 
 
