@@ -44,7 +44,8 @@ Feature: Online Psychologist Page
     Then Markets' texts are correct
 
 
-  Scenario: Certificates
+  Scenario: Analytics and Certificates
+    Then Analytics are correct on Online Psychologist page
     Then Certificates title is correct on Online Psychologist page
     Then Previous button is disabled next button is enabled in default on Online Psychologist page
     When User clicks on next button on Online Psychologist page
@@ -58,6 +59,21 @@ Feature: Online Psychologist Page
     Then Subtitle and text is correct for ISO 20000 and logo is visible on Online Psychologist page
     When User clicks on next button on Online Psychologist page
     Then Subtitle and text is correct for ETBIS and logo is visible on Online Psychologist page
+
+  @wip
+  Scenario: Texts are correct on the page
+    When Scroll to How to Create an Online Call
+    Then Texts are correct on How to Create an Online Call
+    When Scroll to How do we choose our consultants
+    Then Texts are correct on How do we choose our consultants
+    When User clicks on Become Consultant on Online Psychologist Page
+    Then User should land Become a Consultant Page
+    When User navigates back
+    When Scroll to Why should I choose Hidoctor
+    Then Texts are correct on Why should I choose Hidoctor
+
+
+
 
 
 

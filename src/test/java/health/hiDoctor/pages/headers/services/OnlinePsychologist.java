@@ -223,5 +223,123 @@ public class OnlinePsychologist extends BasePage {
     public String ETBISSubTitle = "Kayıtlı";
     public String ETBISText = "Elektronik Ticaret Bilgi Sistemi";
 
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[1]/span[1]")
+    public WebElement USER_ANALYTIC;
+
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[1]/span[2]")
+    public WebElement USER_TEXT;
+
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[2]/span[1]")
+    public WebElement VIDEO_CALL_ANALYTIC;
+
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[2]/span[2]")
+    public WebElement VIDEO_CALL_TEXT;
+
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[3]/span[1]")
+    public WebElement VOICE_CALL_ANALYTIC;
+
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[3]/span[2]")
+    public WebElement VOICE_CALL_TEXT;
+
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[4]/span[1]")
+    public WebElement CONSULTANT_ANALYTIC;
+
+    @FindBy(xpath = "//div[@class='pb-14']/div/div/div/div[4]/span[2]")
+    public WebElement CONSULTANT_TEXT;
+
+    @FindBy(xpath = "//div[@class='mx-auto max-w-[1200px] px-2 pb-4 text-center']/h2")
+    public WebElement HOW_CREATE_ONLINE_CALL_TITLE;
+
+    @FindBy(xpath = "//div[@class='mx-auto max-w-[1200px] px-2 pb-4 text-center']/div[2]/div[1]/div[2]/h5")
+    public WebElement HOW_CREATE_ONLINE_CALL_STEP1_TITLE;
+
+    @FindBy(xpath = "//div[@class='mx-auto max-w-[1200px] px-2 pb-4 text-center']/div[2]/div[1]/div[2]/div")
+    public WebElement HOW_CREATE_ONLINE_CALL_STEP1_TEXT;
+
+    @FindBy(xpath = "//div[@class='mx-auto max-w-[1200px] px-2 pb-4 text-center']/div[2]/div[2]/div[2]/h5")
+    public WebElement HOW_CREATE_ONLINE_CALL_STEP2_TITLE;
+
+    @FindBy(xpath = "//div[@class='mx-auto max-w-[1200px] px-2 pb-4 text-center']/div[2]/div[2]/div[2]/div")
+    public WebElement HOW_CREATE_ONLINE_CALL_STEP2_TEXT;
+
+    @FindBy(xpath = "//div[@class='mx-auto max-w-[1200px] px-2 pb-4 text-center']/div[2]/div[3]/div[2]/h5")
+    public WebElement HOW_CREATE_ONLINE_CALL_STEP3_TITLE;
+
+    @FindBy(xpath = "//div[@class='mx-auto max-w-[1200px] px-2 pb-4 text-center']/div[2]/div[3]/div[2]/div")
+    public WebElement HOW_CREATE_ONLINE_CALL_STEP3_TEXT;
+
+    @FindBy(xpath = "//div[@class='mx-auto max-w-[1200px] px-2 pb-4 text-center']/div[2]/div[4]/div[2]/h5")
+    public WebElement HOW_CREATE_ONLINE_CALL_STEP4_TITLE;
+
+    @FindBy(xpath = "//div[@class='mx-auto max-w-[1200px] px-2 pb-4 text-center']/div[2]/div[4]/div[2]/div")
+    public WebElement HOW_CREATE_ONLINE_CALL_STEP4_TEXT;
+
+    public String howCreateOnlineCallTitle = "Online Görüşme Nasıl Oluşturulur?";
+    public String howCreateOnlineCallTitleStep1Title = "1. Psikoloğunu Seç";
+    public String howCreateOnlineCallTitleStep1Text = "Sistemimizdeki psikologların uzmanlık alanlarını ihtiyacına göre filtreleyebilir, eğitim ve sertifikalarını inceleyerek sana en uygun psikoloğu seçebilirsin.";
+    public String howCreateOnlineCallTitleStep2Title = "2. Görüşmeni Planla";
+    public String howCreateOnlineCallTitleStep2Text = "Sesli ya da görüntülü görüşebilir, görüşme süresine karar verebilirsin. Hemen başlayabilir veya sana en uygun tarihe randevunu oluşturabilirsin.";
+    public String howCreateOnlineCallTitleStep3Title = "3. Ödemeni Tamamla";
+    public String howCreateOnlineCallTitleStep3Text = "Online olarak banka/kredi kartı ya da cüzdan bakiyen ile ödeme seçeneklerinden birini tercih ederek güvenli ve hızlı bir şekilde ödemeni tamamlayabilirsin. ";
+    public String howCreateOnlineCallTitleStep4Title = "4. Seansına Başla!";
+    public String howCreateOnlineCallTitleStep4Text = "Randevu saatinde, sisteme giriş yaparak görüşmeye başlayabilirsin. HiDoctor uygulaması ya da web sitemiz üzerinden görüşmeni gerçekleştirebilirsin.";
+
+    @FindBy(xpath = "//div[@class='w-full lg:my-12 lg:flex-1']/p")
+    public WebElement HOW_DO_WE_CHOOSE_CONSULTANTS_TITLE;
+
+    @FindBy(xpath = "//div[@class='w-full lg:my-12 lg:flex-1']/div/ul/li[1]")
+    public WebElement HOW_DO_WE_CHOOSE_CONSULTANTS_FIRST_PARAG;
+
+    @FindBy(xpath = "//div[@class='w-full lg:my-12 lg:flex-1']/div/ul/li[2]")
+    public WebElement HOW_DO_WE_CHOOSE_CONSULTANTS_SECOND_PARAG;
+
+    @FindBy(xpath = "//div[@class='w-full lg:my-12 lg:flex-1']/a")
+    public WebElement BECOME_CONSULTANT;
+
+    public String howDoWeChooseConsultantsTitle = "Danışmanlarımızı Nasıl Seçiyoruz?";
+    public String howDoWeChooseConsultantsFirstParag = "HiDoctor platformundaki danışmanları seçerken yüksek lisans eğitimini tamamlamış, alanında uzman klinik psikologları aşamalı bir mülakat sürecine tabi tutuyoruz.";
+    public String howDoWeChooseConsultantsSecondParag = "Mülakat sürecinin ardından HiDoctor Danışman Heyeti tarafından diplomaları ve sertifikaları onaylanmış, deneyimli uzmanlar ile iş birliği yapıyoruz. Bunu sizlere daha güvenli bir hizmet sağlamak amacıyla gerçekleştiriyoruz.";
+    public String becomeConsultant = "Şimdi Danışman Ol";
+
+    @FindBy(xpath = "//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/h3")
+    public WebElement WHY_SHOULD_I_CHOOSE_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/h2)[1]")
+    public WebElement SECURE_AND_PRIVATE_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/p)[1]")
+    public WebElement SECURE_AND_PRIVATE_TEXT;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/h2)[2]")
+    public WebElement GUARANTEED_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/p)[2]")
+    public WebElement GUARANTEED_TEXT;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/h2)[3]")
+    public WebElement EXPERT_CLINICAL_PSYCHOLOGISTS_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/p)[3]")
+    public WebElement EXPERT_CLINICAL_PSYCHOLOGISTS_TEXT;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/h2)[4]")
+    public WebElement EVIDENCE_BASED_THERAPY_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/p)[4]")
+    public WebElement EVIDENCE_BASED_THERAPY_TEXT;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/h2)[5]")
+    public WebElement VOICE_AND_VIDEO_CALLS_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/p)[5]")
+    public WebElement VOICE_AND_VIDEO_CALLS_TEXT;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/h2)[6]")
+    public WebElement ACCESSIBLE_AND_TIMESAVING_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/p)[6]")
+    public WebElement ACCESSIBLE_AND_TIMESAVING_TEXT;
+
+
 
 }

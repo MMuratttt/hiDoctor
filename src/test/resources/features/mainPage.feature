@@ -48,7 +48,7 @@ Feature: Main page functionalities are working fine
     Then User should see Consultant Application Form
     And Logout
 
-  @wip
+
   Scenario: Certificates are displayed as intended
     Then Certificates title is correct
     Then Previous button is disabled next button is enabled in default
@@ -68,6 +68,7 @@ Feature: Main page functionalities are working fine
   Scenario: All texts are being displayed properly
     Then Online Psychologist and Online Dietitian texts are correct
     Then What and why question texts are correct
+    Then Analytics are correct
     Then Trustworthy texts are correct
     Then Become a consultant texts are correct
     Then FAQ title and question texts are correct
