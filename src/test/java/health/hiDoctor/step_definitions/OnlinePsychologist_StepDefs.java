@@ -359,12 +359,26 @@ public class OnlinePsychologist_StepDefs {
 
     @When("Scroll to Why should I choose Hidoctor")
     public void scroll_to_why_should_i_choose_hidoctor() {
-
+        BrowserUtils.scrollToElement(onlinePsychologist.HOW_DO_WE_CHOOSE_CONSULTANTS_TITLE);
+        BrowserUtils.waitFor(1);
     }
 
     @Then("Texts are correct on Why should I choose Hidoctor")
     public void texts_are_correct_on_why_should_i_choose_hidoctor() {
-
+        BrowserUtils.scrollToElement(onlinePsychologist.WHY_SHOULD_I_CHOOSE_TITLE);
+        Assert.assertEquals(mainPage.whyShouldIChooseOnlineAdvice, onlinePsychologist.WHY_SHOULD_I_CHOOSE_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.secureAndPrivateTitle, onlinePsychologist.SECURE_AND_PRIVATE_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.secureAndPrivateText, onlinePsychologist.SECURE_AND_PRIVATE_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.guaranteedTitle, onlinePsychologist.GUARANTEED_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.guaranteedText, onlinePsychologist.GUARANTEED_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.expertClinicalPsychologistsTitle, onlinePsychologist.EXPERT_CLINICAL_PSYCHOLOGISTS_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.expertClinicalPsychologistsText, onlinePsychologist.EXPERT_CLINICAL_PSYCHOLOGISTS_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.evidencedBasedTherapyTitle, onlinePsychologist.EVIDENCE_BASED_THERAPY_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.evidencedBasedTherapyText, onlinePsychologist.EVIDENCE_BASED_THERAPY_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.voiceAndVideoCallsTitle, onlinePsychologist.VOICE_AND_VIDEO_CALLS_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.voiceAndVideoCallsText, onlinePsychologist.VOICE_AND_VIDEO_CALLS_TEXT.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.accessibleAndTimesavingTitle, onlinePsychologist.ACCESSIBLE_AND_TIMESAVING_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(mainPage.accessibleAndTimesavingText, onlinePsychologist.ACCESSIBLE_AND_TIMESAVING_TEXT.getAttribute("textContent"));
     }
 
 

@@ -301,5 +301,45 @@ public class OnlinePsychologist extends BasePage {
     public String howDoWeChooseConsultantsSecondParag = "Mülakat sürecinin ardından HiDoctor Danışman Heyeti tarafından diplomaları ve sertifikaları onaylanmış, deneyimli uzmanlar ile iş birliği yapıyoruz. Bunu sizlere daha güvenli bir hizmet sağlamak amacıyla gerçekleştiriyoruz.";
     public String becomeConsultant = "Şimdi Danışman Ol";
 
+    @FindBy(xpath = "//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/h3")
+    public WebElement WHY_SHOULD_I_CHOOSE_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/h2)[1]")
+    public WebElement SECURE_AND_PRIVATE_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/p)[1]")
+    public WebElement SECURE_AND_PRIVATE_TEXT;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/h2)[2]")
+    public WebElement GUARANTEED_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/p)[2]")
+    public WebElement GUARANTEED_TEXT;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/h2)[3]")
+    public WebElement EXPERT_CLINICAL_PSYCHOLOGISTS_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/p)[3]")
+    public WebElement EXPERT_CLINICAL_PSYCHOLOGISTS_TEXT;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/h2)[4]")
+    public WebElement EVIDENCE_BASED_THERAPY_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/p)[4]")
+    public WebElement EVIDENCE_BASED_THERAPY_TEXT;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/h2)[5]")
+    public WebElement VOICE_AND_VIDEO_CALLS_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/p)[5]")
+    public WebElement VOICE_AND_VIDEO_CALLS_TEXT;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/h2)[6]")
+    public WebElement ACCESSIBLE_AND_TIMESAVING_TITLE;
+
+    @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/p)[6]")
+    public WebElement ACCESSIBLE_AND_TIMESAVING_TEXT;
+
+
 
 }
