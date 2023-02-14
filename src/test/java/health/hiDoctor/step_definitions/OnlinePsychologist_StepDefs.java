@@ -10,6 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
 
 import javax.naming.NamingException;
 
@@ -379,6 +380,94 @@ public class OnlinePsychologist_StepDefs {
         Assert.assertEquals(mainPage.voiceAndVideoCallsText, onlinePsychologist.VOICE_AND_VIDEO_CALLS_TEXT.getAttribute("textContent"));
         Assert.assertEquals(mainPage.accessibleAndTimesavingTitle, onlinePsychologist.ACCESSIBLE_AND_TIMESAVING_TITLE.getAttribute("textContent"));
         Assert.assertEquals(mainPage.accessibleAndTimesavingText, onlinePsychologist.ACCESSIBLE_AND_TIMESAVING_TEXT.getAttribute("textContent"));
+    }
+
+    @When("User clicks on Home Icon")
+    public void user_clicks_on_home_icon() {
+        BrowserUtils.waitForVisibility(onlinePsychologist.HOME_ICON, 10);
+        onlinePsychologist.HOME_ICON.click();
+    }
+
+    @Then("User should land on the Main Page")
+    public void user_should_land_on_the_main_page() {
+        BrowserUtils.waitForVisibility(mainPage.CONTACT_US,10);
+        Assert.assertEquals(mainPage.title,Driver.getDriver().getTitle());
+    }
+
+    @When("Clicks on Online Psychologist")
+    public void clicks_on_online_psychologist() {
+        BrowserUtils.waitForVisibility(onlinePsychologist.HOME_ICON, 10);
+        onlinePsychologist.ONLINE_PSYCHOLOGIST_TITLE.click();
+    }
+
+    @Then("User should stay in Online Psychologist page")
+    public void user_should_stay_in_online_psychologist_page() {
+        Assert.assertEquals(onlinePsychologist.onlinePsychologistPageTitle,Driver.getDriver().getTitle());
+    }
+
+    @Then("Title and sub-titles are correct on Banner section in Online Psychologist page")
+    public void title_and_sub_titles_are_correct_on_banner_section_in_online_psychologist_page() {
+        Assert.assertEquals(onlinePsychologist.onlinePsychologistH1Title,onlinePsychologist.ONLINE_PSYCHOLOGIST_H1_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.onlinePsychologistSubtitle1,onlinePsychologist.ONLINE_PSYCHOLOGIST_SUBTITLE1.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.onlinePsychologistSubtitle2,onlinePsychologist.ONLINE_PSYCHOLOGIST_SUBTITLE2.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.onlinePsychologistSubtitle3,onlinePsychologist.ONLINE_PSYCHOLOGIST_SUBTITLE3.getAttribute("textContent"));
+    }
+
+    @Then("Horizontal scroll slides automatically")
+    public void horizontal_scroll_slides_automatically() {
+        String sliderAttribute1 = onlinePsychologist.TEXT_SLIDER.getAttribute("style");
+        BrowserUtils.waitFor(3);
+        String sliderAttribute2 = onlinePsychologist.TEXT_SLIDER.getAttribute("style");
+        BrowserUtils.waitFor(3);
+        String sliderAttribute3 = onlinePsychologist.TEXT_SLIDER.getAttribute("style");
+
+        Assert.assertNotEquals(sliderAttribute1,sliderAttribute2);
+        Assert.assertNotEquals(sliderAttribute1,sliderAttribute3);
+    }
+
+    @Then("Horizontal left scroll is working correctly")
+    public void horizontal_left_scroll_is_working_correctly() {
+        String centreText1 = onlinePsychologist.CENTRE_TEXT_SLIDER_TEXT_CONTENT.getAttribute("textContent");
+
+        new Actions(Driver.getDriver()).moveToElement(onlinePsychologist.CENTRE_TEXT_SLIDER)
+                .clickAndHold()
+                .moveToElement(onlinePsychologist.LEFT_TEXT_SLIDER)
+                .release()
+                .perform();
+
+        String centreText2 = onlinePsychologist.CENTRE_TEXT_SLIDER_TEXT_CONTENT.getAttribute("textContent");
+
+        Assert.assertNotEquals(centreText1, centreText2);
+    }
+
+    @Then("Horizontal right scroll is working well")
+    public void horizontal_right_scroll_is_working_well() {
+        String centreText1 = onlinePsychologist.CENTRE_TEXT_SLIDER_TEXT_CONTENT.getAttribute("textContent");
+
+        new Actions(Driver.getDriver()).moveToElement(onlinePsychologist.CENTRE_TEXT_SLIDER)
+                .clickAndHold()
+                .moveToElement(onlinePsychologist.RIGHT_TEXT_SLIDER)
+                .release()
+                .perform();
+
+        String centreText2 = onlinePsychologist.CENTRE_TEXT_SLIDER_TEXT_CONTENT.getAttribute("textContent");
+
+        Assert.assertNotEquals(centreText1, centreText2);
+    }
+
+    @When("User clicks on Find My Psychologists")
+    public void user_clicks_on_find_my_psychologists() {
+
+    }
+
+    @Then("User should land Find My Psychologists page")
+    public void user_should_land_find_my_psychologists_page() {
+
+    }
+
+    @When("User clicks on Select Psychologist")
+    public void user_clicks_on_select_psychologist() {
+
     }
 
 
