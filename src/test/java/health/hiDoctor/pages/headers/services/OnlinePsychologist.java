@@ -340,6 +340,49 @@ public class OnlinePsychologist extends BasePage {
     @FindBy(xpath = "(//div[@class='mt-4 bg-opacity-50 pt-6 md:pt-5']/div/div/div/p)[6]")
     public WebElement ACCESSIBLE_AND_TIMESAVING_TEXT;
 
+    @FindBy(xpath = "(//div[@class='container  flex items-center py-3 ']/span)[1]")
+    public WebElement HOME_ICON;
+
+    @FindBy(xpath = "(//div[@class='container  flex items-center py-3 ']/span)[2]")
+    public WebElement ONLINE_PSYCHOLOGIST_TITLE;
+
+    @FindBy(xpath = "//div[@class='pb-6 lg:pb-6 xl:pb-20']/h1")
+    public WebElement ONLINE_PSYCHOLOGIST_H1_TITLE;
+
+    @FindBy(xpath = "//div[@class='pb-6 lg:pb-6 xl:pb-20']/div/p[1]")
+    public WebElement ONLINE_PSYCHOLOGIST_SUBTITLE1;
+
+    @FindBy(xpath = "//div[@class='pb-6 lg:pb-6 xl:pb-20']/div/p[2]")
+    public WebElement ONLINE_PSYCHOLOGIST_SUBTITLE2;
+
+    @FindBy(xpath = "//div[@class='pb-6 lg:pb-6 xl:pb-20']/div/p[3]")
+    public WebElement ONLINE_PSYCHOLOGIST_SUBTITLE3;
+
+    public String onlinePsychologistH1Title = "Modunu Yakalamak İçin Psikoloğunla Tanış";
+    public String onlinePsychologistSubtitle1 = "Alanında Uzman Psikologlar";
+    public String onlinePsychologistSubtitle2 = "Sesli ve Görüntülü Görüşme";
+    public String onlinePsychologistSubtitle3 = "Güvenilir ve Gizli";
+
+    @FindBy(xpath = "(//div[@class='swiper-wrapper'])[1]")
+    public WebElement TEXT_SLIDER;
+
+    @FindBy(xpath = "(//div[@class='swiper-slide swiper-slide-active'])[1]")
+    public WebElement CENTRE_TEXT_SLIDER;
+
+    @FindBy(xpath = "//div[@class='swiper-slide swiper-slide-prev']")
+    public WebElement LEFT_TEXT_SLIDER;
+
+    @FindBy(xpath = "//div[@class='swiper-slide swiper-slide-next']")
+    public WebElement RIGHT_TEXT_SLIDER;
+
+    @FindBy(xpath = "((//div[@class='swiper-slide swiper-slide-active'])[1]/div/div/p)[2]")
+    public WebElement CENTRE_TEXT_SLIDER_TEXT_CONTENT;
+
+
+
+
+
+
 
 
 }
