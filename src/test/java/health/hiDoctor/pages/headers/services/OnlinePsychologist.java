@@ -378,6 +378,12 @@ public class OnlinePsychologist extends BasePage {
     @FindBy(xpath = "((//div[@class='swiper-slide swiper-slide-active'])[1]/div/div/p)[2]")
     public WebElement CENTRE_TEXT_SLIDER_TEXT_CONTENT;
 
+    @FindBy(xpath = "(//a[@rel='nofollow'])[1]")
+    public WebElement FIND_MY_PSYCHOLOGIST_BTN;
+
+    @FindBy(xpath = "(//a[@rel='nofollow'])[2]")
+    public WebElement LIST_ALL_PSYCHOLOGISTS_BTN;
+
 
 
 

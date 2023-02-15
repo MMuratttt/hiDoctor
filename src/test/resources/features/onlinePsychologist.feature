@@ -72,7 +72,7 @@ Feature: Online Psychologist Page
     When Scroll to Why should I choose Hidoctor
     Then Texts are correct on Why should I choose Hidoctor
 
-  @wip
+
   Scenario: Banner section in Online Psychologist page
     When User clicks on Home Icon
     Then User should land on the Main Page
@@ -87,8 +87,89 @@ Feature: Online Psychologist Page
     Then User should land Find My Psychologists page
     When User navigates back
     And User clicks on Select Psychologist
-    Then User should land Find My Psychologists page
-    When User navigates back
+    Then User should land All Psychologist page
 
+  @wip
+  Scenario: Online Psychologists Slider section texts and functions are working correctly
+    When User scrolls to Online Psychologists title over the slider
+    Then Title is correct on Psychologists slider
+    When User clicks on All Psychologists chip
+    Then User should land All Psychologist page
+    When User navigates back
+    Then Previous and next button is enabled in Psychologists slider
+    When User clicks on next button on Psychologists slider
+    Then Slider works correctly on Psychologists slider
+    When User clicks on previous button on Psychologists slider
+    Then Slider works correctly on Psychologists slider
+
+
+  Scenario: Online Psychologists thumbnails are correct
+    When The Psychologist is Online
+    Then User should see the status correctly
+    When The Psychologist is offline
+    Then User should see the status correctly
+    When The Psychologist is Busy
+    Then User should see the status correctly
+    When User clicks on thumbnail of the psychologist
+    Then User should land on related Psychologist page
+
+
+  Scenario: Online, offline and Busy psychologists are displayed correctly
+    When The Psychologist is Online
+    Then User should see Start Now button
+    When User clicks on Start Now button
+    Then User should land on related Psychologist page
+    And Start Now button should be enabled
+    And The expert info and status should be correct
+    And Video and voice call analytics are compatible with each other
+    When User navigates back
+    And The Psychologist is offline
+    Then User should see Reserve Later button
+    When User clicks on Reserve Later button
+    Then User should land on related Psychologist page
+    And Start Now button should be disabled
+    And The expert info and status should be correct
+    And Video and voice call analytics are compatible with each other
+    When User navigates back
+    And The Psychologist is Busy
+    Then User should see Reserve Later button
+    When User clicks on Reserve Later button
+    Then User should land on related Psychologist page
+    And Start Now button should be disabled
+    And The expert info and status should be correct
+    And Video and voice call analytics are compatible with each other
+
+
+  Scenario: Expert box behave as expected
+    When User clicks on profile picture of the Psychologist
+    Then User should land on related Psychologist page
+    When User navigates back
+    And User clicks on stars of the Psychologist
+    Then User should land on related Psychologist page
+    When User navigates back
+    And User clicks on name of the Psychologist
+    Then User should land on related Psychologist page
+    When User navigates back
+    And User clicks on title of the Psychologist
+    Then User should land on related Psychologist page
+    When User navigates back
+    And User clicks on video call of the Psychologist
+    Then User should land on related Psychologist page
+    When User navigates back
+    And User clicks on voice call of the Psychologist
+    Then User should land on related Psychologist page
+    When User navigates back
+    And User clicks on language of the Psychologist
+    Then User should land on related Psychologist page
+    When User navigates back
+    And User clicks on View Educations and Certifications
+    Then User should land on related Psychologist page
+    When User navigates back
+    And User clicks on Starting Price
+    Then User should land on related Psychologist page
+    When User navigates back
+    And User clicks on expertise chips
+    Then User should land on related disease page
+    And User should see the expert name in the expertise list
 
 
