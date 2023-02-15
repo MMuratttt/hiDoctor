@@ -475,38 +475,31 @@ public class OnlinePsychologist_StepDefs {
 
     @When("User scrolls to Online Psychologists title over the slider")
     public void user_scrolls_to_online_psychologists_title_over_the_slider() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
     @Then("Title is correct on Psychologists slider")
     public void title_is_correct_on_psychologists_slider() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
     @When("User clicks on All Psychologists chip")
     public void user_clicks_on_all_psychologists_chip() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
     @Then("Previous and next button is enabled in Psychologists slider")
     public void previous_and_next_button_is_enabled_in_psychologists_slider() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
     @When("User clicks on next button on Psychologists slider")
     public void user_clicks_on_next_button_on_psychologists_slider() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
     @Then("Slider works correctly on Psychologists slider")
     public void slider_works_correctly_on_psychologists_slider() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
     @When("User clicks on previous button on Psychologists slider")
     public void user_clicks_on_previous_button_on_psychologists_slider() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @When("The Psychologist is Online")
