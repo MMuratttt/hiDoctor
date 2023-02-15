@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class AllPsychologists extends BasePage{
 
-    @FindBy(xpath = "//*[@id=\"__next\"]/div[4]/div[1]/div/div[2]/span[3]")
+    @FindBy(xpath = "//div[@class=' flex items-center py-3 ']/span[3]")
     public WebElement ALL_PSYCHOLOGISTS_TITLE;
 
     @FindBy(xpath = "//a[contains(@data-testid,'HiDoctor-logo-link-')]")

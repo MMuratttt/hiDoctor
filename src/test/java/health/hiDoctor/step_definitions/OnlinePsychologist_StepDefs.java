@@ -1,6 +1,7 @@
 package health.hiDoctor.step_definitions;
 
 import health.hiDoctor.pages.BecomeAConsultant;
+import health.hiDoctor.pages.FindOnlinePsychologist;
 import health.hiDoctor.pages.MainPage;
 import health.hiDoctor.pages.headers.services.OnlinePsychologist;
 import health.hiDoctor.utilities.BrowserUtils;
@@ -390,8 +391,8 @@ public class OnlinePsychologist_StepDefs {
 
     @Then("User should land on the Main Page")
     public void user_should_land_on_the_main_page() {
-        BrowserUtils.waitForVisibility(mainPage.CONTACT_US,10);
-        Assert.assertEquals(mainPage.title,Driver.getDriver().getTitle());
+        BrowserUtils.waitForVisibility(mainPage.CONTACT_US, 10);
+        Assert.assertEquals(mainPage.title, Driver.getDriver().getTitle());
     }
 
     @When("Clicks on Online Psychologist")
@@ -402,15 +403,15 @@ public class OnlinePsychologist_StepDefs {
 
     @Then("User should stay in Online Psychologist page")
     public void user_should_stay_in_online_psychologist_page() {
-        Assert.assertEquals(onlinePsychologist.onlinePsychologistPageTitle,Driver.getDriver().getTitle());
+        Assert.assertEquals(onlinePsychologist.onlinePsychologistPageTitle, Driver.getDriver().getTitle());
     }
 
     @Then("Title and sub-titles are correct on Banner section in Online Psychologist page")
     public void title_and_sub_titles_are_correct_on_banner_section_in_online_psychologist_page() {
-        Assert.assertEquals(onlinePsychologist.onlinePsychologistH1Title,onlinePsychologist.ONLINE_PSYCHOLOGIST_H1_TITLE.getAttribute("textContent"));
-        Assert.assertEquals(onlinePsychologist.onlinePsychologistSubtitle1,onlinePsychologist.ONLINE_PSYCHOLOGIST_SUBTITLE1.getAttribute("textContent"));
-        Assert.assertEquals(onlinePsychologist.onlinePsychologistSubtitle2,onlinePsychologist.ONLINE_PSYCHOLOGIST_SUBTITLE2.getAttribute("textContent"));
-        Assert.assertEquals(onlinePsychologist.onlinePsychologistSubtitle3,onlinePsychologist.ONLINE_PSYCHOLOGIST_SUBTITLE3.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.onlinePsychologistH1Title, onlinePsychologist.ONLINE_PSYCHOLOGIST_H1_TITLE.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.onlinePsychologistSubtitle1, onlinePsychologist.ONLINE_PSYCHOLOGIST_SUBTITLE1.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.onlinePsychologistSubtitle2, onlinePsychologist.ONLINE_PSYCHOLOGIST_SUBTITLE2.getAttribute("textContent"));
+        Assert.assertEquals(onlinePsychologist.onlinePsychologistSubtitle3, onlinePsychologist.ONLINE_PSYCHOLOGIST_SUBTITLE3.getAttribute("textContent"));
     }
 
     @Then("Horizontal scroll slides automatically")
@@ -421,8 +422,8 @@ public class OnlinePsychologist_StepDefs {
         BrowserUtils.waitFor(3);
         String sliderAttribute3 = onlinePsychologist.TEXT_SLIDER.getAttribute("style");
 
-        Assert.assertNotEquals(sliderAttribute1,sliderAttribute2);
-        Assert.assertNotEquals(sliderAttribute1,sliderAttribute3);
+        Assert.assertNotEquals(sliderAttribute1, sliderAttribute2);
+        Assert.assertNotEquals(sliderAttribute1, sliderAttribute3);
     }
 
     @Then("Horizontal left scroll is working correctly")
@@ -457,17 +458,19 @@ public class OnlinePsychologist_StepDefs {
 
     @When("User clicks on Find My Psychologists")
     public void user_clicks_on_find_my_psychologists() {
-
+        onlinePsychologist.FIND_MY_PSYCHOLOGIST_BTN.click();
     }
 
     @Then("User should land Find My Psychologists page")
     public void user_should_land_find_my_psychologists_page() {
-
+        BrowserUtils.waitFor(2);
+        Assert.assertEquals(new FindOnlinePsychologist().pageTitle,Driver.getDriver().getTitle());
     }
 
     @When("User clicks on Select Psychologist")
     public void user_clicks_on_select_psychologist() {
-
+        BrowserUtils.waitForVisibility(onlinePsychologist.LIST_ALL_PSYCHOLOGISTS_BTN, 10);
+        onlinePsychologist.LIST_ALL_PSYCHOLOGISTS_BTN.click();
     }
 
 
