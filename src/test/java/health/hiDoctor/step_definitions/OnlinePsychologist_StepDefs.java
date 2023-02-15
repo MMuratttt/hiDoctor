@@ -473,5 +473,152 @@ public class OnlinePsychologist_StepDefs {
         onlinePsychologist.LIST_ALL_PSYCHOLOGISTS_BTN.click();
     }
 
+    @When("User scrolls to Online Psychologists title over the slider")
+    public void user_scrolls_to_online_psychologists_title_over_the_slider() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Then("Title is correct on Psychologists slider")
+    public void title_is_correct_on_psychologists_slider() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @When("User clicks on All Psychologists chip")
+    public void user_clicks_on_all_psychologists_chip() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Then("Previous and next button is enabled in Psychologists slider")
+    public void previous_and_next_button_is_enabled_in_psychologists_slider() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @When("User clicks on next button on Psychologists slider")
+    public void user_clicks_on_next_button_on_psychologists_slider() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Then("Slider works correctly on Psychologists slider")
+    public void slider_works_correctly_on_psychologists_slider() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @When("User clicks on previous button on Psychologists slider")
+    public void user_clicks_on_previous_button_on_psychologists_slider() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @When("The Psychologist is Online")
+    public void the_psychologist_is_online() {
+
+    }
+    @Then("User should see the status correctly")
+    public void user_should_see_the_status_correctly() {
+
+    }
+    @When("The Psychologist is offline")
+    public void the_psychologist_is_offline() {
+
+    }
+    @When("The Psychologist is Busy")
+    public void the_psychologist_is_busy() {
+
+    }
+    @When("User clicks on thumbnail of the psychologist")
+    public void user_clicks_on_thumbnail_of_the_psychologist() {
+
+    }
+    @Then("User should land on related Psychologist page")
+    public void user_should_land_on_related_psychologist_page() {
+
+    }
+
+    @Then("User should see Start Now button")
+    public void user_should_see_start_now_button() {
+
+    }
+    @When("User clicks on Start Now button")
+    public void user_clicks_on_start_now_button() {
+
+    }
+
+    @Then("Start Now button should be enabled")
+    public void start_now_button_should_be_enabled() {
+
+    }
+    @Then("The expert info and status should be correct")
+    public void the_expert_info_and_status_should_be_correct() {
+
+    }
+    @Then("Video and voice call analytics are compatible with each other")
+    public void video_and_voice_call_analytics_are_compatible_with_each_other() {
+
+    }
+
+    @Then("User should see Reserve Later button")
+    public void user_should_see_reserve_later_button() {
+
+    }
+    @When("User clicks on Reserve Later button")
+    public void user_clicks_on_reserve_later_button() {
+
+    }
+    @Then("Start Now button should be disabled")
+    public void start_now_button_should_be_disabled() {
+
+    }
+
+    @When("User clicks on profile picture of the Psychologist")
+    public void user_clicks_on_profile_picture_of_the_psychologist() {
+
+    }
+
+    @When("User clicks on stars of the Psychologist")
+    public void user_clicks_on_stars_of_the_psychologist() {
+
+    }
+    @When("User clicks on name of the Psychologist")
+    public void user_clicks_on_name_of_the_psychologist() {
+
+    }
+    @When("User clicks on title of the Psychologist")
+    public void user_clicks_on_title_of_the_psychologist() {
+
+    }
+    @When("User clicks on video call of the Psychologist")
+    public void user_clicks_on_video_call_of_the_psychologist() {
+
+    }
+    @When("User clicks on voice call of the Psychologist")
+    public void user_clicks_on_voice_call_of_the_psychologist() {
+
+    }
+    @When("User clicks on language of the Psychologist")
+    public void user_clicks_on_language_of_the_psychologist() {
+
+    }
+    @When("User clicks on View Educations and Certifications")
+    public void user_clicks_on_view_educations_and_certifications() {
+
+    }
+    @When("User clicks on Starting Price")
+    public void user_clicks_on_starting_price() {
+
+    }
+    @When("User clicks on expertise chips")
+    public void user_clicks_on_expertise_chips() {
+
+    }
+    @Then("User should land on related disease page")
+    public void user_should_land_on_related_disease_page() {
+
+    }
+    @Then("User should see the expert name in the expertise list")
+    public void user_should_see_the_expert_name_in_the_expertise_list() {
+
+    }
+
+
 
 }
