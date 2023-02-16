@@ -89,20 +89,18 @@ Feature: Online Psychologist Page
     And User clicks on Select Psychologist
     Then User should land All Psychologist page
 
-  @wip
+
   Scenario: Online Psychologists Slider section texts and functions are working correctly
     When User scrolls to Online Psychologists title over the slider
     Then Title is correct on Psychologists slider
     When User clicks on All Psychologists chip
     Then User should land All Psychologist page
     When User navigates back
-    Then Previous and next button is enabled in Psychologists slider
-    When User clicks on next button on Psychologists slider
-    Then Slider works correctly on Psychologists slider
-    When User clicks on previous button on Psychologists slider
-    Then Slider works correctly on Psychologists slider
+    And User scrolls to Online Psychologists title over the slider
+    Then Slider works correctly on Psychologists slider with next
+    Then Slider works correctly on Psychologists slider with previous
 
-
+  @wip
   Scenario: Online Psychologists thumbnails are correct
     When The Psychologist is Online
     Then User should see the status correctly

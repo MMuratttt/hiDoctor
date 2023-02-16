@@ -475,31 +475,39 @@ public class OnlinePsychologist_StepDefs {
 
     @When("User scrolls to Online Psychologists title over the slider")
     public void user_scrolls_to_online_psychologists_title_over_the_slider() {
-
+        BrowserUtils.scrollToElement(onlinePsychologist.ONLINE_PSYCHOLOGISTS_OVER_SLIDER);
     }
     @Then("Title is correct on Psychologists slider")
     public void title_is_correct_on_psychologists_slider() {
-
+        Assert.assertEquals(onlinePsychologist.onlinePsychologistsTitleOverSlider, onlinePsychologist.ONLINE_PSYCHOLOGISTS_OVER_SLIDER.getAttribute("textContent"));
     }
     @When("User clicks on All Psychologists chip")
     public void user_clicks_on_all_psychologists_chip() {
-
+        BrowserUtils.waitFor(1);
+        onlinePsychologist.ONLINE_PSYCHOLOGISTS_CHIP.click();
     }
-    @Then("Previous and next button is enabled in Psychologists slider")
-    public void previous_and_next_button_is_enabled_in_psychologists_slider() {
 
+    @Then("Slider works correctly on Psychologists slider with next")
+    public void slider_works_correctly_on_psychologists_slider_with_next() {
+        String firstState = onlinePsychologist.FIRST_PSYCHOLOGIST_BOX_IN_SLIDER.getAttribute("class");
+        BrowserUtils.waitFor(1);
+        onlinePsychologist.NEXT_SLIDE_BUTTON.click();
+        BrowserUtils.waitFor(1);
+        onlinePsychologist.NEXT_SLIDE_BUTTON.click();
+        BrowserUtils.waitFor(1);
+        String secondState = onlinePsychologist.FIRST_PSYCHOLOGIST_BOX_IN_SLIDER.getAttribute("class");
+        Assert.assertNotEquals(firstState,secondState);
     }
-    @When("User clicks on next button on Psychologists slider")
-    public void user_clicks_on_next_button_on_psychologists_slider() {
-
-    }
-    @Then("Slider works correctly on Psychologists slider")
-    public void slider_works_correctly_on_psychologists_slider() {
-
-    }
-    @When("User clicks on previous button on Psychologists slider")
-    public void user_clicks_on_previous_button_on_psychologists_slider() {
-
+    @Then("Slider works correctly on Psychologists slider with previous")
+    public void slider_works_correctly_on_psychologists_slider_with_previous() {
+        String firstState = onlinePsychologist.FIRST_PSYCHOLOGIST_BOX_IN_SLIDER.getAttribute("class");
+        BrowserUtils.waitFor(1);
+        onlinePsychologist.PREVIOUS_SLIDE_BUTTON.click();
+        BrowserUtils.waitFor(1);
+        onlinePsychologist.PREVIOUS_SLIDE_BUTTON.click();
+        BrowserUtils.waitFor(1);
+        String secondState = onlinePsychologist.FIRST_PSYCHOLOGIST_BOX_IN_SLIDER.getAttribute("class");
+        Assert.assertNotEquals(firstState,secondState);
     }
 
     @When("The Psychologist is Online")
